@@ -1,0 +1,45 @@
+appId: com.daivbharathi.daiv
+---
+#List of reels available- 4
+
+- assertVisible: "Daiv\nUser Audio\ndaiv Clips"
+- scrollUntilVisible:
+    element: "Daiv\nUser Audio\ndaiv Clips"
+- tapOn: "Daiv\nUser Audio\ndaiv Clips"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+
+- assertVisible: "Daiv\nUser Audio\nAvatar"
+- scrollUntilVisible:
+    element: "Daiv\nUser Audio\nAvatar"
+- tapOn: "Daiv\nUser Audio\nAvatar"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "Daiv\nUser Audio\ntesting "
+- scrollUntilVisible:
+    element: "Daiv\nUser Audio\ntesting "
+- tapOn: "Daiv\nUser Audio\ntesting "
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "Daiv\nUser Audio\nLord Vishnu Dashavatar"
+- scrollUntilVisible:
+    element: "Daiv\nUser Audio\nLord Vishnu Dashavatar"
+- tapOn: "Daiv\nUser Audio\nLord Vishnu Dashavatar"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
