@@ -1,0 +1,193 @@
+appId: com.daivbharathi.daiv
+---
+
+- assertVisible:
+    text: "Home"
+- waitForAnimationToEnd
+- takeScreenshot: "01_home_screen"
+
+# ════════════════════════════════════
+# ── CHAT FLOW 1 — I just want to explore ──
+# ════════════════════════════════════
+- tapOn:
+    point: "43%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Talk to us"
+- takeScreenshot: "02_chat_screen_1"
+
+- tapOn:
+    text: "I just want to explore"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "03_explore_selected"
+
+- tapOn:
+    point: "18%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "82%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "04_numbers_selected"
+
+# ── Back arrow: box(36,118)→(112,195) | center: 74/1080=7%, 156/2400=6.5% ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "05_back_to_home"
+
+# ════════════════════════════════════
+# ── CHAT FLOW 2 — Life feels confusing ──
+# ════════════════════════════════════
+- tapOn:
+    point: "43%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Talk to us"
+- takeScreenshot: "06_chat_screen_2"
+
+- tapOn:
+    text: "Life feels confusing"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "07_life_confusing_selected"
+
+- tapOn:
+    point: "18%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "82%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "08_numbers_selected"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "09_back_to_home"
+
+# ════════════════════════════════════
+# ── CHAT FLOW 3 — Relationship issues ──
+# ════════════════════════════════════
+- tapOn:
+    point: "43%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Talk to us"
+- takeScreenshot: "10_chat_screen_3"
+
+- tapOn:
+    text: "Relationship issues"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "11_relationship_selected"
+
+- tapOn:
+    point: "18%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "82%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "12_numbers_selected"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "13_back_to_home"
+
+# ════════════════════════════════════
+# ── CHAT FLOW 4 — Career or finances ──
+# ════════════════════════════════════
+- tapOn:
+    point: "43%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Talk to us"
+- takeScreenshot: "14_chat_screen_4"
+
+- tapOn:
+    text: "Career or finances"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "15_career_selected"
+
+- tapOn:
+    point: "18%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "82%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "16_numbers_selected"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "17_back_to_home"
+
+# ════════════════════════════════════
+# ── CHAT FLOW 5 — Health & peace of mind ──
+# ════════════════════════════════════
+- tapOn:
+    point: "43%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Talk to us"
+- takeScreenshot: "18_chat_screen_5"
+
+- tapOn:
+    text: "Health & peace of mind"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "19_health_selected"
+
+- tapOn:
+    point: "18%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "82%,65%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "20_numbers_selected"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "21_back_to_home_final"

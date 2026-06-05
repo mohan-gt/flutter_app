@@ -1,0 +1,424 @@
+appId: com.daivbharathi.daiv
+---
+# Flow- Home-Media-Library
+# Daily Devotion songs playing
+
+- assertVisible: "Home"
+
+- assertVisible: "Media"
+- tapOn: "Media"
+
+- assertVisible: "Bruhaspati Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bruhaspati Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn: "Back"
+
+- assertVisible: "Bhuda Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bhuda Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn: "Back"
+
+- assertVisible: "Devotional Song\nArtist: Sangeeta Kattii"
+- tapOn: "Devotional Song\nArtist: Sangeeta Kattii"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn: "Back"
+
+- assertVisible: "Bramha Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bramha Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn: "Back"
+
+# Misic Flow:
+
+- assertVisible: "Music"
+- tapOn: "Music"
+
+- assertVisible: "See More"
+- tapOn: "See More"
+
+- assertVisible: "Mangala Arti"
+- tapOn: "Mangala Arti"
+
+- assertVisible: "Test-Adi\nSangeeta Kattii"
+- tapOn: "Test-Adi\nSangeeta Kattii"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+
+- assertVisible: "Maha Mangala Artii"
+- tapOn: "Maha Mangala Artii"
+
+- assertVisible: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- tapOn: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "See More"
+- tapOn: "See More"
+
+- assertVisible: "Mangala Arti"
+- tapOn: "Mangala Arti"
+
+- assertVisible: "Test-Adi\nSangeeta Kattii"
+- tapOn: "Test-Adi\nSangeeta Kattii"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Maha Mangala Artii"
+- tapOn: "Maha Mangala Artii"
+
+- assertVisible: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- tapOn: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- swipe:
+    direction: DOWN
+    duration: 400
+
+- assertVisible: "Ganeshaa"
+- tapOn: "Ganeshaa"
+
+- assertVisible: "Kirtan"
+- tapOn: "Kirtan"
+
+- assertVisible: "Rama Beeja Mantra\nSamartha Nagabhushanam"
+- tapOn: "Rama Beeja Mantra\nSamartha Nagabhushanam"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+
+#Videos Section:
+    
+- assertVisible: "Videos"
+- tapOn: "Videos"
+# Trending Videos:
+
+- assertVisible: "00:31\nMorning Shiva Mantra"
+- tapOn: "00:31\nMorning Shiva Mantra"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+#Om Shanthi Om Shanthi Video
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- swipe:
+    direction: LEFT
+    duration: 400
+# String Video
+
+- assertVisible: "00:10\nstring"
+- tapOn: "00:10\nstring"
+
+- assertVisible: "00:10\nstring"
+- tapOn: "00:10\nstring"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+#Sloka Flow
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "Show More"
+- tapOn: "Show More"
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- tapOn: "Back"
+
+# Shloka Flow View More
+
+- assertVisible: "Shloka"
+- assertVisible: "Show More"
+- tapOn: "Show More"
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- tapOn: "Back"
+- tapOn: "Back"
+
+#Books Flow
+
+- assertVisible: "Books"
+- tapOn: "Books"
+
+# First Book- Ramayana Book
+- assertVisible: "Ramayana\nauthor"
+- tapOn: "Ramayana\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+
+#Chapter 1
+- assertVisible: "Chapter 01\nBirth of Rama"
+- tapOn: "Chapter 01\nBirth of Rama"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "back"
+
+#Chapter 2
+- assertVisible: "Chapter 02\nSwayamvara of Sita"
+- tapOn: "Chapter 02\nSwayamvara of Sita"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "back"
+
+#Chapter 3
+- assertVisible: "Chapter 03\nCoronation and Exile"
+- tapOn: "Chapter 03\nCoronation and Exile"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "back"
+
+#Chapter 4
+- assertVisible: "Chapter 04\nLife in the Forest"
+- tapOn: "Chapter 04\nLife in the Forest"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "back"
+
+#Chapter 5
+- assertVisible: "Chapter 05\nShurpanakha\u2019s Revenge"
+- tapOn: "Chapter 05\nShurpanakha\u2019s Revenge"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# Second Book- Mahabharat2 Book
+- assertVisible: "Mahabharata2\nauthor"
+- tapOn: "Mahabharata2\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+
+- assertVisible: "Chapter 01\nThe Game of Dice"
+- tapOn: "Chapter 01\nThe Game of Dice"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Chapter 02\nExile of the Pandavas"
+- tapOn: "Chapter 02\nExile of the Pandavas"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Chapter 03\nContinue Reading\nKrishna\u2019s Counsel"
+- tapOn: "Chapter 03\nContinue Reading\nKrishna\u2019s Counsel"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Chapter 04\nThe Great War of Kurukshetra"
+- tapOn: "Chapter 04\nThe Great War of Kurukshetra"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Chapter 05\nAftermath and Legacy"
+- tapOn: "Chapter 05\nAftermath and Legacy"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# THird Book- Upanishads Book
+- assertVisible: "Upanishads\nauthor"
+- tapOn: "Upanishads\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+
+# Fourth Book- Upanishads2
+- assertVisible: "Upanishads2\nauthor"
+- tapOn: "Upanishads2\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+
+- assertVisible: "Chapter 01\nUp1"
+- tapOn: "Chapter 01\nUp1"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+# Fifth Book- Guru Granth Sahib
+- assertVisible: "Guru Granth Sahib\nauthor"
+- tapOn: "Guru Granth Sahib\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# Sixth Book- Test Data
+- assertVisible: "Test data\nauthor"
+- tapOn: "Test data\nauthor"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+
+- assertVisible: "Chapter 01\nChapter 1"
+- tapOn: "Chapter 01\nChapter 1"
+
+- tapOn:
+    text: "back"
+
+- assertVisible: "Chapter 02\nChapter 2"
+- tapOn: "Chapter 02\nChapter 2"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# Flow- Home-Media-Clips
+
+- assertVisible: "Clips"
+- tapOn: "Clips"
+- swipe:
+    direction: UP
+    duration: 400
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- swipe:
+    direction: UP
+    duration: 400
+
+# Community Flow
+
+- assertVisible: "Community"
+- tapOn: "Community"
+
+- assertVisible: "Daiv Bharthi Community\n10 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+
+- assertVisible: "Golden Temple\n13 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+
+- assertVisible: "Sri Rama Temple \n10 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+
+# Explore Channels
+
+- assertVisible: "Sri Ayyappa Temple\n8 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+
+- tapOn:
+    text: "back"
+
+
+
+
+
+

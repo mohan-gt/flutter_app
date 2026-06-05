@@ -1,0 +1,25 @@
+appId: com.daivbharathi.daiv
+---
+
+- launchApp
+
+# 🌐 Select English language
+- tapOn:
+    text: "English"
+
+# OR fallback if it's a button/list item:
+# - tapOn: "English"
+
+# ➜ Continue button
+- tapOn:
+    text: "Continue"
+
+
+# ⏭ Skip button (if shown)
+- tapOn:
+    text: "Skip"
+
+# 🚀 Let’s Start button
+- tapOn:
+    text: "Let's Start"
+- tapOn: "I'll do it Later!"

@@ -1,0 +1,484 @@
+appId: com.daivbharathi.daiv
+---
+# Flow- Home-Astro-Panchang- Select your Rashi
+
+- assertVisible: "Home"
+- assertVisible: "Astro"
+- tapOn: "Astro"
+# Rashi 1- Aries
+
+- assertVisible: "Aries"
+- tapOn: "Aries"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 2- Taurus
+
+- assertVisible: "Taurus"
+- tapOn: "Taurus"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 3- Temini
+
+- assertVisible: "Temini"
+- tapOn: "Temini"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 4- Cancer
+
+- assertVisible: "Cancer"
+- tapOn: "Cancer"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 5- Leo
+
+- assertVisible: "Leo"
+- tapOn: "Leo"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 6- Virgo
+
+- assertVisible: "Virgo"
+- tapOn: "Virgo"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 7- Libra
+
+- assertVisible: "Libra"
+- tapOn: "Libra"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 8- Scarpio
+
+- assertVisible: "Scorpio"
+- tapOn: "Scorpio"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+- swipe:
+    direction: UP
+    duration: 800
+
+# Rashi 9- Sagittarius
+
+- assertVisible: "Sagittarius"
+- tapOn: "Sagittarius"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 10- Capricorn
+
+- assertVisible: "Capricorn"
+- tapOn: "Capricorn"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 11- Aquaries
+
+- assertVisible: "Aquarius"
+- tapOn: "Aquarius"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+# Rashi 12- Pisces
+
+- assertVisible: "Pisces"
+- tapOn: "Pisces"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+
+- tapOn:
+    text: "Back"
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "Learn More"
+- tapOn: "Learn More"
+
+- assertVisible: "I'll do it Later!"
+- tapOn: "I'll do it Later!"
+
+
+# Flow- Home-Astro-Plans
+
+- assertVisible: "Plans"
+- tapOn: "Plans"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+# First Subscription Plan- Upgrade to Plan silver
+
+- assertVisible: "Upgrade to Plan silver"
+- tapOn: "Upgrade to Plan silver"
+
+- assertVisible: "1 Month\n\u20b999"
+- tapOn: "1 Month\n\u20b999"
+
+- assertVisible: "3 Months\n\u20b9249\nEquivalent to \u20b983.00 Per Month\n\u20b948 saved"
+- tapOn: "3 Months\n\u20b9249\nEquivalent to \u20b983.00 Per Month\n\u20b948 saved"
+
+- assertVisible: "6 Months\n\u20b9499\nEquivalent to \u20b983.17 Per Month\n\u20b995 saved"
+- tapOn: "6 Months\n\u20b9499\nEquivalent to \u20b983.17 Per Month\n\u20b995 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Second Subscription Plan- Upgrade to Gold Plan1
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Gold Plan1"
+- tapOn: "Upgrade to Gold Plan1"
+- waitForAnimationToEnd
+
+- assertVisible: "1 Month\n\u20b92000"
+- tapOn: "1 Month\n\u20b92000"
+
+- assertVisible: "3 Months\n\u20b92500\nEquivalent to \u20b9833.33 Per Month\n\u20b93500 saved"
+- tapOn: "3 Months\n\u20b92500\nEquivalent to \u20b9833.33 Per Month\n\u20b93500 saved"
+
+- assertVisible: "6 Months\n\u20b93000\nEquivalent to \u20b9500.00 Per Month\n\u20b99000 saved"
+- tapOn: "6 Months\n\u20b93000\nEquivalent to \u20b9500.00 Per Month\n\u20b99000 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Third Subscription Plan- Upgrade to Sample Plan2
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Sample Plan2"
+- tapOn: "Upgrade to Sample Plan2"
+
+- assertVisible: "1 Month\n\u20b9200"
+- tapOn: "1 Month\n\u20b9200"
+
+- assertVisible: "3 Months\n\u20b9250\nEquivalent to \u20b983.33 Per Month\n\u20b9350 saved"
+- tapOn: "3 Months\n\u20b9250\nEquivalent to \u20b983.33 Per Month\n\u20b9350 saved"
+
+- assertVisible: "6 Months\n\u20b9300\nEquivalent to \u20b950.00 Per Month\n\u20b9900 saved"
+- tapOn: "6 Months\n\u20b9300\nEquivalent to \u20b950.00 Per Month\n\u20b9900 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+
+- waitForAnimationToEnd- assertVisible: "Back"
+- tapOn: "Back"
+
+- waitForAnimationToEnd- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Fourth Subscription Plan- Upgrade to Sample Plan
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Sample Plan"
+- tapOn: "Upgrade to Sample Plan"
+
+- assertVisible: "1 Month\n\u20b9200"
+- tapOn: "1 Month\n\u20b9200"
+
+- assertVisible: "3 Months\n\u20b9250\nEquivalent to \u20b983.33 Per Month\n\u20b9350 saved"
+- tapOn: "3 Months\n\u20b9250\nEquivalent to \u20b983.33 Per Month\n\u20b9350 saved"
+
+- assertVisible: "6 Months\n\u20b9300\nEquivalent to \u20b950.00 Per Month\n\u20b9900 saved"
+- tapOn: "6 Months\n\u20b9300\nEquivalent to \u20b950.00 Per Month\n\u20b9900 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Fifth Subscription Plan- Upgrade to Divine Connect Plan12
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Divine Connect Plan12"
+- tapOn: "Upgrade to Divine Connect Plan12"
+
+- assertVisible: "1 Month\n\u20b92000"
+- tapOn: "1 Month\n\u20b92000"
+
+- assertVisible: "3 Months\n\u20b9500\nEquivalent to \u20b9166.67 Per Month\n\u20b95500 saved"
+- tapOn: "3 Months\n\u20b9500\nEquivalent to \u20b9166.67 Per Month\n\u20b95500 saved"
+
+- assertVisible: "6 Months\n\u20b92000\nEquivalent to \u20b9333.33 Per Month\n\u20b910000 saved"
+- tapOn: "6 Months\n\u20b92000\nEquivalent to \u20b9333.33 Per Month\n\u20b910000 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Sixth Subscription Plan- Upgrade to Divine Connect Plan
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Divine Connect Plan"
+- tapOn: "Upgrade to Divine Connect Plan"
+
+- assertVisible: "1 Month\n\u20b91000"
+- tapOn: "1 Month\n\u20b91000"
+
+- assertVisible: "3 Months\n\u20b91500\nEquivalent to \u20b9500.00 Per Month\n\u20b91500 saved"
+- tapOn: "3 Months\n\u20b91500\nEquivalent to \u20b9500.00 Per Month\n\u20b91500 saved"
+
+- assertVisible: "6 Months\n\u20b92000\nEquivalent to \u20b9333.33 Per Month\n\u20b94000 saved"
+- tapOn: "6 Months\n\u20b92000\nEquivalent to \u20b9333.33 Per Month\n\u20b94000 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+# Seventh Subscription Plan- Upgrade to Gold Plan
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- waitForAnimationToEnd
+
+- assertVisible: "Upgrade to Gold Plan"
+- tapOn: "Upgrade to Gold Plan"
+
+- assertVisible: "1 Month\n\u20b999"
+- tapOn: "1 Month\n\u20b999"
+
+- assertVisible: "3 Months\n\u20b9199\nEquivalent to \u20b966.33 Per Month\n\u20b998 saved"
+- tapOn: "3 Months\n\u20b9199\nEquivalent to \u20b966.33 Per Month\n\u20b998 saved"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- waitForAnimationToEnd
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd
+
+- assertVisible: "YES"
+- tapOn: "YES"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+
+- tapOn:
+    text: "back"
+
+- tapOn:
+    text: "back"
+
+- assertVisible: "Home"
+

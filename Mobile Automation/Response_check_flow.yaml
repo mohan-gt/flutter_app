@@ -1,0 +1,88 @@
+appId: com.daivbharathi.daiv
+---
+
+# STEP 1 - Launch App
+- launchApp
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "01_app_launched"
+
+# STEP 2 - Select English
+
+- tapOn:
+    text: "English"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "02_language_selected"
+
+# STEP 3 - Continue
+
+- tapOn:
+    text: "Continue"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "03_continue"
+
+# STEP 4 - Skip
+- tapOn:
+    text: "Skip"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "04_skip"
+
+# STEP 5 - Let's Start
+- tapOn:
+    text: "Let's Start"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "05_lets_start"
+
+# STEP 6 - Close Popup
+- tapOn: "I'll do it Later!"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "06_popup_closed"
+
+# STEP 7 - Scroll to Explore Daiv Sevas
+- scrollUntilVisible:
+    element:
+      text: "Explore Daiv Sevas"
+    direction: DOWN
+
+- assertVisible:
+    text: "Explore Daiv Sevas"
+
+- tapOn:
+    text: "Explore Daiv Sevas"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "07_sevas"
+
+# STEP 8 - Open Video 1
+- tapOn:
+    point: "24%,63%"
+
+- assertVisible:
+    text: "Clips"
+
+- takeScreenshot: "08_video1"
+
+# STEP 9 - Watch Video 1
+- waitForAnimationToEnd:
+    timeout: 10000
+
+- takeScreenshot: "09_video1_played"
+
+# STEP 10 - Back
+- back
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "10_back"

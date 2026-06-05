@@ -1,0 +1,66 @@
+appId: com.daivbharathi.daiv
+---
+
+# Verify Home screen is loaded
+- assertVisible:
+    text: "Home"
+
+- tapOn:
+    text: "Explore Daiv Sevas"
+
+# Scroll to Explore Daiv Sevas if not visible
+- scrollUntilVisible:
+    element:
+      text: "Explore Daiv Sevas"
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+# Open first video
+- tapOn:
+    point: "24%,63%"
+
+# Verify Clips screen
+- assertVisible:
+    text: "Clips"
+
+# Play video for 10 seconds
+- waitForAnimationToEnd:
+    timeout: 10000
+
+# Tap on Back button
+- tapOn: "Back"
+
+# Open second video
+- tapOn:
+    point: "44%,63%"
+
+# Verify Clips screen
+- assertVisible:
+    text: "Clips"
+
+# Play video for 10 seconds
+- waitForAnimationToEnd:
+    timeout: 10000
+
+# Tap on Back button
+- tapOn: "Back"
+
+# Open third video
+- tapOn:
+    point: "64%,63%"
+
+- waitForAnimationToEnd
+
+# Verify Clips screen
+- assertVisible:
+    text: "Clips"
+
+# Play video for 10 seconds
+- waitForAnimationToEnd:
+    timeout: 10000
+
+# Tap on Back button
+- tapOn: "Back"
+
+- waitForAnimationToEnd

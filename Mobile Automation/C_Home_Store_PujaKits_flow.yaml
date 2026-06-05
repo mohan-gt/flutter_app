@@ -1,0 +1,283 @@
+appId: com.daivbharathi.daiv
+---
+
+# ════════════════════════════════════
+# ── HOME → STORE → PUJA KITS FLOW ──
+# ════════════════════════════════════
+#Puja Kits
+# Diwali Mahalakshmi Puja
+
+- assertVisible: "Diwali Mahalakshmi puja kittttt\nStarts from: \u20b9466.0"
+- tapOn: "Diwali Mahalakshmi puja kittttt\nStarts from: \u20b9466.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "-"
+- tapOn: "-"
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+#Ganesha Kit
+- assertVisible: "Ganesha Puja Kit \nStarts from: \u20b9466.0"
+- tapOn: "Ganesha Puja Kit \nStarts from: \u20b9466.0"
+- assertVisible: "+"
+- tapOn: "+"
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+- assertVisible: "Store"
+- swipe:
+    direction: LEFT
+    duration: 400
+
+# Ganapati Puja KIt
+
+- assertVisible: "Ganapati Puja Kit\nStarts from: \u20b9466.0"
+- tapOn: "Ganapati Puja Kit\nStarts from: \u20b9466.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# Divine Essentials Puja Kit
+
+- assertVisible: "Divine Essentials Puja Kit\nStarts from: \u20b9466.0"
+- tapOn: "Divine Essentials Puja Kit\nStarts from: \u20b9466.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+# Homa Puja KIt
+
+- swipe:
+    direction: UP
+    duration: 400
+
+- assertVisible: "Homa Puja Kit\nStarts from: \u20b9466.0"
+- tapOn: "Homa Puja Kit\nStarts from: \u20b9466.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+
+# ── STORE → GEM AND BRACELET FLOW ──
+
+# ── Swipe up to bring Gem and Bracelet section into view ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "275_gem_bracelet_visible"
+
+
+# ── Tap Kalasa Bowl card ──
+
+- assertVisible: "Kalasa Bowl\nStarts from: \u20b9100.0"
+- tapOn: "Kalasa Bowl\nStarts from: \u20b9100.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "back"
+- tapOn:
+    text: "back"
+# ════════════════════════════════════
+# ── DEPPAM OIL (Card 2 - Right) ──
+# ════════════════════════════════════
+- assertVisible: "DEPPAM OIL\nStarts from: \u20b9100.0"
+- tapOn: "DEPPAM OIL\nStarts from: \u20b9100.0"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "285_deppam_oil_detail"
+
+- tapOn: "+"
+- assertVisible: "-"
+- tapOn: "-"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "288_reviews_visible"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn: "Back"
+- tapOn: "Back"
+
+# Camphor
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- assertVisible: "Camphor\nStarts from: \u20b9100.0"
+- tapOn: "Camphor\nStarts from: \u20b9100.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "-"
+- tapOn: "-"
+
+- swipe:
+    direction: UP
+    duration: 1500
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+# Silver Plate 1
+- assertVisible: "Silver plate 1\nStarts from: \u20b9100.0"
+- tapOn: "Silver plate 1\nStarts from: \u20b9100.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "-"
+- tapOn: "-"
+
+- swipe:
+    direction: UP
+    duration: 1500
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+- swipe:
+    direction: UP
+    duration: 1500
+
+# Organic Honey
+
+- assertVisible: "Organic Honey\nStarts from: \u20b9100.0"
+- tapOn: "Organic Honey\nStarts from: \u20b9100.0"
+
+- assertVisible: "+"
+- tapOn: "+"
+
+- assertVisible: "-"
+- tapOn: "-"
+
+- swipe:
+    direction: UP
+    duration: 1500
+
+- assertVisible: "Back"
+- tapOn: "Back"
+
+- assertVisible: "Store"
+- assertVisible: "Back"
+- tapOn: "Back"
+

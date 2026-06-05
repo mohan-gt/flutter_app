@@ -1,0 +1,1119 @@
+appId: com.daivbharathi.daiv
+---
+
+- assertVisible:
+    text: "Home"
+- waitForAnimationToEnd
+- takeScreenshot: "01_home_screen"
+# ════════════════════════════════════
+# ── FAITH → SEVA → EXPLORE TEMPLES FLOW ──
+# ════════════════════════════════════
+
+# ── Tap Faith tab (bottom nav) ──
+- tapOn:
+    text: "Faith"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "77_faith_tab_tapped"
+
+# ── Seva screen — Tap Show More (Explore Temples) ──
+# Inspector box: (840,1063)→(1055,1121) | center: 947/1080=88%, 1092/2400=46%
+- tapOn:
+    point: "88%,46%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "78_explore_temples_show_more_tapped"
+
+
+# ════════════════════════════════════
+# ── GANAPATHI TEMPLE ──
+# ════════════════════════════════════
+
+# ── Tap Ganapathi Temple card ──
+# Inspector box: (26,567)→(1055,1445) | center: 540/1080=50%, 1006/2400=42%
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "80_ganapathi_temple_detail"
+
+# ── Tap Show More (orange bar) ──
+- tapOn:
+    point: "921,1390"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "81_ganapathi_show_more_tapped"
+
+# ── Tap Join Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "82_join_community_tapped"
+
+# ── Toast: "You've joined this Community Successfully" ──
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "83_joined_community_toast_visible"
+
+# ── Tap Leave Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "84_leave_community_tapped"
+
+# ── Confirmation dialog — Tap Leave Community ──
+# Inspector box: (41,1830)→(1039,1973) | center: 540/1080=50%, 1901/2400=79%
+- tapOn:
+    point: "50%,79%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "85_leave_community_confirmed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+# Inspector box: (13,85)→(133,228) | center: 73/1080=7%, 156/2400=6%
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+# ── RADHA TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Radha Temple to Ganapathi position ──
+
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "88_swiped_radha_temple_visible"
+
+# ── Tap Radha Temple card ──
+# Box: (26,750)→(1055,1627) | center: 540/1080=50%, 1188/2400=50%
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "89_radha_temple_detail"
+
+# ── Swipe up to see Book Seva ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "90_radha_temple_scrolled"
+
+# ── Tap Book Seva button ──
+# Box: (279,1999)→(621,2087) | center: 450/1080=42%, 2043/2400=85%
+- tapOn:
+    point: "540,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "91_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+# Box: (174,1152)→(321,1267) | center: 247/1080=23%, 1209/2400=50%
+- tapOn:
+    point: "23%,50%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "92_date_selected"
+
+# ── Tap Proceed to Book ──
+# Box: (46,2061)→(1034,2205) | center: 540/1080=50%, 2133/2400=89%
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "93_proceed_to_book_tapped"
+
+# ── Tap Proceed ──
+# Box: (41,2054)→(1039,2181) | center: 540/1080=50%, 2117/2400=88%
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "94_proceed_tapped"
+
+# ── Tap Back arrow ──
+# Box: (13,85)→(133,228) | center: 73/1080=7%, 156/2400=6%
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "95_back_from_proceed"
+
+# ── Close date view with X mark ──
+# Box: (968,602)→(1019,654) | center: 993/1080=92%, 628/2400=26%
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "96_date_view_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "97_back_to_explore_temples"
+# ════════════════════════════════════
+# ── GOLDEN TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Golden Temple to Radha Temple position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "98_golden_temple_visible"
+
+# ── Tap Golden Temple card (same position as Radha Temple) ──
+# Box: (26,750)→(1055,1627) | center: 50%, 50%
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "99_golden_temple_detail"
+
+# ── Swipe up to see Book Seva ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "100_golden_temple_scrolled"
+
+# ── Tap Book Seva button (same as Radha Temple) ──
+- tapOn:
+    point: "540,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "101_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+- tapOn:
+    point: "23%,50%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "102_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "103_proceed_to_book_tapped"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "104_proceed_tapped"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "105_back_from_proceed"
+
+# ── Close date view with X mark ──
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "106_date_view_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "107_back_to_explore_temples"
+
+
+# ════════════════════════════════════
+# ── SRI SARASWATHI TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Sri Saraswathi Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "108_sri_saraswathi_temple_visible"
+
+# ── Tap Sri Saraswathi Temple card ──
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "109_sri_saraswathi_temple_detail"
+
+# ── Swipe up to see Book Seva ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "110_sri_saraswathi_temple_scrolled"
+
+# ── Tap Book Seva button ──
+- tapOn:
+    point: "540,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "111_book_seva_tapped"
+
+# ── Choose date (June 17) ──
+# Box: (467,1152)→(613,1267) | center: 540/1080=50%, 1209/2400=50%
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "112_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "113_proceed_to_book_tapped"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "114_proceed_tapped"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "115_back_from_proceed"
+
+# ── Close date view with X mark ──
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "116_date_view_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "117_back_to_explore_temples"
+
+# ════════════════════════════════════
+# ── GANESHA TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up 600ms to bring Ganesha Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "118_ganesha_temple_visible"
+
+# ── Tap Ganesha Temple card ──
+# Box: (82,495)→(998,982) | center: 540/1080=50%, 738/2400=31%
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "119_ganesha_temple_detail"
+
+# ── Swipe up 800ms to see Book Your Desired Seva section ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "120_ganesha_temple_scrolled"
+# ── Second swipe up to bring all 3 sevas into view ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "120_ganesha_all_sevas_visible"
+
+# ════════════════════════════════════
+# ── SEVA 1 — Abhisheka Seva ₹980 ──
+# ════════════════════════════════════
+
+# ── Tap Book Seva (Seva 1) ──
+# Box: (278,889)→(621,977) | center: 449/1080=42%, 933/2400=39%
+- tapOn:
+    point: "449,933"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "121_seva1_book_seva_tapped"
+
+# ── Choose date June 14 ──
+# Box: (28,1152)→(174,1267) | center: 101/1080=9%, 1209/2400=50%
+- tapOn:
+    point: "9%,50%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "122_seva1_date_selected"
+
+# ── Tap Proceed to Book ──
+# Box: (46,2061)→(1034,2205) | center: 540/1080=50%, 2133/2400=89%
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "123_seva1_proceed_to_book"
+
+# ── Tap Proceed ──
+# Box: (41,2054)→(1039,2181) | center: 540/1080=50%, 2117/2400=88%
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "124_seva1_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "125_seva1_back"
+
+# ── Close date view with X mark ──
+# Box: (968,602)→(1019,654) | center: 993/1080=92%, 628/2400=26%
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "126_seva1_date_closed"
+
+# ════════════════════════════════════
+# ── SEVA 2 — Daiv Seva ₹5000 ──
+# ════════════════════════════════════
+
+# ── Tap Book Seva (Seva 2) ──
+# Box: (303,1393)→(646,1481) | center: 474/1080=44%, 1437/2400=60%
+- tapOn:
+    point: "474,1437"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "127_seva2_book_seva_tapped"
+
+# ── Choose date June 22 ──
+# Box: (174,1267)→(321,1382) | center: 247/1080=23%, 1324/2400=55%
+- tapOn:
+    point: "23%,55%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "128_seva2_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "129_seva2_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "130_seva2_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "131_seva2_back"
+
+# ── Close date view with X mark ──
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "132_seva2_date_closed"
+
+# ════════════════════════════════════
+# ── SEVA 3 — Annadanam ₹399 ──
+# ════════════════════════════════════
+
+# ── Tap Book Seva (Seva 3) ──
+# Box: (278,1999)→(620,2087) | center: 449/1080=42%, 2043/2400=85%
+- tapOn:
+    point: "449,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "133_seva3_book_seva_tapped"
+
+# ── Choose date June 22 ──
+# Box: (174,1267)→(321,1382) | center: 247/1080=23%, 1324/2400=55%
+- tapOn:
+    point: "23%,55%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "134_seva3_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "135_seva3_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "136_seva3_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "137_seva3_back"
+
+# ── Close date view with X mark ──
+- tapOn:
+    point: "92%,26%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "138_seva3_date_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "139_back_to_explore_temples"
+
+
+---
+# ════════════════════════════════════
+# ── SHREE BANASHANKARI DEVI TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Shree Banashankari Devi Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "140_banashankari_temple_visible"
+
+# ── Tap Shree Banashankari Devi Temple card ──
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "141_banashankari_temple_detail"
+
+# ── Tap Show More ──
+- tapOn:
+    point: "1039,1523"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "142_banashankari_show_more_tapped"
+
+# ── Tap Join Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "143_join_community_tapped"
+
+# ── Toast: "You've joined this Community Successfully" ──
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "144_joined_community_toast_visible"
+
+# ── Tap Leave Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "145_leave_community_tapped"
+
+# ── Confirmation dialog — Tap Leave Community ──
+- tapOn:
+    point: "50%,79%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "146_leave_community_confirmed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "147_back_to_explore_temples"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "147_back_to_explore_temples"
+
+# ════════════════════════════════════
+# ── SHREE BANASHANKARI DEVI TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Shree Banashankari Devi Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "140_banashankari_temple_visible"
+
+# ── Tap Shree Banashankari Devi Temple card ──
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "141_banashankari_temple_detail"
+
+# ── Tap Show More ──
+- tapOn:
+    point: "1039,1434"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "142_banashankari_show_more_tapped"
+
+# ── Tap Join Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "143_join_community_tapped"
+
+# ── Toast: "You've joined this Community Successfully" ──
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "144_joined_community_toast_visible"
+
+# ── Tap Leave Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "145_leave_community_tapped"
+
+# ── Confirmation dialog — Tap Leave Community ──
+- tapOn:
+    point: "50%,79%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "146_leave_community_confirmed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "147_back_to_explore_temples"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "147_back_to_explore_temples"
+
+# ════════════════════════════════════
+# ── KOLLUR MOOKAMBIKA TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Kollur Mookambika Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "167_kollur_temple_visible"
+
+# ── Tap Kollur Mookambika Temple card ──
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "168_kollur_temple_detail"
+
+# ── Swipe up once to reveal both sevas ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "169_kollur_both_sevas_visible"
+
+# ════════════════════════════════════
+# ── SEVA 1 — Palapuspa ₹1000 ──
+# ════════════════════════════════════
+
+# ── Tap Book Seva (Seva 1) ──
+- tapOn:
+    point: "467,1437"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "170_seva1_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+- tapOn:
+    point: "247,1209"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "171_seva1_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "172_seva1_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "173_seva1_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "174_seva1_back"
+
+# ── Close X mark ──
+- tapOn:
+    point: "993,628"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "175_seva1_x_closed"
+
+# ════════════════════════════════════
+# ── SEVA 2 — Suprapatha ₹5000 ──
+# ════════════════════════════════════
+
+# ── Tap Book Seva (Seva 2) ──
+- tapOn:
+    point: "474,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "176_seva2_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+- tapOn:
+    point: "247,1209"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "177_seva2_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "178_seva2_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "179_seva2_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "180_seva2_back"
+
+# ── Close X mark ──
+- tapOn:
+    point: "993,628"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "181_seva2_x_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "182_back_to_explore_temples"
+# ════════════════════════════════════
+# ── SRI RAMA TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Sri Rama Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "183_sri_rama_temple_visible"
+
+# ── Tap Sri Rama Temple card ──
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "184_sri_rama_temple_detail"
+
+# ── Tap Show More ──
+- tapOn:
+    point:  "903,1464"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "185_sri_rama_show_more_tapped"
+
+# ── Tap Join Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "186_join_community_tapped"
+
+# ── Toast: "You've joined this Community Successfully" ──
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "187_joined_community_toast_visible"
+
+# ── Tap Leave Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "188_leave_community_tapped"
+
+# ── Confirmation dialog — Tap Leave Community ──
+- tapOn:
+    point: "50%,79%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "189_leave_community_confirmed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "190_back_to_explore_temples"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "190_back_to_explore_temples"
+
+
+# ════════════════════════════════════
+# ── HANUMAN TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Hanuman Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "191_hanuman_temple_visible"
+
+# ── Tap Hanuman Temple card ──
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "192_hanuman_temple_detail"
+
+# ── Swipe up once to reveal Book Seva ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "193_hanuman_temple_scrolled"
+
+# ── Tap Book Seva button ──
+# Box: (303,1999)→(646,2087) | center: 474,2043
+- tapOn:
+    point: "474,2043"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "194_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+- tapOn:
+    point: "247,1209"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "195_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "196_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "197_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "198_back_from_proceed"
+
+# ── Close X mark ──
+- tapOn:
+    point: "993,628"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "199_x_mark_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "200_back_to_explore_temples"
+
+# ════════════════════════════════════
+# ── SHRI KANYAKA PARAMESHWARI DEVI TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "201_kanyaka_temple_visible"
+
+# ── Tap temple card ──
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "202_kanyaka_temple_detail"
+
+# ── Tap Show More (try 921,1390 first) ──
+- tapOn:
+    point: "921,1483"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "203_kanyaka_show_more_tapped"
+
+# ── Tap Join Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "204_join_community_tapped"
+
+# ── Toast visible ──
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "205_joined_community_toast"
+
+# ── Tap Leave Community button ──
+- tapOn:
+    point: "540,2212"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "206_leave_community_tapped"
+
+# ── Confirmation dialog — Tap Leave Community ──
+- tapOn:
+    point: "50%,79%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "207_leave_community_confirmed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "208_back_to_explore_temples"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "208_back_to_explore_temples"
+
+# ════════════════════════════════════
+# ── SRI AYYAPPA TEMPLE ──
+# ════════════════════════════════════
+
+# ── Swipe up to bring Sri Ayyappa Temple to position ──
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "209_ayyappa_temple_visible"
+
+# ── Tap Sri Ayyappa Temple card ──
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "210_ayyappa_temple_detail"
+
+# ── Swipe up to reveal Book Seva ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "211_ayyappa_temple_scrolled"
+
+# ── Tap Book Seva button ──
+# Box: (261,1999)→(604,2087) | exact: 416,2030
+- tapOn:
+    point: "416,2030"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "212_book_seva_tapped"
+
+# ── Choose date (June 20) ──
+# Box: (906,1152)→(1052,1267) | center: 979,1209
+- tapOn:
+    point: "979,1209"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "213_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "214_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "215_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "216_back_from_proceed"
+
+# ── Close X mark ──
+- tapOn:
+    point: "993,628"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "217_x_mark_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "218_back_to_explore_temples"
+# ════════════════════════════════════
+# ── LINGARAJ TEMPLE (LAST TEMPLE) ──
+# ════════════════════════════════════
+
+# ── Tap Lingaraj Temple card (second card visible) ──
+- tapOn:
+    point: "50%,70%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "219_lingaraj_temple_detail"
+
+# ── Swipe up to reveal Book Seva ──
+- swipe:
+    direction: UP
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "220_lingaraj_temple_scrolled"
+
+# ── Tap Book Seva button ──
+- tapOn:
+    point: "472,2041"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "221_book_seva_tapped"
+
+# ── Choose date (June 15) ──
+- tapOn:
+    point: "247,1209"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "222_date_selected"
+
+# ── Tap Proceed to Book ──
+- tapOn:
+    point: "50%,89%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "223_proceed_to_book"
+
+# ── Tap Proceed ──
+- tapOn:
+    point: "50%,88%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "224_proceed"
+
+# ── Tap Back arrow ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "225_back_from_proceed"
+
+# ── Close X mark ──
+- tapOn:
+    point: "993,628"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "226_x_mark_closed"
+
+# ── Tap Back arrow → back to Explore Temples ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "227_back_to_explore_temples"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "228_back_to_home"

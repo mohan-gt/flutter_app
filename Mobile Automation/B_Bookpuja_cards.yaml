@@ -1,0 +1,253 @@
+appId: com.daivbharathi.daiv
+---
+
+- assertVisible:
+    text: "Home"
+- waitForAnimationToEnd
+- takeScreenshot: "01_home_screen"
+
+# ── Swipe up to reveal Book Puja section ──
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "02_book_puja_visible"
+
+# ════════════════════════════════════
+# ── PUJA 1 — Maha Rudrabhisheka ──
+# Inspector box: (26,1155)→(458,1437) | center: 242/1080=22%, 1296/2400=54%
+# ════════════════════════════════════
+- tapOn:
+    point: "22%,54%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "03_maha_rudrabhisheka_detail"
+
+# ── Select ₹501 Per Person ──
+- tapOn:
+    point: "26%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "04_amount_501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "05_family_details_screen"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "06_proceed_to_payment"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "07_back_to_family_details"
+
+# ── Select ₹1501 4 Family members ──
+# Inspector box: (555,1529)→(1039,1695) | center: 797/1080=74%, 1612/2400=67%
+- tapOn:
+    point: "74%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "08_amount_1501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "09_family_details_screen_2"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "10_proceed_to_payment_2"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "11_back_to_family_details"
+
+# ── Back to puja detail ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "12_back_to_puja_detail"
+
+
+# ════════════════════════════════════
+# ── SWIPE LEFT to reveal Puja 2 & 3 ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "14_puja2_3_visible"
+
+# ════════════════════════════════════
+# ── PUJA 2 — Satyanarayana Puja ──
+# Inspector box: (191,1011)→(623,1546) | center: 407/1080=38%, 1278/2400=53%
+# ════════════════════════════════════
+- tapOn:
+    point: "38%,53%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "15_satyanarayana_detail"
+
+# ── Select ₹501 Per Person ──
+- tapOn:
+    point: "26%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "16_amount_501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "17_family_details_screen"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "18_proceed_to_payment"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "19_back_to_family_details"
+
+# ── Select ₹1501 4 Family members ──
+- tapOn:
+    point: "74%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "20_amount_1501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "21_family_details_screen_2"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "22_proceed_to_payment_2"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "23_back_to_family_details"
+
+# ── Back to puja detail ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "24_back_to_puja_detail"
+
+# ── Back to home ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "25_back_to_home"
+
+# ════════════════════════════════════
+# ── PUJA 3 — Maha Shivratri Puja ──
+# Inspector box: (648,1011)→(1080,1546) | center: 864/1080=80%, 1278/2400=53%
+# ════════════════════════════════════
+- tapOn:
+    point: "80%,53%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "26_maha_shivratri_detail"
+
+# ── Select ₹501 Per Person ──
+- tapOn:
+    point: "26%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "27_amount_501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "28_family_details_screen"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "29_proceed_to_payment"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "30_back_to_family_details"
+
+# ── Select ₹1501 4 Family members ──
+- tapOn:
+    point: "74%,67%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "31_amount_1501_selected"
+
+# ── Tap BOOK ──
+- tapOn:
+    text: "Book"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "32_family_details_screen_2"
+
+# ── Tap Proceed to Payment ──
+- tapOn:
+    text: "Proceed to Payment"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "33_proceed_to_payment_2"
+
+# ── Back to family details ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "34_back_to_family_details"
+
+# ── Back to puja detail ──
+- tapOn:
+    point: "3%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "35_back_to_puja_detail"

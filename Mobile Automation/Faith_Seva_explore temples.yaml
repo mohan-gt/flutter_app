@@ -1,0 +1,136 @@
+appId: com.daivbharathi.daiv
+---
+- launchApp:
+    clearState: true
+  
+# Wait for app to load
+- waitForAnimationToEnd
+
+# Select English language
+- tapOn:
+    text: "English"
+
+# ➜ Continue button
+- tapOn:
+    text: "Continue"
+# ⏭ Skip button (if shown)
+- tapOn:
+    text: "Skip"
+
+# Let’s Start button
+- tapOn:
+    text: "Let's Start"
+- tapOn: "I'll do it Later!"
+
+# Wait for homepage
+- waitForAnimationToEnd
+
+# Navigate to Faith tab
+- tapOn:
+    text: "Faith"
+
+# Wait for screen load
+- waitForAnimationToEnd
+
+# Click Seva tab
+- tapOn:
+    text: "Seva"
+
+# Wait for screen
+- waitForAnimationToEnd
+
+# Scroll until Explore Temples visible
+- scrollUntilVisible:
+    element:
+      text: "Explore Temples"
+
+# Verify section visible
+- assertVisible:
+    text: "Explore Temples"
+
+# Click Ganapathi Temple card
+- waitForAnimationToEnd
+- tapOn:
+    point: "250,180"
+
+# Wait for temple detail/video page
+- waitForAnimationToEnd
+
+# Click later button if popup appears
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Store"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Purohit"
+- tapOn:
+    text: "I'll do it Later!"
+# Tap on Back button
+- tapOn: "Back"
+- waitForAnimationToEnd
+- tapOn:
+    text: "Astro"
+- waitForAnimationToEnd
+- tapOn:
+    text: "Panchang"
+- waitForAnimationToEnd
+- tapOn:
+    text: "Aries"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Taurus"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Temini"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Cancer"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Leo"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Virgo"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Libra"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Scorpio"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Sagittarius"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Capricorn"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Aquarius"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Pisces"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Guru"
+- tapOn:
+    text: "I'll do it Later!"
+- tapOn:
+    text: "Plans"
+- tapOn:
+    text: "I'll do it Later!"
+# Tap on Back button
+- tapOn: "Back"

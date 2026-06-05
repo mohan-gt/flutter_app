@@ -1,0 +1,442 @@
+appId: com.daivbharathi.daiv
+---
+#list of temples- 7
+
+# Durga Puja
+#Pinda Puja
+#Surya Puja
+#Sample Puja
+#Ganesh Puja
+#ShivaDhara
+#Aagni Puja
+
+# Temple1- Durga Puja
+- assertVisible: "Home"
+
+- scrollUntilVisible:
+    element: "Faith"
+- tapOn: "Faith"
+
+- assertVisible: "Seva"
+
+- assertVisible: "Purohit"
+- tapOn: "Purohit"
+
+- assertVisible: "Most Performed Pujas\nView More"
+
+- assertVisible: "Durga Puja\nStarts from Rs.300.0/-"
+- tapOn: "Durga Puja\nStarts from Rs.300.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "10"
+- tapOn: "10"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,83%
+- tapOn:
+    point: 8%,83%
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "ONLINE"
+- tapOn: "ONLINE"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- assertVisible: "venkat eshwar\nExperience :7 Years\nTirupati Temple\n0\n(0) Ratings"
+- tapOn: "Book Now"
+
+- assertVisible: "\u20b9 500.0\nWith Samagiri"
+- tapOn: "\u20b9 500.0\nWith Samagiri"
+
+- assertVisible: "Book"
+- tapOn: "Book"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "Subramanya\nExperience :5 Years\nTirupati Temple\n0\n(0) Ratings"
+- tapOn: "Book Now"
+
+- assertVisible: "\u20b9 500.0\nWith Samagiri"
+- tapOn: "\u20b9 500.0\nWith Samagiri"
+
+- assertVisible: "Book"
+- tapOn: "Book"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+
+
+# Temple2- Pinda Daan
+
+- assertVisible: "Pinda Daan\nStarts from Rs.400.0/-"
+- tapOn: "Pinda Daan\nStarts from Rs.400.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "10"
+- tapOn: "10"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,83%
+- tapOn:
+    point: 8%,83%
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+
+# Temple3- Surya Puja
+
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- assertVisible: "surya puja\nStarts from Rs.21.0/-"
+- tapOn: "surya puja\nStarts from Rs.21.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "9"
+- tapOn: "9"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,77%
+- tapOn:
+    point: 8%,77%
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+
+# Temple4- Sample Puja
+
+- assertVisible: "Sample Puja\nStarts from Rs.12.0/-"
+- tapOn: "Sample Puja\nStarts from Rs.12.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "23"
+- tapOn: "23"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,77%
+- tapOn:
+    point: 8%,77%
+- waitForAnimationToEnd
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+
+
+# Temple5- Ganesh Puja
+
+- swipe:
+    direction: UP
+    duration: 800
+- assertVisible: "Ganesh Puja\nStarts from Rs.400.0/-"
+- tapOn: "Ganesh Puja\nStarts from Rs.400.0/-"
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+- assertVisible: "24"
+- tapOn: "24"
+- assertVisible: "Next"
+- tapOn: "Next"
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+- assertVisible: "Ok"
+- tapOn: "Ok"
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+- assertVisible:
+    point: 8%,77%
+- tapOn:
+    point: 8%,77%
+- waitForAnimationToEnd
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+- assertVisible: "Enter"
+- tapOn: "Enter"
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+- waitForAnimationToEnd
+
+# Temple6- Shiva Dhara
+
+- assertVisible: "Shiva Dhara\nStarts from Rs.400.0/-"
+- tapOn: "Shiva Dhara\nStarts from Rs.400.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "17"
+- tapOn: "17"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,77%
+- tapOn:
+    point: 8%,77%
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+- waitForAnimationToEnd
+
+# Temple7- Aagni Puja
+
+- assertVisible: "Aagni puja\nStarts from Rs.450.0/-"
+- tapOn: "Aagni puja\nStarts from Rs.450.0/-"
+
+- assertVisible: "Select Puja Date / Time"
+- tapOn: "Select Puja Date / Time"
+
+- assertVisible: "16"
+- tapOn: "16"
+
+- assertVisible: "Next"
+- tapOn: "Next"
+
+- assertVisible:
+    point: 22%,59%
+- tapOn:
+    point: 22%,59%
+
+- assertVisible: "Ok"
+- tapOn: "Ok"
+
+- assertVisible: "OFFLINE"
+- tapOn: "OFFLINE"
+
+- assertVisible:
+    point: 8%,76%
+- tapOn:
+    point: 8%,76%
+
+- tapOn: "5"
+- tapOn: "6"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "1"
+- tapOn: "9"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+
+- assertVisible: "Select Pujari"
+- tapOn: "Select Pujari"
+
+- tapOn:
+    text: "Back"
+- tapOn:
+    text: "Back"
+- waitForAnimationToEnd
+
+
+
+
+
+
+
+
+
+
+

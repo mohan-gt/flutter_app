@@ -1,0 +1,547 @@
+appId: com.daivbharathi.daiv
+---
+- launchApp
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Home"
+- waitForAnimationToEnd
+- takeScreenshot: "01_home_screen"
+
+# ── Tap Profile icon ──
+- tapOn:
+    point: "10%,9%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "02_profile_screen"
+
+# ── Tap Free Plan badge ──
+- tapOn:
+    point: "40%,19%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "03_subscription_screen"
+
+# ── Tap Upgrade plan button ──
+- tapOn:
+    text: "Upgrade plan"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "04_current_plan_displayed"
+
+# ════════════════════════════════════
+# ── PLAN SILVER ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "05_plan_silver_visible"
+
+- tapOn:
+    point: "50%,47%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "06_plan_silver_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "07_silver_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "08_silver_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "09_silver_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "10_back_to_subscription"
+
+# ════════════════════════════════════
+# ── GOLD PLAN 1 ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "11_gold_plan1_visible"
+
+- tapOn:
+    point: "50%,49%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "12_gold_plan1_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "13_gold_plan1_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "14_gold_plan1_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "15_gold_plan1_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "16_back_to_subscription"
+
+# ════════════════════════════════════
+# ── SAMPLE PLAN 2 ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "17_sample_plan2_visible"
+
+- tapOn:
+    point: "50%,49%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "18_sample_plan2_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "19_sample_plan2_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "20_sample_plan2_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "21_sample_plan2_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "22_back_to_subscription"
+
+# ════════════════════════════════════
+# ── SAMPLE PLAN ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "23_sample_plan_visible"
+
+- tapOn:
+    point: "50%,49%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "24_sample_plan_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "25_sample_plan_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "26_sample_plan_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "27_sample_plan_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "28_back_to_subscription"
+
+# ════════════════════════════════════
+# ── DIVINE CONNECT PLAN 12 ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "29_divine_plan12_visible"
+
+- tapOn:
+    point: "50%,49%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "30_divine_plan12_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "31_divine_plan12_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "32_divine_plan12_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "33_divine_plan12_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "34_back_to_subscription"
+
+# ════════════════════════════════════
+# ── DIVINE CONNECT PLAN ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "35_divine_plan_visible"
+
+- tapOn:
+    point: "50%,49%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "36_divine_plan_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "37_divine_plan_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "38_divine_plan_3months"
+
+- tapOn:
+    point: "50%,53%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "39_divine_plan_6months"
+
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "40_back_to_subscription"
+
+# ════════════════════════════════════
+# ── GOLD PLAN — only 1 Month and 3 Months ──
+# ════════════════════════════════════
+- swipe:
+    direction: LEFT
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "41_gold_plan_visible"
+
+- tapOn:
+    point: "50%,47%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "42_gold_plan_subscription"
+
+- tapOn:
+    point: "50%,33%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "43_gold_plan_1month"
+
+- tapOn:
+    point: "50%,42%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "44_gold_plan_3months"
+
+# ── Back to Subscription ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "45_back_to_subscription"
+
+# ── Back to Profile ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "46_back_to_profile"
+
+# ── Back to Home ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "47_back_to_home"
+# ════════════════════════════════════
+# ── EDIT PROFILE FLOW ──
+# ════════════════════════════════════
+
+# ── Tap Edit icon (pencil) ──
+# Inspector box: (858,358)→(909,409) | center: 883/1080=82%, 383/2400=16%
+- tapOn:
+    point: "82%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Edit Profile"
+- takeScreenshot: "49_edit_profile_screen"
+
+# ── Tap Update button ──
+# Inspector box: (46,2012)→(1034,2176) | center: 540/1080=50%, 2094/2400=87%
+- tapOn:
+    point: "50%,87%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "50_update_clicked"
+
+# ── Tap Notification icon ──
+# Inspector box: (853,131)→(904,182) | center: 878/1080=81%, 156/2400=6%
+- tapOn:
+    point: "81%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Notifications"
+- takeScreenshot: "51_notifications_screen"
+
+# ── Tap General tab ──
+# Inspector box: (540,228)→(1051,350) | center: 795/1080=74%, 289/2400=12%
+- tapOn:
+    point: "74%,12%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "52_general_tab_selected"
+
+# ── Tap Back arrow from Notifications ──
+# Inspector box: (13,85)→(133,228) | center: 73/1080=7%, 156/2400=6%
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "53_back_from_notifications"
+
+# ── Tap 3 lines menu ──
+# Inspector box: (948,112)→(1037,201) | center: 992/1080=92%, 156/2400=6%
+- tapOn:
+    point: "92%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "54_menu_opened"
+
+# ── Tap Cancel (X) button ──
+# Inspector box: (932,110)→(1055,233) | center: 993/1080=92%, 171/2400=7%
+- tapOn:
+    point: "92%,7%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "55_menu_cancelled"
+
+# ── Tap Back arrow from Profile ──
+# Inspector box: (13,85)→(133,228) | center: 73/1080=7%, 156/2400=6%
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "56_back_to_home"
+- tapOn:
+    point: "91%,16%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Filter by Category"
+- takeScreenshot: "57_search_filter_screen"
+
+# ── Tap Seva ──
+# Inspector box: (43,386)→(307,509) | center: 175/1080=16%, 447/2400=19%
+- tapOn:
+    point: "16%,19%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "58_seva_selected"
+
+# ── Tap X to deselect Seva ──
+# Inspector box: (335,315)→(407,386) | center: 371/1080=34%, 350/2400=15%
+- tapOn:
+    point: "34%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "59_seva_deselected"
+
+# ── Tap Purohit ──
+# Inspector box: (327,386)→(641,509) | center: 484/1080=45%, 447/2400=19%
+- tapOn:
+    point: "45%,19%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "60_purohit_selected"
+
+# ── Tap X to deselect Purohit ──
+# Inspector box: (386,315)→(457,386) | center: 421/1080=39%, 350/2400=15%
+- tapOn:
+    point: "39%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "61_purohit_deselected"
+
+# ── Tap Pooja Kit ──
+# Inspector box: (661,386)→(999,509) | center: 830/1080=77%, 447/2400=19%
+- tapOn:
+    point: "77%,19%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "62_poojakit_selected"
+
+# ── Tap X to deselect Pooja Kit ──
+# Inspector box: (410,315)→(482,386) | center: 446/1080=41%, 350/2400=15%
+- tapOn:
+    point: "41%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "63_poojakit_deselected"
+
+# ── Tap Samagri ──
+# Inspector box: (43,529)→(370,652) | center: 206/1080=19%, 590/2400=25%
+- tapOn:
+    point: "19%,25%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "64_samagri_selected"
+
+# ── Tap X to deselect Samagri ──
+# Inspector box: (399,315)→(471,386) | center: 435/1080=40%, 350/2400=15%
+- tapOn:
+    point: "40%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "65_samagri_deselected"
+
+# ── Tap Music ──
+# Inspector box: (391,529)→(671,652) | center: 531/1080=49%, 590/2400=25%
+- tapOn:
+    point: "49%,25%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "66_music_selected"
+
+# ── Tap X to deselect Music ──
+# Inspector box: (353,315)→(424,386) | center: 388/1080=36%, 350/2400=15%
+- tapOn:
+    point: "36%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "67_music_deselected"
+
+# ── Tap Videos ──
+# Inspector box: (692,529)→(992,652) | center: 842/1080=78%, 590/2400=25%
+- tapOn:
+    point: "78%,25%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "68_videos_selected"
+
+# ── Tap X to deselect Videos ──
+# Inspector box: (372,315)→(444,386) | center: 408/1080=38%, 350/2400=15%
+- tapOn:
+    point: "38%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "69_videos_deselected"
+
+# ── Tap Books ──
+# Inspector box: (43,672)→(336,794) | center: 189/1080=18%, 733/2400=31%
+- tapOn:
+    point: "18%,31%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "70_books_selected"
+
+# ── Tap X to deselect Books ──
+# Inspector box: (365,315)→(437,386) | center: 401/1080=37%, 350/2400=15%
+- tapOn:
+    point: "37%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "71_books_deselected"
+
+# ── Tap Community ──
+# Inspector box: (356,672)→(754,794) | center: 555/1080=51%, 733/2400=31%
+- tapOn:
+    point: "51%,31%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "72_community_selected"
+
+# ── Tap X to deselect Community ──
+# Inspector box: (469,315)→(541,386) | center: 505/1080=47%, 350/2400=15%
+- tapOn:
+    point: "47%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "73_community_deselected"
+
+# ── Tap Temples ──
+# Inspector box: (43,815)→(375,937) | center: 209/1080=19%, 876/2400=37%
+- tapOn:
+    point: "19%,37%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "74_temples_selected"
+
+# ── Tap X to deselect Temples ──
+# Inspector box: (404,315)→(475,386) | center: 439/1080=41%, 350/2400=15%
+- tapOn:
+    point: "41%,15%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "75_temples_deselected"
+
+# ── Tap Back arrow to Home ──
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "47_back_to_home"

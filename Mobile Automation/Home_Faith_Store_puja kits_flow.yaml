@@ -1,0 +1,137 @@
+appId: com.daiv.ai
+---
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "01_home_screen"
+- assertVisible:
+    text: "Home"
+- tapOn:
+    text: "Faith"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Seva"
+- takeScreenshot: "02_seva_screen"
+- tapOn:
+    text: "Store"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "03_store_screen"
+
+# KIT 1 - Kalasha (left card 26%,37%)
+- tapOn:
+    point: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "04_kit1_open"
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "05_kit1_details"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "06_kit1_back"
+
+# Swipe LEFT one card width to bring kit2 to 26%
+- swipe:
+    start: "72%,37%"
+    end: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 2500
+- takeScreenshot: "07_kit2_in_position"
+
+# KIT 2 - etrgtrhtr (26%,37%)
+- tapOn:
+    point: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "08_kit2_open"
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "09_kit2_details"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "10_kit2_back"
+
+# Swipe LEFT one card width to bring kit3 to 26%
+- swipe:
+    start: "72%,37%"
+    end: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 2500
+- takeScreenshot: "11_kit3_in_position"
+
+# KIT 3 - erewrewr (26%,37%)
+- tapOn:
+    point: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "12_kit3_open"
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "13_kit3_details"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "14_kit3_back"
+
+# Swipe LEFT one card width to bring kit4 to 26%
+- swipe:
+    start: "72%,37%"
+    end: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 2500
+- takeScreenshot: "15_kit4_in_position"
+
+# KIT 4 - wrewre (26%,37%)
+- tapOn:
+    point: "26%,37%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "16_kit4_open"
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "17_kit4_details"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "18_kit4_back"
+
+# KIT 5 - dfghjk already visible as right card, no swipe
+# Right card position: 74%,37%
+- takeScreenshot: "19_kit5_visible"
+- tapOn:
+    point: "74%,37%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "20_kit5_open"
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "21_kit5_details"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "22_kit5_back"
+
+- takeScreenshot: "23_all_kits_completed"

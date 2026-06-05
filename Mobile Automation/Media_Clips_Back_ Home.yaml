@@ -1,0 +1,28 @@
+appId: com.daivbharathi.daiv
+---
+- launchApp
+# 🌐 Select English language
+- tapOn:
+    text: "English"
+
+- tapOn: "Continue"
+
+- tapOn: "Skip"
+
+- tapOn: "Let's Start"
+
+- tapOn: "I'll do it Later!"
+
+# Wait for homepage to fully load
+- waitForAnimationToEnd
+
+# Tap on specific point
+- tapOn:
+    point: "82%,49%"
+
+- waitForAnimationToEnd
+
+# Tap on Back button
+- tapOn: "Back"
+
+- waitForAnimationToEnd
