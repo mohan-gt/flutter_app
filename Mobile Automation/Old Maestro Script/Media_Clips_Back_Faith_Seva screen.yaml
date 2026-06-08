@@ -1,0 +1,68 @@
+appId: com.daivbharathi.daiv
+---
+# Launch application
+- launchApp
+# 🌐 Select English language
+- tapOn:
+    text: "English"
+
+# Continue onboarding
+- tapOn:
+    text: "Continue"
+
+# Skip onboarding
+- tapOn:
+    text: "Skip"
+
+# Start application
+- tapOn:
+    text: "Let's Start"
+
+# Skip optional setup
+- tapOn:
+    text: "I'll do it Later!"
+# Wait for homepage to fully load
+- waitForAnimationToEnd
+
+# Tap on specific point
+
+- tapOn:
+    text: "Media"
+
+- tapOn:
+    text: "Music"
+
+- tapOn:
+    text: "Shloka & Stotra"
+
+- waitForAnimationToEnd
+
+# Verify screen opened
+- assertVisible:
+    text: "Music"
+
+# Navigate back using arrow
+- tapOn:
+    point: "7%,6%"
+
+- waitForAnimationToEnd
+
+# Verify previous screen
+- assertVisible:
+    text: "Shloka & Stotra"
+
+- tapOn:
+    text: "Mantra & Japa"
+
+- waitForAnimationToEnd
+- tapOn:
+    point: "6%,6%"
+
+# Tap on Back button
+- tapOn: "Back"
+# Tap on Back button
+- tapOn: "Back"
+# Open Faith tab
+- tapOn:
+    point: "46%,92%"
+

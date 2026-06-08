@@ -1,0 +1,177 @@
+appId: com.daivbharathi.daiv
+---
+- waitForAnimationToEnd:
+    timeout: 4000
+- assertVisible:
+    text: "Home"
+- tapOn:
+    text: "Faith"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Seva"
+- tapOn:
+    text: "Purohit"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "93%,27%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "04_all_pujas_screen"
+
+# PUJA 1 - Nitya Shraddha
+- tapOn:
+    point: "26%,30%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "05_nitya_shraddha"
+- tapOn:
+    text: "Select Puja Date / Time"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "50%,57%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "Next"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    text: "Ok"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "09_time_done"
+- tapOn:
+    text: "OFFLINE"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    point: "50%,78%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- inputText: "560018"
+- waitForAnimationToEnd:
+    timeout: 2000
+- hideKeyboard
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "11_pincode_entered"
+- tapOn:
+    text: "Select Pujari"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "12_pujari_offline_result"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    text: "ONLINE"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "Select Pujari"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "15_pujari_screen"
+- tapOn:
+    text: "Book Now"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "16_preference_popup"
+
+# Tap preference row using box model coordinates from Appium Inspector
+# Center: x=280/1081=26%, y=1817/2400=76%
+- tapOn:
+    point: "26%,76%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "17_amount_selected"
+
+# Tap Book button by coordinates
+- tapOn:
+    point: "50%,87%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "18_booking_done"
+
+# Go back 3 times to reach all pujas list
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "21_pujas_list"
+
+# PUJA 2 - Sankasta Chathurthi
+- tapOn:
+    point: "74%,30%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "22_sankasta_detail"
+- tapOn:
+    text: "Select Puja Date / Time"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "50%,57%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "Next"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    text: "Ok"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "26_time_done"
+- tapOn:
+    text: "ONLINE"
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "Select Pujari"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "32_pujari_screen"
+- tapOn:
+    text: "Book Now"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "33_preference_popup"
+
+# Tap preference row using box model coordinates
+- tapOn:
+    point: "26%,76%"
+- waitForAnimationToEnd:
+    timeout: 2000
+- takeScreenshot: "34_amount_selected"
+
+# Tap Book button
+- tapOn:
+    point: "50%,87%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "35_booking_done"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+- tapOn:
+    point: "7%,6%"

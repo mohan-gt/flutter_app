@@ -1,0 +1,125 @@
+appId: com.daivbharathi.daiv
+---
+# =========================
+# INIT PERFORMANCE TRACKER
+# =========================
+- evalScript: |
+    output.report = {
+      warnings: [],
+      timings: {}
+    }
+
+    function warn(label, time) {
+      if (time > 300) {
+        const msg = "⚠️ SLOW: " + label + " " + time + "ms (>300ms)"
+        console.log(msg)
+        output.report.warnings.push(msg)
+      } else {
+        console.log("✅ OK: " + label + " " + time + "ms")
+      }
+    }
+
+    output.warn = warn
+
+    output.startTime = Date.now()
+
+# =========================
+# LAUNCH APP
+# =========================
+
+- evalScript: ${output.t0 = Date.now()}
+
+- launchApp:
+    clearState: true
+
+- waitForAnimationToEnd
+
+- evalScript: |
+    output.report.timings.launch = Date.now() - output.t0
+    output.warn("App Launch", output.report.timings.launch)
+
+# =========================
+# LANGUAGE SELECTION
+# =========================
+
+- evalScript: ${output.t1 = Date.now()}
+
+- assertVisible: "English"
+
+- tapOn: "English"
+- tapOn: "Continue"
+
+- evalScript: |
+    output.report.timings.language = Date.now() - output.t1
+    output.warn("Language Selection", output.report.timings.language)
+
+# =========================
+# SKIP FLOW
+# =========================
+
+- evalScript: ${output.t2 = Date.now()}
+
+- assertVisible: "Skip"
+
+- tapOn: "Skip"
+
+- evalScript: |
+    output.report.timings.skip = Date.now() - output.t2
+    output.warn("Skip Flow", output.report.timings.skip)
+
+# =========================
+# LET'S START FLOW
+# =========================
+
+- evalScript: ${output.t3 = Date.now()}
+
+- assertVisible: "Let's Start"
+
+- tapOn: "Let's Start"
+
+- tapOn: "I'll do it Later!"
+
+- evalScript: |
+    output.report.timings.startFlow = Date.now() - output.t3
+    output.warn("Let's Start Flow", output.report.timings.startFlow)
+
+# =========================
+# FINAL REPORT + SLA CHECK
+# =========================
+
+- evalScript: |
+    output.report.totalTime = Date.now() - output.startTime
+
+    console.log("================================")
+    console.log("📊 PERFORMANCE REPORT")
+    console.log("================================")
+
+    console.log("🚀 Launch:", output.report.timings.launch + "ms")
+    console.log("🌐 Language:", output.report.timings.language + "ms")
+    console.log("⏭ Skip:", output.report.timings.skip + "ms")
+    console.log("🚀 Start Flow:", output.report.timings.startFlow + "ms")
+    console.log("🧾 Total:", output.report.totalTime + "ms")
+
+    console.log("================================")
+    console.log("⚠️ WARNINGS SUMMARY")
+    console.log("================================")
+
+    if (output.report.warnings.length > 0) {
+      output.report.warnings.forEach(w => console.log(w))
+    } else {
+      console.log("🎉 No SLA violations")
+    }
+
+# =========================
+# SLA GATES (FAIL TEST IF NEEDED)
+# =========================
+
+- evalScript: |
+    const t = output.report.timings
+
+    if (t.launch > 300) throw "❌ SLA FAIL: Launch > 300ms"
+    if (t.language > 300) throw "❌ SLA FAIL: Language > 300ms"
+    if (t.skip > 300) throw "❌ SLA FAIL: Skip > 300ms"
+    if (t.startFlow > 300) throw "❌ SLA FAIL: Start Flow > 300ms"
+
+    console.log("✅ ALL SLA CHECKS PASSED")

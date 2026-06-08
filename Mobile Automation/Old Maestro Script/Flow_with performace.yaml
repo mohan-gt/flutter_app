@@ -1,0 +1,111 @@
+appId: com.daivbharathi.daiv
+
+env:
+  START_TIME: 0
+
+---
+
+# =========================================
+# Launch App
+# =========================================
+
+- evalScript: ${output.launchStart = Date.now()}
+
+- launchApp:
+    clearState: true
+
+- waitForAnimationToEnd
+
+- evalScript: |
+    output.launchEnd = Date.now()
+    output.launchDuration = output.launchEnd - output.launchStart
+    console.log("🚀 App Launch Time: " + output.launchDuration + " ms")
+
+# =========================================
+# Language Selection Screen
+# =========================================
+
+- evalScript: ${output.langStart = Date.now()}
+
+- assertVisible: "English"
+
+- tapOn:
+    text: "English"
+
+- tapOn:
+    text: "Continue"
+
+- evalScript: |
+    output.langEnd = Date.now()
+    output.langDuration = output.langEnd - output.langStart
+    console.log("🌐 Language Selection Time: " + output.langDuration + " ms")
+
+# =========================================
+# Skip Flow Timing
+# =========================================
+
+- evalScript: ${output.skipStart = Date.now()}
+
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 10000
+
+- tapOn:
+    text: "Skip"
+
+- evalScript: |
+    output.skipEnd = Date.now()
+    output.skipDuration = output.skipEnd - output.skipStart
+    console.log("⏭ Skip Screen Response Time: " + output.skipDuration + " ms")
+
+# =========================================
+# Let's Start Timing
+# =========================================
+
+- evalScript: ${output.startFlow = Date.now()}
+
+- assertVisible: "Let's Start"
+
+- tapOn:
+    text: "Let's Start"
+
+- evalScript: |
+    output.startEnd = Date.now()
+    output.startDuration = output.startEnd - output.startFlow
+    console.log("🚀 Let's Start Response Time: " + output.startDuration + " ms")
+
+# =========================================
+# Later Button Timing
+# =========================================
+
+- evalScript: ${output.laterStart = Date.now()}
+
+- extendedWaitUntil:
+    visible: "I'll do it Later!"
+    timeout: 10000
+
+- tapOn: "I'll do it Later!"
+
+- evalScript: |
+    output.laterEnd = Date.now()
+    output.laterDuration = output.laterEnd - output.laterStart
+    console.log("⏰ Later Button Response Time: " + output.laterDuration + " ms")
+
+# =========================================
+# Total Flow Time
+# =========================================
+
+- evalScript: |
+    output.totalEnd = Date.now()
+    output.totalDuration = output.totalEnd - output.launchStart
+
+    console.log("====================================")
+    console.log("✅ PERFORMANCE SUMMARY")
+    console.log("====================================")
+    console.log("🚀 App Launch: " + output.launchDuration + " ms")
+    console.log("🌐 Language Screen: " + output.langDuration + " ms")
+    console.log("⏭ Skip Flow: " + output.skipDuration + " ms")
+    console.log("🚀 Let's Start: " + output.startDuration + " ms")
+    console.log("⏰ Later Button: " + output.laterDuration + " ms")
+    console.log("🧾 Total Flow Time: " + output.totalDuration + " ms")
+    console.log("====================================")

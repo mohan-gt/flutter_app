@@ -1,0 +1,75 @@
+appId: com.daivbharathi.daiv
+---
+- launchApp
+# 🌐 Select English language
+- tapOn:
+    text: "English"
+
+- tapOn: "Continue"
+
+- tapOn: "Skip"
+
+- tapOn: "Let's Start"
+
+- tapOn: "I'll do it Later!"
+
+# Wait for homepage to fully load
+- waitForAnimationToEnd
+- assertVisible: "HOME"
+
+
+# 2. Verify main UI components exist
+- assertVisible: "Explore Daiv Sevas"
+- assertVisible: "Book Puja"
+
+# Banner carousel (can only assert presence via scroll/content root)
+- assertVisible:
+    text: "HOME"
+
+
+
+# 4. Puja list horizontal scroll area
+- assertVisible: "Ganesh Puja"
+
+# Try horizontal scroll (cards inside ListView)
+- swipe:
+    direction: LEFT
+
+- swipe:
+    direction: RIGHT
+
+
+# 5. Tap "See More" (Book Puja section)
+- tapOn: "Book Puja"
+
+# Should navigate to puja listing screen
+- assertVisible:
+    text: "Puja"
+
+
+# 6. Back navigation to Home
+- back
+
+- assertVisible: "Book Puja"
+
+
+# 7. Create Temple widget visibility
+- assertVisible: "Create Temple"
+
+
+# 8. Bottom banner visibility
+- assertVisible: "Bottom Banner"
+
+
+# 9. Bottom sheet (Create Mandir flow)
+# Trigger depends on API state; we simulate tap if banner visible
+
+- tapOn:
+    text: "Create Your Daiv Mandir"
+
+# Bottom sheet should appear
+- assertVisible: "Create your Daiv Mandir"
+
+# Close bottom sheet
+- tapOn:
+    id: close

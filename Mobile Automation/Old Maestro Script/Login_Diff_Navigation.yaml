@@ -1,0 +1,17 @@
+appId: com.daivbharathi.daiv
+---
+- launchApp
+- tapOn:
+    text: "English"
+- tapOn:
+    text: "Continue"
+- tapOn:
+    point: "91%,88%"
+- tapOn:
+    point: "91%,88%"
+- tapOn:
+    point: "91%,88%"
+- tapOn:
+    text: "Let's Start"
+- tapOn: "I'll do it Later!"
+- takeScreenshot: onboarding_completed
