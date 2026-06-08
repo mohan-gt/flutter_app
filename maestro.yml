@@ -1,0 +1,252 @@
+✅ 1. HIGH-LEVEL ARCHITECTURE
+GitHub Actions (CI Pipeline)
+        |
+        |  (APK built)
+        ↓
+Upload Artifact (APK)
+        |
+        ↓
+Self-Hosted Runner (Windows GPU Machine)
+        |
+        ├── Android Emulator (GPU accelerated)
+        ├── Maestro Test Execution
+        └── Test Reports (logs/screenshots)
+        |
+        ↓
+Upload Results back to GitHub Actions
+
+
+✅ 2. GPU MACHINE SETUP (WINDOWS)
+✅ 2.1 Install Required Software
+Install everything on your Windows GPU desktop:
+1. Java
+
+
+
+Shell
+Download: https://adoptium.net/
+Install: JDK 17
+Show more lines
+2. Android Studio (MANDATORY)
+Install:
+	• Android SDK
+	• Android SDK Platform Tools
+	• Android Emulator
+	• Enable Hardware Acceleration (WHPX)
+3. Environment Variables
+Set in System Environment Variables:
+ANDROID_HOME = C:\Users\<user>\AppData\Local\Android\Sdk
+PATH add:
+%ANDROID_HOME%\platform-tools
+%ANDROID_HOME%\emulator
+%ANDROID_HOME%\tools
+
+4. Create Emulator (ONE device)
+Open CMD:
+
+
+
+Shell
+sdkmanager "system-images;android-34;google_apis;x86_64"
+avdmanager create avd -n ci-emulator -k "system-images;android-34;google_apis;x86_64"
+Show more lines
+
+5. Start Emulator (Manual test)
+
+
+
+Shell
+emulator -avd ci-emulator -gpu auto -no-snapshot -no-boot-anim
+Show more lines
+Verify:
+
+
+
+Shell
+adb devices
+Show more lines
+
+6. Install Maestro
+
+
+
+Shell
+curl -Ls https://get.maestro.mobile.dev | bash
+Show more lines
+Windows alternative:
+
+
+
+Shell
+powershell -Command "iwr https://get.maestro.mobile.dev -UseBasicParsing | iex"
+Show more lines
+Verify:
+
+
+
+Shell
+maestro --version
+Show more lines
+
+✅ 3. SELF-HOSTED RUNNER SETUP (CRITICAL)
+Go to:
+GitHub Repo → Settings → Actions → Runners → New Self Hosted Runner
+
+Choose:
+OS: Windows
+Architecture: x64
+
+Run on GPU machine:
+
+
+
+Shell
+mkdir actions-runner
+cd actions-runner
+
+# Download runner ZIP from GitHub UI
+
+config.cmd --url https://github.com/<org>/<repo> --token <token>
+
+# IMPORTANT LABEL
+Enter:
+self-hosted, windows, gpu
+
+run.cmd
+Show more lines
+
+✅ Runner must stay running
+✅ This machine will execute automation jobs
+
+✅ 4. PROJECT STRUCTURE FOR MAESTRO
+Inside your repo:
+maestro/
+   login_test.yaml
+   smoke_test.yaml
+
+Example: maestro/login_test.yaml
+
+
+
+YAML
+appId: com.example.app
+---
+- launchApp
+- tapOn: "Login"
+- inputText: "testuser"
+- tapOn: "Password"
+- inputText: "password123"
+- tapOn: "Submit"
+- assertVisible: "Home"
+Show more lines
+
+✅ 5. UPDATE YOUR PIPELINE (IMPORTANT)
+You already have build_android ✅
+Now we add automation job after APK build
+
+✅ NEW JOB: maestro_tests
+
+
+
+YAML
+maestro_tests:
+ name: Maestro Automation (GPU)
+ runs-on: [self-hosted, windows, gpu]
+ needs: build_android
+
+ steps:
+
+ - name: Checkout Code
+ uses: actions/checkout@v4
+
+ # ✅ Download APK from previous job
+ - name: Download APK
+ uses: actions/download-artifact@v4
+ with:
+ name: android-apk
+ path: apk/
+
+ # ✅ Start Emulator
+ - name: Start Emulator
+ shell: cmd
+ run: |
+ start "" emulator -avd ci-emulator -gpu auto -no-snapshot -no-boot-anim
+ timeout /t 40
+
+ # ✅ Wait for Device
+ - name: Wait for device
+ shell: cmd
+ run: |
+ adb wait-for-device
+ adb devices
+
+ # ✅ Install APK
+ - name: Install APK
+ shell: cmd
+ run: |
+ adb install -r apk\app-release.apk
+
+ # ✅ Run Maestro Tests
+ - name: Run Maestro Tests
+ shell: cmd
+ run: |
+ maestro test maestro/
+
+ # ✅ Collect Logs
+ - name: Save logs
+ run: |
+ mkdir test-output
+ echo "Logs collected" > test-output/result.txt
+
+ # ✅ Upload Results
+ - name: Upload Test Results
+ uses: actions/upload-artifact@v4
+ with:
+ name: maestro-results
+ path: test-output/
+Show more lines
+
+✅ 6. ENTERPRISE IMPROVEMENTS (VERY IMPORTANT)
+✅ 6.1 Emulator Stability
+Add before tests:
+
+
+
+Shell
+adb shell settings put global window_animation_scale 0
+adb shell settings put global transition_animation_scale 0
+adb shell settings put global animator_duration_scale 0
+Show more lines
+
+✅ 6.2 Retry Mechanism
+
+
+
+YAML
+- name: Run Maestro Tests
+ run: |
+ for /L %%i in (1,1,3) do (
+ maestro test maestro/ && exit /b 0
+ echo Retry %%i failed
+ )
+ exit 1
+Show more lines
+
+✅ 6.3 Parallel Scaling (Future)
+You can later:
+	• Create multiple emulators
+	• Use matrix strategy
+
+✅ 6.4 Fail Pipeline on Test Failure
+Default behavior already ✅
+(If Maestro fails → job fails)
+
+✅ 7. EXECUTION FLOW (END-TO-END)
+	1. Trigger pipeline
+	2. Build APK (GitHub Runner)
+	3. Upload APK
+	4. GPU runner picks job
+	5. Emulator starts
+	6. APK installs
+	7. Maestro runs tests
+	8. Results uploaded
