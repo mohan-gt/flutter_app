@@ -1,0 +1,200 @@
+appId: com.daivbharathi.daiv
+---
+- assertVisible: "Home"
+- takeScreenshot: "01_home_screen"
+
+# Swipe up to reveal Book Puja section
+- swipe:
+    direction: UP
+    duration: 1000
+- waitForAnimationToEnd:
+- takeScreenshot: "02_book_puja_visible"
+
+# PUJA 1 — Maha Rudrabhisheka
+- tapOn:
+    point: "22%,54%"
+- takeScreenshot: "03_maha_rudrabhisheka_detail"
+
+# Select ₹501 Per Person
+- assertVisible: "₹ 501.0\nPer Person"
+- takeScreenshot: "001_per_person_option_visible"
+ 
+- tapOn: "₹ 501.0\nPer Person"
+- takeScreenshot: "002_per_person_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "003_book_button_visible"
+ 
+- tapOn: "Book"
+- takeScreenshot: "004_after_tap_book"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "005_proceed_to_payment_visible"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "006_payment_screen_opened"
+ 
+- tapOn:
+    id: "back"
+- takeScreenshot: "007_back_from_payment"
+
+# Option 2: ₹1501 — 4 Family Members
+- assertVisible: "₹ 1501.0\n4 Family members"
+- takeScreenshot: "008_family_option_visible"
+ 
+- tapOn: "₹ 1501.0\n4 Family members"
+- takeScreenshot: "009_family_option_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "010_book_button_visible_family"
+ 
+- tapOn: "Book"
+- takeScreenshot: "011_after_tap_book_family"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "012_proceed_to_payment_visible_family"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "013_payment_screen_opened_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "014_back_from_payment_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "015_back_to_puja_listing"
+
+# PUJA 2 — Satyanarayana Puja
+- assertVisible:
+    point: 45%,51%
+- takeScreenshot: "001_puja_card_visible"
+ 
+- tapOn:
+    point: 45%,51%
+- takeScreenshot: "002_puja_card_tapped"
+ 
+# Option 1: ₹501 Per Person
+- assertVisible: "₹ 501.0\nPer Person"
+- takeScreenshot: "003_per_person_option_visible"
+ 
+- tapOn: "₹ 501.0\nPer Person"
+- takeScreenshot: "004_per_person_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "005_book_button_visible"
+ 
+- tapOn: "Book"
+- takeScreenshot: "006_after_tap_book"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "007_proceed_to_payment_visible"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "008_payment_screen_opened"
+ 
+- tapOn: "back"
+- takeScreenshot: "009_back_from_payment"
+ 
+# Option 2: ₹1501 — 4 Family Members
+- assertVisible: "₹ 1501.0\n4 Family members"
+- takeScreenshot: "010_family_option_visible"
+ 
+- tapOn: "₹ 1501.0\n4 Family members"
+- takeScreenshot: "011_family_option_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "012_book_button_visible_family"
+ 
+- tapOn: "Book"
+- takeScreenshot: "013_after_tap_book_family"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "014_proceed_to_payment_visible_family"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "015_payment_screen_opened_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "016_back_from_payment_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "017_back_to_puja_listing"
+
+# PUJA 3 — Maha Shivratri Puja
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "001_after_swipe_left"
+
+- assertVisible:
+    point: 60%,51%
+- takeScreenshot: "001_puja_card_visible"
+ 
+- tapOn:
+    point: 60%,51%
+- takeScreenshot: "002_puja_card_tapped"
+
+# Option 1: ₹100 Per Person
+- assertVisible: "₹ 100.0\nPer Person"
+- takeScreenshot: "003_per_person_option_visible"
+ 
+- tapOn: "₹ 100.0\nPer Person"
+- takeScreenshot: "004_per_person_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "005_book_button_visible"
+ 
+- tapOn: "Book"
+- takeScreenshot: "006_after_tap_book"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "007_proceed_to_payment_visible"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "008_payment_screen_opened"
+ 
+- tapOn: "back"
+- takeScreenshot: "009_back_from_payment"
+
+# Option 2: ₹500 — 4 Family Members
+- assertVisible: "₹ 500.0\n4 Family members"
+- takeScreenshot: "010_family_option_visible"
+ 
+- tapOn: "₹ 500.0\n4 Family members"
+- takeScreenshot: "011_family_option_selected"
+ 
+- assertVisible: "Book"
+- takeScreenshot: "012_book_button_visible_family"
+ 
+- tapOn: "Book"
+- takeScreenshot: "013_after_tap_book_family"
+ 
+- assertVisible: "Proceed to Payment"
+- takeScreenshot: "014_proceed_to_payment_visible_family"
+ 
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "015_payment_screen_opened_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "016_back_from_payment_family"
+ 
+- tapOn: "back"
+- takeScreenshot: "017_back_to_puja_listing"
+- assertVisible: "Home"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

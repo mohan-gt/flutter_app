@@ -1,0 +1,737 @@
+appId: com.daivbharathi.daiv
+---
+# PROFILE & SUBSCRIPTION FLOW
+# Open Profile
+- assertVisible: "Tithi : Ashtami\nVara : Monday"
+- tapOn: "Tithi : Ashtami\nVara : Monday"
+- takeScreenshot: "001_profile_opened"
+
+- assertVisible: "Free Plan"
+- tapOn: "Free Plan"
+- takeScreenshot: "002_free_plan_tapped"
+
+- assertVisible: "Upgrade plan"
+- tapOn: "Upgrade plan"
+- takeScreenshot: "003_upgrade_plan_screen"
+
+# Plan: Silver — swipe to reach
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "004_swiped_to_silver"
+
+- assertVisible: "Upgrade to Plan silver"
+- tapOn: "Upgrade to Plan silver"
+- takeScreenshot: "005_silver_plan_opened"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "006_silver_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "007_silver_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "008_silver_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "009_silver_1m_try_again"
+
+- assertVisible: "3 Months\n₹249\nEquivalent to ₹83.00 Per Month\n₹48 saved"
+- tapOn: "3 Months\n₹249\nEquivalent to ₹83.00 Per Month\n₹48 saved"
+- takeScreenshot: "010_silver_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "011_silver_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "012_silver_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "013_silver_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "014_silver_3m_try_again"
+
+- assertVisible: "6 Months\n₹499\nEquivalent to ₹83.17 Per Month\n₹95 saved"
+- tapOn: "6 Months\n₹499\nEquivalent to ₹83.17 Per Month\n₹95 saved"
+- takeScreenshot: "015_silver_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "016_silver_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "017_silver_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "018_silver_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "019_silver_6m_try_again"
+
+- tapOn: "back"
+- takeScreenshot: "020_back_from_silver"
+
+# Plan: Gold Plan1
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "021_swiped_to_gold1"
+
+- assertVisible: "Upgrade to Gold Plan1"
+- tapOn: "Upgrade to Gold Plan1"
+- takeScreenshot: "022_gold1_plan_opened"
+
+- tapOn: "1 Month\n₹2000"
+- takeScreenshot: "023_gold1_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "024_gold1_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "025_gold1_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "026_gold1_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "027_gold1_1m_try_again"
+
+- assertVisible: "3 Months\n₹2500\nEquivalent to ₹833.33 Per Month\n₹3500 saved"
+- tapOn: "3 Months\n₹2500\nEquivalent to ₹833.33 Per Month\n₹3500 saved"
+- takeScreenshot: "028_gold1_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "029_gold1_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "030_gold1_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "031_gold1_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "032_gold1_3m_try_again"
+
+- assertVisible: "6 Months\n₹3000\nEquivalent to ₹500.00 Per Month\n₹9000 saved"
+- tapOn: "6 Months\n₹3000\nEquivalent to ₹500.00 Per Month\n₹9000 saved"
+- takeScreenshot: "033_gold1_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "034_gold1_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "035_gold1_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "036_gold1_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "037_gold1_6m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "038_back_from_gold1"
+
+# Plan: Sample Plan2
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "039_swiped_to_sample2"
+
+- assertVisible: "Upgrade to Sample Plan2"
+- tapOn: "Upgrade to Sample Plan2"
+- takeScreenshot: "040_sample2_plan_opened"
+
+- assertVisible: "1 Month\n₹200"
+- tapOn: "1 Month\n₹200"
+- takeScreenshot: "041_sample2_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "042_sample2_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "043_sample2_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "044_sample2_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "045_sample2_1m_try_again"
+
+- assertVisible: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- tapOn: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- takeScreenshot: "046_sample2_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "047_sample2_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "048_sample2_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "049_sample2_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "050_sample2_3m_try_again"
+
+- assertVisible: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- tapOn: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- takeScreenshot: "051_sample2_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "052_sample2_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "053_sample2_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "054_sample2_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "055_sample2_6m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "056_back_from_sample2"
+
+# Plan: Sample Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "057_swiped_to_sample"
+
+- assertVisible: "Upgrade to Sample Plan"
+- tapOn: "Upgrade to Sample Plan"
+- takeScreenshot: "058_sample_plan_opened"
+
+- assertVisible: "1 Month\n₹200"
+- tapOn: "1 Month\n₹200"
+- takeScreenshot: "059_sample_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "060_sample_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "061_sample_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "062_sample_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "063_sample_1m_try_again"
+
+- assertVisible: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- tapOn: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- takeScreenshot: "064_sample_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "065_sample_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "066_sample_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "067_sample_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "068_sample_3m_try_again"
+
+- assertVisible: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- tapOn: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- takeScreenshot: "069_sample_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- takeScreenshot: "070_sample_6m_tap_again"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "071_sample_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "072_sample_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "073_sample_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "074_sample_6m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "075_back_from_sample"
+
+# Plan: Divine Connect Plan12
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "076_swiped_to_divine12"
+
+- assertVisible: "Upgrade to Divine Connect Plan12"
+- tapOn: "Upgrade to Divine Connect Plan12"
+- takeScreenshot: "077_divine12_plan_opened"
+
+- assertVisible: "1 Month\n₹2000"
+- tapOn: "1 Month\n₹2000"
+- takeScreenshot: "078_divine12_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "079_divine12_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "080_divine12_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "081_divine12_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "082_divine12_1m_try_again"
+
+- assertVisible: "3 Months\n₹500\nEquivalent to ₹166.67 Per Month\n₹5500 saved"
+- tapOn: "3 Months\n₹500\nEquivalent to ₹166.67 Per Month\n₹5500 saved"
+- takeScreenshot: "083_divine12_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "084_divine12_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "085_divine12_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "086_divine12_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "087_divine12_3m_try_again"
+
+- assertVisible: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹10000 saved"
+- tapOn: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹10000 saved"
+- takeScreenshot: "088_divine12_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "089_divine12_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "090_divine12_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "091_divine12_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "092_divine12_6m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "093_back_from_divine12"
+
+# Plan: Divine Connect Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "094_swiped_to_divine"
+
+- assertVisible: "Upgrade to Divine Connect Plan"
+- tapOn: "Upgrade to Divine Connect Plan"
+- takeScreenshot: "095_divine_plan_opened"
+
+- assertVisible: "1 Month\n₹1000"
+- tapOn: "1 Month\n₹1000"
+- takeScreenshot: "096_divine_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "097_divine_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "098_divine_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "099_divine_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "100_divine_1m_try_again"
+
+- assertVisible: "3 Months\n₹1500\nEquivalent to ₹500.00 Per Month\n₹1500 saved"
+- tapOn: "3 Months\n₹1500\nEquivalent to ₹500.00 Per Month\n₹1500 saved"
+- takeScreenshot: "101_divine_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "102_divine_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "103_divine_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "104_divine_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "105_divine_3m_try_again"
+
+- assertVisible: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹4000 saved"
+- tapOn: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹4000 saved"
+- takeScreenshot: "106_divine_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "107_divine_6m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "108_divine_6m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "109_divine_6m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "110_divine_6m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "111_back_from_divine"
+
+# Plan: Gold Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "112_swiped_to_gold"
+
+- assertVisible: "Upgrade to Gold Plan"
+- tapOn: "Upgrade to Gold Plan"
+- takeScreenshot: "113_gold_plan_opened"
+
+- assertVisible: "1 Month\n₹99"
+- tapOn: "1 Month\n₹99"
+- takeScreenshot: "114_gold_1m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "115_gold_1m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "116_gold_1m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "117_gold_1m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "118_gold_1m_try_again"
+
+- assertVisible: "3 Months\n₹199\nEquivalent to ₹66.33 Per Month\n₹98 saved"
+- tapOn: "3 Months\n₹199\nEquivalent to ₹66.33 Per Month\n₹98 saved"
+- takeScreenshot: "119_gold_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "120_gold_3m_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "121_gold_3m_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "122_gold_3m_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "123_gold_3m_try_again"
+
+- tapOn: "Back"
+- takeScreenshot: "124_back_from_gold"
+
+- tapOn: "Back"
+- takeScreenshot: "125_back_from_plans"
+
+- tapOn: "Back"
+- takeScreenshot: "126_back_to_profile"
+
+# PROFILE MENU ITEMS
+# Daiv Mudras
+- assertVisible: "0\nMy Daiv Mudras:0"
+- tapOn: "0\nMy Daiv Mudras:0"
+- takeScreenshot: "127_daiv_mudras_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "128_back_from_mudras"
+
+# Followers / Following
+- assertVisible: "0\nFollowers"
+- tapOn: "0\nFollowers"
+- takeScreenshot: "129_followers_opened"
+
+- assertVisible: "0 Following"
+- tapOn: "0 Following"
+- takeScreenshot: "130_following_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "131_back_from_following"
+# Add Clips
+- assertVisible: "Add Clips"
+- tapOn: "Add Clips"
+- takeScreenshot: "132_add_clips_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "133_back_from_clips"
+
+# Saved
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "134_menu_opened_saved"
+
+- assertVisible: "Saved"
+- tapOn: "Saved"
+- takeScreenshot: "135_saved_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "136_back_from_saved"
+
+# My Orders
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "137_menu_opened_orders"
+
+- assertVisible: "My Orders"
+- tapOn: "My Orders"
+- takeScreenshot: "138_orders_opened"
+
+- assertVisible: "Successful"
+- tapOn: "Successful"
+- takeScreenshot: "139_orders_successful"
+
+- assertVisible: "Pending"
+- tapOn: "Pending"
+- takeScreenshot: "140_orders_pending"
+
+- assertVisible: "Cancelled"
+- tapOn: "Cancelled"
+- takeScreenshot: "141_orders_cancelled"
+
+- tapOn: "Back"
+- takeScreenshot: "142_back_from_orders"
+
+# Subscription
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "143_menu_opened_subscription"
+
+- assertVisible: "Subscription"
+- tapOn: "Subscription"
+- takeScreenshot: "144_subscription_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "145_back_from_subscription"
+
+# Temple Community
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "146_menu_opened_temple"
+
+- assertVisible: "Temple Community"
+- tapOn: "Temple Community"
+- takeScreenshot: "147_temple_community_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "148_back_from_temple"
+
+# Languages
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "149_menu_opened_languages"
+
+- assertVisible: "Languages"
+- tapOn: "Languages"
+- takeScreenshot: "150_languages_opened"
+
+- assertVisible: "English"
+- tapOn: "English"
+- takeScreenshot: "151_english_selected"
+
+- assertVisible: "Continue"
+- tapOn: "Continue"
+- takeScreenshot: "152_language_continued"
+
+- assertVisible: "Tithi : Ashtami\nVara : Monday"
+- tapOn: "Tithi : Ashtami\nVara : Monday"
+- takeScreenshot: "153_profile_reopened"
+
+# Account Settings
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "154_menu_opened_account"
+
+- assertVisible: "Account Settings"
+- tapOn: "Account Settings"
+- takeScreenshot: "155_account_settings_opened"
+
+- assertVisible: "Address Settings"
+- tapOn: "Address Settings"
+- takeScreenshot: "156_address_settings_opened"
+
+- assertVisible: "Add new address"
+- tapOn: "Add new address"
+- takeScreenshot: "157_add_new_address"
+
+- assertVisible: "Use my current location"
+- tapOn: "Use my current location"
+- takeScreenshot: "158_current_location_tapped"
+
+- tapOn: "Back"
+- takeScreenshot: "159_back_from_location"
+
+- assertVisible: "Deliver to this address"
+- tapOn: "Deliver to this address"
+- takeScreenshot: "160_deliver_to_address"
+
+- assertVisible: "Delete Account"
+- tapOn: "Delete Account"
+- takeScreenshot: "161_delete_account_tapped"
+
+- tapOn: "Back"
+- takeScreenshot: "162_back_from_delete"
+
+- tapOn: "Back"
+- takeScreenshot: "163_back_from_address"
+
+# Help Centre
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "164_menu_opened_help"
+
+- assertVisible: "Help Centre"
+- tapOn: "Help Centre"
+- takeScreenshot: "165_help_centre_opened"
+
+- assertVisible: "What is the DAIV App?"
+- tapOn: "What is the DAIV App?"
+- takeScreenshot: "166_daiv_app_faq_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "167_back_from_faq"
+
+# Terms & Conditions
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "168_menu_opened_terms"
+
+- assertVisible: "Terms & conditions"
+- tapOn: "Terms & conditions"
+- takeScreenshot: "169_terms_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "170_back_from_terms"
+
+# Privacy Policy
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "171_menu_opened_privacy"
+
+- assertVisible: "Privacy policy"
+- tapOn: "Privacy policy"
+- takeScreenshot: "172_privacy_policy_opened"
+
+- tapOn: "Back"
+- takeScreenshot: "173_back_from_privacy"
+
+# Logout
+- assertVisible:
+    point: 88%,5%
+- tapOn:
+    point: 88%,5%
+- takeScreenshot: "174_menu_opened_logout"
+
+- assertVisible: "Logout"
+- tapOn: "Logout"
+- takeScreenshot: "175_logout_dialog_opened"
+
+- assertVisible: "Cancel"
+- tapOn: "Cancel"
+- takeScreenshot: "176_logout_cancelled"
+
+- tapOn: "Back"
+- takeScreenshot: "177_back_to_home"
+
+- assertVisible: "Home"
+- takeScreenshot: "178_home_screen_verified"

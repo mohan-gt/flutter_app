@@ -1,0 +1,533 @@
+appId: com.daivbharathi.daiv
+---
+# Flow- Home-Media-Library
+
+- assertVisible: "Home"
+- assertVisible: "Media"
+- tapOn: "Media"
+- takeScreenshot: "001_media_tab_opened"
+
+# Daily Devotion Songs
+- assertVisible: "Bruhaspati Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bruhaspati Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- takeScreenshot: "002_bruhaspati_playing"
+
+- tapOn: "Back"
+- takeScreenshot: "003_back_from_bruhaspati"
+
+- assertVisible: "Bhuda Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bhuda Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- takeScreenshot: "004_bhuda_playing"
+
+- tapOn: "Back"
+- takeScreenshot: "005_back_from_bhuda"
+
+- assertVisible: "Devotional Song\nArtist: Sangeeta Kattii"
+- tapOn: "Devotional Song\nArtist: Sangeeta Kattii"
+- takeScreenshot: "006_devotional_song_playing"
+
+- tapOn: "Back"
+- takeScreenshot: "007_back_from_devotional"
+
+- assertVisible: "Bramha Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- tapOn: "Bramha Beeja Mantra\nArtist: Samartha Nagabhushanam"
+- takeScreenshot: "008_bramha_playing"
+
+- tapOn: "Back"
+- takeScreenshot: "009_back_from_bramha"
+
+# Music Flow
+- assertVisible: "Music"
+- tapOn: "Music"
+- takeScreenshot: "010_music_tab_opened"
+
+- assertVisible: "See More"
+- tapOn: "See More"
+- takeScreenshot: "011_music_see_more"
+
+- assertVisible: "Mangala Arti"
+- tapOn: "Mangala Arti"
+- takeScreenshot: "012_mangala_arti_opened"
+
+- assertVisible: "Test-Adi\nSangeeta Kattii"
+- tapOn: "Test-Adi\nSangeeta Kattii"
+- takeScreenshot: "013_test_adi_playing"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "014_back_from_test_adi"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "015_back_from_mangala_arti"
+
+- assertVisible: "Maha Mangala Artii"
+- tapOn: "Maha Mangala Artii"
+- takeScreenshot: "016_maha_mangala_opened"
+
+- assertVisible: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- tapOn: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- takeScreenshot: "017_hanuman_mantra_playing"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "018_back_from_hanuman_mantra"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "019_back_from_maha_mangala"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "020_back_to_music"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "021_music_scrolled_up"
+
+- assertVisible: "See More"
+- tapOn: "See More"
+- takeScreenshot: "022_music_see_more_2"
+
+- assertVisible: "Mangala Arti"
+- tapOn: "Mangala Arti"
+- takeScreenshot: "023_mangala_arti_opened_2"
+
+- assertVisible: "Test-Adi\nSangeeta Kattii"
+- tapOn: "Test-Adi\nSangeeta Kattii"
+- takeScreenshot: "024_test_adi_playing_2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "025_back_from_test_adi_2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "026_back_from_mangala_arti_2"
+
+- assertVisible: "Maha Mangala Artii"
+- tapOn: "Maha Mangala Artii"
+- takeScreenshot: "027_maha_mangala_opened_2"
+
+- assertVisible: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- tapOn: "Hanuman Beeja Mantraa\nSamartha Nagabhushanam"
+- takeScreenshot: "028_hanuman_mantra_playing_2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "029_back_from_hanuman_2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "030_back_from_maha_mangala_2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "031_back_to_music_2"
+
+- swipe:
+    direction: DOWN
+    duration: 400
+- takeScreenshot: "032_music_scrolled_down"
+
+- assertVisible: "Ganeshaa"
+- tapOn: "Ganeshaa"
+- takeScreenshot: "033_ganeshaa_opened"
+
+- assertVisible: "Kirtan"
+- tapOn: "Kirtan"
+- takeScreenshot: "034_kirtan_opened"
+
+- assertVisible: "Rama Beeja Mantra\nSamartha Nagabhushanam"
+- tapOn: "Rama Beeja Mantra\nSamartha Nagabhushanam"
+- takeScreenshot: "035_rama_mantra_playing"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "036_back_from_rama_mantra"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "037_back_from_kirtan"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "038_back_from_ganeshaa"
+
+# Videos Section
+- assertVisible: "Videos"
+- tapOn: "Videos"
+- takeScreenshot: "039_videos_tab_opened"
+
+- assertVisible: "00:31\nMorning Shiva Mantra"
+- tapOn: "00:31\nMorning Shiva Mantra"
+- takeScreenshot: "040_shiva_mantra_playing"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "041_back_from_shiva_mantra"
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+- takeScreenshot: "042_om_shanthi_playing"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "043_back_from_om_shanthi"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "044_videos_swiped_left"
+
+- assertVisible: "00:10\nstring"
+- tapOn: "00:10\nstring"
+- takeScreenshot: "045_string_video_tapped_1"
+
+- assertVisible: "00:10\nstring"
+- tapOn: "00:10\nstring"
+- takeScreenshot: "046_string_video_playing"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "047_back_from_string"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "048_videos_scrolled_up"
+
+- assertVisible: "Show More"
+- tapOn: "Show More"
+- takeScreenshot: "049_videos_show_more"
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+- takeScreenshot: "050_om_shanthi_playing_2"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "051_back_from_om_shanthi_2"
+
+- tapOn: "Back"
+- takeScreenshot: "052_back_from_show_more"
+
+# Shloka Flow View More
+- assertVisible: "Shloka"
+- assertVisible: "Show More"
+- tapOn: "Show More"
+- takeScreenshot: "053_shloka_show_more"
+
+- assertVisible: "00:20\nom shanthi om shanti"
+- tapOn: "00:20\nom shanthi om shanti"
+- takeScreenshot: "054_shloka_om_shanthi_playing"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "055_back_from_shloka_video"
+
+- tapOn: "Back"
+- takeScreenshot: "056_back_from_shloka_list"
+
+- tapOn: "Back"
+- takeScreenshot: "057_back_to_videos"
+
+# Books Flow
+- assertVisible: "Books"
+- tapOn: "Books"
+- takeScreenshot: "058_books_tab_opened"
+
+# Book 1 - Ramayana
+- assertVisible: "Ramayana\nauthor"
+- tapOn: "Ramayana\nauthor"
+- takeScreenshot: "059_ramayana_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "060_ramayana_start_reading"
+
+- assertVisible: "Chapter 01\nBirth of Rama"
+- tapOn: "Chapter 01\nBirth of Rama"
+- takeScreenshot: "061_ramayana_ch1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "062_back_from_ramayana_ch1"
+
+- assertVisible: "Chapter 02\nSwayamvara of Sita"
+- tapOn: "Chapter 02\nSwayamvara of Sita"
+- takeScreenshot: "063_ramayana_ch2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "064_back_from_ramayana_ch2"
+
+- assertVisible: "Chapter 03\nCoronation and Exile"
+- tapOn: "Chapter 03\nCoronation and Exile"
+- takeScreenshot: "065_ramayana_ch3"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "066_back_from_ramayana_ch3"
+
+- assertVisible: "Chapter 04\nLife in the Forest"
+- tapOn: "Chapter 04\nLife in the Forest"
+- takeScreenshot: "067_ramayana_ch4"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "068_back_from_ramayana_ch4"
+
+- assertVisible: "Chapter 05\nShurpanakha's Revenge"
+- tapOn: "Chapter 05\nShurpanakha's Revenge"
+- takeScreenshot: "069_ramayana_ch5"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "070_back_from_ramayana_ch5"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "071_back_from_ramayana_chapters"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "072_back_to_books"
+
+# Book 2 - Mahabharata2
+- assertVisible: "Mahabharata2\nauthor"
+- tapOn: "Mahabharata2\nauthor"
+- takeScreenshot: "073_mahabharata2_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "074_mahabharata2_start_reading"
+
+- assertVisible: "Chapter 01\nThe Game of Dice"
+- tapOn: "Chapter 01\nThe Game of Dice"
+- takeScreenshot: "075_mahabharata2_ch1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "076_back_from_mahabharata2_ch1"
+
+- assertVisible: "Chapter 02\nExile of the Pandavas"
+- tapOn: "Chapter 02\nExile of the Pandavas"
+- takeScreenshot: "077_mahabharata2_ch2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "078_back_from_mahabharata2_ch2"
+
+- assertVisible: "Chapter 03\nContinue Reading\nKrishna's Counsel"
+- tapOn: "Chapter 03\nContinue Reading\nKrishna's Counsel"
+- takeScreenshot: "079_mahabharata2_ch3"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "080_back_from_mahabharata2_ch3"
+
+- assertVisible: "Chapter 04\nThe Great War of Kurukshetra"
+- tapOn: "Chapter 04\nThe Great War of Kurukshetra"
+- takeScreenshot: "081_mahabharata2_ch4"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "082_back_from_mahabharata2_ch4"
+
+- assertVisible: "Chapter 05\nAftermath and Legacy"
+- tapOn: "Chapter 05\nAftermath and Legacy"
+- takeScreenshot: "083_mahabharata2_ch5"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "084_back_from_mahabharata2_ch5"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "085_back_from_mahabharata2_chapters"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "086_back_to_books_from_mahabharata2"
+
+# Book 3 - Upanishads
+- assertVisible: "Upanishads\nauthor"
+- tapOn: "Upanishads\nauthor"
+- takeScreenshot: "087_upanishads_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "088_upanishads_start_reading"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "089_back_from_upanishads_reading"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "090_back_to_books_from_upanishads"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "091_books_swiped_left"
+
+# Book 4 - Upanishads2
+- assertVisible: "Upanishads2\nauthor"
+- tapOn: "Upanishads2\nauthor"
+- takeScreenshot: "092_upanishads2_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "093_upanishads2_start_reading"
+
+- assertVisible: "Chapter 01\nUp1"
+- tapOn: "Chapter 01\nUp1"
+- takeScreenshot: "094_upanishads2_ch1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "095_back_from_upanishads2_ch1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "096_back_from_upanishads2_chapters"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "097_back_to_books_from_upanishads2"
+
+# Book 5 - Guru Granth Sahib
+- assertVisible: "Guru Granth Sahib\nauthor"
+- tapOn: "Guru Granth Sahib\nauthor"
+- takeScreenshot: "098_guru_granth_sahib_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "099_guru_granth_sahib_start_reading"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "100_back_from_guru_granth_reading"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "101_back_to_books_from_guru_granth"
+
+# Book 6 - Test Data
+- assertVisible: "Test data\nauthor"
+- tapOn: "Test data\nauthor"
+- takeScreenshot: "102_test_data_opened"
+
+- assertVisible: "Start Reading"
+- tapOn: "Start Reading"
+- takeScreenshot: "103_test_data_start_reading"
+
+- assertVisible: "Chapter 01\nChapter 1"
+- tapOn: "Chapter 01\nChapter 1"
+- takeScreenshot: "104_test_data_ch1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "105_back_from_test_data_ch1"
+
+- assertVisible: "Chapter 02\nChapter 2"
+- tapOn: "Chapter 02\nChapter 2"
+- takeScreenshot: "106_test_data_ch2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "107_back_from_test_data_ch2"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "108_back_from_test_data_chapters"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "109_back_from_test_data_book"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "110_back_to_books_from_test_data"
+
+# Clips Flow
+- assertVisible: "Clips"
+- tapOn: "Clips"
+- takeScreenshot: "111_clips_tab_opened"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "112_clips_swipe_up_1"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "113_clips_swipe_up_2"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "114_clips_swipe_up_3"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "115_clips_swipe_up_4"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "116_clips_swipe_up_5"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "117_clips_swipe_up_6"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "118_clips_swipe_up_7"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "119_clips_swipe_up_8"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "120_clips_swipe_up_9"
+
+# Community Flow
+- assertVisible: "Community"
+- tapOn: "Community"
+- takeScreenshot: "121_community_tab_opened"
+
+- assertVisible: "Daiv Bharthi Community\n10 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+- takeScreenshot: "122_daiv_community_joined"
+
+- assertVisible: "Golden Temple\n13 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+- takeScreenshot: "123_golden_temple_joined"
+
+- assertVisible: "Sri Rama Temple \n10 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+- takeScreenshot: "124_sri_rama_temple_joined"
+
+- assertVisible: "Sri Ayyappa Temple\n8 Followers"
+- assertVisible: "Join"
+- tapOn: "Join"
+- takeScreenshot: "125_ayyappa_temple_joined"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "126_back_from_community"

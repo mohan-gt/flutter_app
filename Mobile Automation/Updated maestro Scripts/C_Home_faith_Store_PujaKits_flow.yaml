@@ -1,0 +1,377 @@
+appId: com.daivbharathi.daiv
+---
+
+# ── HOME → STORE → PUJA KITS FLOW
+- assertVisible: "Home"
+- assertVisible: "Faith"
+- tapOn: "Faith"
+- takeScreenshot: "001_faith_tab_opened"
+
+- assertVisible: "Store"
+- tapOn: "Store"
+- takeScreenshot: "002_store_opened"
+
+# Diwali Mahalakshmi Puja Kit
+- assertVisible: "Diwali Mahalakshmi puja kittttt\nStarts from: ₹466.0"
+- tapOn: "Diwali Mahalakshmi puja kittttt\nStarts from: ₹466.0"
+- takeScreenshot: "003_diwali_kit_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "004_diwali_qty_increased"
+
+- assertVisible: "-"
+- tapOn: "-"
+- takeScreenshot: "005_diwali_qty_decreased"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "006_diwali_scrolled_up"
+- runFlow:
+    when:
+      visible: "Add To Cart"
+    commands:
+      - tapOn: "Add To Cart"
+      - waitForAnimationToEnd
+      - takeScreenshot: "008_diwali_added_to_cart"
+
+      - tapOn: "Go To Cart"
+      - waitForAnimationToEnd
+      - takeScreenshot: "009_diwali_cart_screen"
+
+# Path B: Already in cart
+- runFlow:
+    when:
+      notVisible: "Add To Cart"
+    commands:
+      - tapOn: "Go To Cart"
+      - waitForAnimationToEnd
+      - takeScreenshot: "009_diwali_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "009_diwali_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "010_diwali_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "011_diwali_back_to_store"
+
+# Ganesha Puja Kit
+- assertVisible: "Ganesha Puja Kit \nStarts from: ₹466.0"
+- tapOn: "Ganesha Puja Kit \nStarts from: ₹466.0"
+- takeScreenshot: "012_ganesha_kit_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "013_ganesha_qty_increased"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "014_ganesha_scrolled_up"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "015_ganesha_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "016_ganesha_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "017_ganesha_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "018_ganesha_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "019_ganesha_back_to_store"
+
+- assertVisible: "Store"
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "020_store_swiped_left"
+
+# Ganapati Puja Kit
+- assertVisible: "Ganapati Puja Kit\nStarts from: ₹466.0"
+- tapOn: "Ganapati Puja Kit\nStarts from: ₹466.0"
+- takeScreenshot: "021_ganapati_kit_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "022_ganapati_qty_increased"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "023_ganapati_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "024_ganapati_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "025_ganapati_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "026_ganapati_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "027_ganapati_back_to_store"
+
+# Divine Essentials Puja Kit
+- assertVisible: "Divine Essentials Puja Kit\nStarts from: ₹466.0"
+- tapOn: "Divine Essentials Puja Kit\nStarts from: ₹466.0"
+- takeScreenshot: "028_divine_kit_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "029_divine_qty_increased"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "030_divine_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "031_divine_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "032_divine_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "033_divine_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "034_divine_back_to_store"
+
+# Homa Puja Kit
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "035_store_swiped_left_homa"
+
+- assertVisible: "Homa Puja Kit\nStarts from: ₹466.0"
+- tapOn: "Homa Puja Kit\nStarts from: ₹466.0"
+- takeScreenshot: "036_homa_kit_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "037_homa_qty_increased"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "038_homa_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "039_homa_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "040_homa_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "041_homa_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "042_homa_back_to_store"
+
+# ── STORE → GEM AND BRACELET FLOW
+- swipe:
+    direction: UP
+    duration: 800
+- takeScreenshot: "043_gem_bracelet_visible"
+
+# Kalasa Bowl
+- assertVisible: "Kalasa Bowl\nStarts from: ₹100.0"
+- tapOn: "Kalasa Bowl\nStarts from: ₹100.0"
+- takeScreenshot: "044_kalasa_bowl_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "045_kalasa_qty_increased"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "046_kalasa_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "047_kalasa_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "048_kalasa_checkout_screen"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "049_kalasa_back_1"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "050_kalasa_back_to_store"
+
+# Deppam Oil
+- assertVisible: "DEPPAM OIL\nStarts from: ₹100.0"
+- tapOn: "DEPPAM OIL\nStarts from: ₹100.0"
+- takeScreenshot: "051_deppam_oil_opened"
+
+- tapOn: "+"
+- takeScreenshot: "052_deppam_qty_increased"
+
+- assertVisible: "-"
+- tapOn: "-"
+- takeScreenshot: "053_deppam_qty_decreased"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- takeScreenshot: "054_deppam_scrolled_up"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "055_deppam_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "056_deppam_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "057_deppam_checkout_screen"
+
+- tapOn: "Back"
+- takeScreenshot: "058_deppam_back_1"
+
+- tapOn: "Back"
+- takeScreenshot: "059_deppam_back_to_store"
+
+# Camphor
+- swipe:
+    direction: LEFT
+    duration: 500
+- takeScreenshot: "060_store_swiped_left_camphor"
+
+- assertVisible: "Camphor\nStarts from: ₹100.0"
+- tapOn: "Camphor\nStarts from: ₹100.0"
+- takeScreenshot: "061_camphor_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "062_camphor_qty_increased"
+
+- assertVisible: "-"
+- tapOn: "-"
+- takeScreenshot: "063_camphor_qty_decreased"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- takeScreenshot: "064_camphor_scrolled_up"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "065_camphor_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "066_camphor_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "067_camphor_checkout_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "068_camphor_back_1"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "069_camphor_back_to_store"
+
+# Silver Plate 1
+- assertVisible: "Silver plate 1\nStarts from: ₹100.0"
+- tapOn: "Silver plate 1\nStarts from: ₹100.0"
+- takeScreenshot: "070_silver_plate_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "071_silver_plate_qty_increased"
+
+- assertVisible: "-"
+- tapOn: "-"
+- takeScreenshot: "072_silver_plate_qty_decreased"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- takeScreenshot: "073_silver_plate_scrolled_up"
+
+- assertVisible: "Add To Cart"
+- tapOn: "Add To Cart"
+- takeScreenshot: "074_silver_plate_added_to_cart"
+
+- assertVisible: "Go To Cart"
+- tapOn: "Go To Cart"
+- takeScreenshot: "075_silver_plate_cart_screen"
+
+- assertVisible: "Proceed to Checkout"
+- tapOn: "Proceed to Checkout"
+- takeScreenshot: "076_silver_plate_checkout_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "077_silver_plate_back_1"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "078_silver_plate_back_to_store"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- takeScreenshot: "079_store_scrolled_up"
+
+# Organic Honey
+- assertVisible: "Organic Honey\nStarts from: ₹100.0"
+- tapOn: "Organic Honey\nStarts from: ₹100.0"
+- takeScreenshot: "080_organic_honey_opened"
+
+- assertVisible: "+"
+- tapOn: "+"
+- takeScreenshot: "081_organic_honey_qty_increased"
+
+- assertVisible: "-"
+- tapOn: "-"
+- takeScreenshot: "082_organic_honey_qty_decreased"
+
+- swipe:
+    direction: UP
+    duration: 1500
+- takeScreenshot: "083_organic_honey_scrolled_up"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "084_organic_honey_back_1"
+
+- assertVisible: "Store"
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "085_back_to_store_final"
