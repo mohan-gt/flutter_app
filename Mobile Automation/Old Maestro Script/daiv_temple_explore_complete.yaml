@@ -1,0 +1,310 @@
+appId: com.daiv.ai
+---
+- waitForAnimationToEnd:
+    timeout: 4000
+- assertVisible:
+    text: "Home"
+- tapOn:
+    text: "Faith"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Seva"
+- waitForAnimationToEnd:
+    timeout: 4000
+- swipe:
+    direction: DOWN
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 2000
+- tapOn:
+    text: "Show More"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "00_all_temples_screen"
+
+# Scroll to very top first
+- swipe:
+    direction: DOWN
+    duration: 3000
+
+# TEMPLE 1 - tap center of first card
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "01_temple1_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "01_temple1_back"
+
+# TEMPLE 2 - scroll down exactly one full card then tap
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "02_before_temple2"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "02_temple2_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "02_temple2_back"
+
+# TEMPLE 3
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "03_before_temple3"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "03_temple3_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "03_temple3_back"
+
+# TEMPLE 4
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "04_before_temple4"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "04_temple4_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "04_temple4_back"
+
+# TEMPLE 5
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "05_before_temple5"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "05_temple5_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "05_temple5_back"
+
+# TEMPLE 6
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "06_before_temple6"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "06_temple6_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "06_temple6_back"
+
+# TEMPLE 7
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "07_before_temple7"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "07_temple7_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "07_temple7_back"
+
+# TEMPLE 8
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "08_before_temple8"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "08_temple8_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "08_temple8_back"
+
+# TEMPLE 9
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "09_before_temple9"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "09_temple9_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "09_temple9_back"
+
+# TEMPLE 10
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "10_before_temple10"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "10_temple10_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "10_temple10_back"
+
+# TEMPLE 11
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "11_before_temple11"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "11_temple11_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "11_temple11_back"
+
+# TEMPLE 12
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "12_before_temple12"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "12_temple12_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "12_temple12_back"
+
+# TEMPLE 13
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "13_before_temple13"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "13_temple13_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "13_temple13_back"
+
+# TEMPLE 14
+- swipe:
+    direction: UP
+    duration: 1200
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "14_before_temple14"
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "14_temple14_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "14_temple14_back"
+
+# TEMPLE 15 - last temple, no scroll after this
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "15_before_temple15"
+- tapOn:
+    point: "50%,72%"
+- waitForAnimationToEnd:
+    timeout: 6000
+- takeScreenshot: "15_shiv_temple_open"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 4000
+- takeScreenshot: "15_shiv_temple_back"
+
+# All 15 temples done
+# Now on Explore Temples list screen
+# Tap back arrow at top left to go to Seva screen
+- takeScreenshot: "16_all_15_temples_done"
+- tapOn:
+    point: "7%,6%"
+- waitForAnimationToEnd:
+    timeout: 3000
+- takeScreenshot: "17_seva_screen"
+
+# Tap Back in bottom nav to return to Home
+- tapOn:
+    text: "Back"
+- waitForAnimationToEnd:
+    timeout: 3000
+- assertVisible:
+    text: "Home"
+- takeScreenshot: "18_home_final"
+
