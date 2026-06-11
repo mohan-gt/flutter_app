@@ -195,6 +195,90 @@ jobs:
           name: android-apk
           path: build/app/outputs/flutter-apk/app-release.apk  
 
+maestro_tests:
+    runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
+    needs: build_android
+  
+    steps:
+  
+      - name: Checkout Code
+        uses: actions/checkout@v4
+  
+      ####################################################
+      # Download APK artifact
+      ####################################################
+      - name: Download APK
+        uses: actions/download-artifact@v4
+        with:
+          name: android-apk
+          path: apk
+  
+      ####################################################
+      # Verify downloaded file
+      ####################################################
+      - name: List files
+        shell: powershell
+        run: |
+          Get-ChildItem -Recurse apk
+  
+      ####################################################
+      # If artifact is zip, extract it
+      ####################################################
+      - name: Extract APK
+        shell: powershell
+        run: |
+          Expand-Archive apk\android-apk.zip -DestinationPath apk_extracted -Force
+  
+      ####################################################
+      # Verify emulator
+      ####################################################
+      - name: Check emulator
+        shell: powershell
+        run: |
+          adb devices
+  
+      ####################################################
+      # Install APK
+      ####################################################
+      - name: Install APK
+        shell: powershell
+        run: |
+          adb install -r apk_extracted\app-release.apk
+  
+      ####################################################
+      # Verify Maestro
+      ####################################################
+      - name: Maestro Version
+        shell: powershell
+        run: |
+          maestro --version
+  
+      ####################################################
+      # Create reports folder
+      ####################################################
+      - name: Create reports directory
+        shell: powershell
+        run: |
+          mkdir reports
+  
+      ####################################################
+      # Run tests
+      ####################################################
+      - name: Execute Maestro Tests
+        shell: powershell
+        run: |
+          maestro test maestro\all.yaml --format junit --output reports
+  
+      ####################################################
+      # Upload reports
+      ####################################################
+      - name: Upload Maestro Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: maestro-results
+          path: reports          
+
   # ✅ 6. BUILD IOS (MAC RUNNER)
   build_ios:
     runs-on: macos-latest
