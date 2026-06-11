@@ -1,0 +1,19 @@
+appId: com.joshuamdeguzman.circleci_flutter
+
+---
+
+- launchApp
+
+- assertVisible: "Login"
+
+- tapOn: "Email"
+
+- inputText: "test@test.com"
+
+- tapOn: "Password"
+
+- inputText: "password123"
+
+- tapOn: "LOGIN"
+
+- assertVisible: "Home"

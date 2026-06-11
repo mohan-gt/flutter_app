@@ -1,5 +1,0 @@
-appId: com.joshuamdeguzman.circleci_flutter
-
----
-- launchApp
-- assertVisible: "Flutter Demo Home Page"
