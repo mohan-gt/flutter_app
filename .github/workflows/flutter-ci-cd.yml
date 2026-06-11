@@ -214,6 +214,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: gradle   # enables Gradle dependency caching
     
       # ---------------- PATH ----------------
       - name: Setup PATH
