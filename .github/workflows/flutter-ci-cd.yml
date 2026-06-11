@@ -197,7 +197,7 @@ jobs:
           
   maestro_tests:
     runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
-    needs: build_android
+    # needs: build_android
 
     env:
       JAVA_HOME: "C:\\Java\\jdk-17"
