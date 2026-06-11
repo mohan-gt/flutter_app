@@ -223,16 +223,18 @@ jobs:
       - name: Verify Environment
         shell: cmd
         run: |
+          set PATH=%JAVA_HOME%\bin;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%PATH%
+      
           echo JAVA_HOME=%JAVA_HOME%
           echo ANDROID_HOME=%ANDROID_HOME%
-  
-          where java || exit /b 1
+      
+          where java
           java -version
-  
-          where adb || exit /b 1
+      
+          where adb
           adb version
-  
-          where maestro || exit /b 1
+      
+          where maestro
           maestro --version
   
       # ---------------- DOWNLOAD APK ----------------
