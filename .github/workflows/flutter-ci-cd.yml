@@ -254,53 +254,37 @@ jobs:
       #   run: |
       #     taskkill /F /IM adb.exe || echo "No adb process found"
       #     adb start-server
-
-      # # ---------------- START EMULATOR ----------------
-      # - name: Start Emulator
-      #   shell: cmd
-      #   run: |
-      #     start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
-      #       -avd test ^
-      #       -no-window ^
-      #       -no-audio ^
-      #       -gpu swiftshader_indirect ^
-      #       -no-snapshot-load ^
-      #       -wipe-data
-      #     adb wait-for-device
-
-      # # ---------------- WAIT FOR FULL BOOT ----------------
-      # - name: Wait for Boot Complete
-      #   shell: cmd
-      #   run: |
-      #     :loop
-      #     adb shell getprop sys.boot_completed | find "1"
-      #     if errorlevel 1 (
-      #       timeout /t 5 > nul
-      #       goto loop
-      #     )
-      #     echo Emulator boot completed
-                   
-      # # ---------------- VERIFY DEVICE ----------------
-      # - name: Verify Device
-      #   shell: cmd
-      #   run: adb devices
       
       - name: Start Emulator
+        shell: cmd
         run: |
-          Start-Process emulator -ArgumentList "-avd Pixel_8_API35 -gpu host"
-  
-      - name: Wait for Device
-        run: adb wait-for-device
-        
-      # ---------------- INSTALL APK ----------------
+          %ANDROID_HOME%\emulator\emulator.exe ^
+            -avd Pixel_8_API35 ^
+            -no-window ^
+            -no-audio ^
+            -gpu host ^
+            -wipe-data
+          adb wait-for-device
+      
+      - name: Wait for Boot Complete
+        shell: cmd
+        run: |
+          :loop
+          adb shell getprop sys.boot_completed | find "1"
+          if errorlevel 1 (
+            timeout /t 5 > nul
+            goto loop
+          )
+          echo Emulator boot completed
+      
       - name: Install APK
         shell: cmd
         run: adb install -r apk\app-release.apk
-
-      # ---------------- RUN MAESTRO ----------------
+      
       - name: Run Maestro Tests
         shell: cmd
         run: maestro test maestro-tests
+
 
       # ---------------- ARTIFACTS ----------------
       - name: Upload Reports
