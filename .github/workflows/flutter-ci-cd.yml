@@ -196,71 +196,104 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk  
 
   maestro_tests:
-    runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
+    name: Maestro UI Automation
+  
     needs: build_android
   
-    steps:
-      - uses: actions/checkout@v4
+    runs-on:
+      - self-hosted
+      - Windows
+      - gpu
+      - android
+      - maestro
   
-      - name: Download APK
+    steps:
+  
+      - name: Checkout Source
+        uses: actions/checkout@v4
+  
+      - name: Download APK Artifact
         uses: actions/download-artifact@v4
         with:
           name: android-apk
           path: apk
   
-      - name: Verify files
+      - name: Verify APK
         shell: cmd
-        run: dir /s apk
+        run: |
+          dir /s apk
   
-      - name: Verify emulator
+      - name: Verify Environment
         shell: cmd
-        run: adb devices
+        run: |
+          where adb
+          where maestro
+          adb version
+          maestro --version
+  
+      - name: Start ADB
+        shell: cmd
+        run: |
+          adb start-server
+  
+      - name: Start Emulator
+        shell: cmd
+        run: |
+          start "" emulator -avd Pixel_8_API35 -gpu host
+  
+      - name: Wait For Emulator
+        shell: cmd
+        run: |
+          adb wait-for-device
+          timeout /t 60
+  
+      - name: Verify Device
+        shell: cmd
+        run: |
+          adb devices
   
       - name: Install APK
         shell: cmd
         run: |
-          adb uninstall com.joshuamdeguzman.circleci_flutter
           adb install -r apk\app-release.apk
-  
-      - name: Verify Maestro
-        shell: cmd
-        run: maestro --version
   
       - name: Run Maestro Tests
         shell: cmd
         run: |
-          mkdir reports
-          maestro test maestro\all.yaml --format junit --output reports
+          maestro test maestro
   
-      - name: Upload Maestro Reports
+      - name: Upload Maestro Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: maestro-results
-          path: reports
+          path: |
+            maestro-report*
+            *.xml
+            *.json
+            
+  # # ✅ 6. BUILD IOS (MAC RUNNER)
+  # build_ios:
+  #   runs-on: macos-latest
+  #   # needs: [test, code_quality, security_scan]
 
-  # ✅ 6. BUILD IOS (MAC RUNNER)
-  build_ios:
-    runs-on: macos-latest
-    # needs: [test, code_quality, security_scan]
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-    steps:
-      - uses: actions/checkout@v4
+  #     - uses: subosito/flutter-action@v2
+  #       with:
+  #         flutter-version: ${{ env.FLUTTER_VERSION }}
 
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+  #     - run: flutter pub get
 
-      - run: flutter pub get
-
-      - name: Build iOS (No signing)
-        run: flutter build ios --release --no-codesign
+  #     - name: Build iOS (No signing)
+  #       run: flutter build ios --release --no-codesign
         
-      - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ios-ipa
-          path: build/ios/ipa/*.ipa
+  #     - name: Upload IPA Artifact
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: ios-ipa
+  #         path: build/ios/ipa/*.ipa
 
   # ✅ 7. FIREBASE APP DISTRIBUTION
   # deploy_firebase:
