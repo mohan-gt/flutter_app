@@ -194,65 +194,88 @@ jobs:
         with:
           name: android-apk
           path: build/app/outputs/flutter-apk/app-release.apk  
-
+          
   maestro_tests:
     runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
     needs: build_android
+
     env:
-      JAVA_HOME: C:\Users\Hi\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.19.10-hotspot
-      ANDROID_HOME: C:\Users\Hi\AppData\Local\Android\Sdk
-  
+      JAVA_HOME: C:\Java\jdk-17
+      ANDROID_HOME: C:\Android\Sdk
+
     steps:
-      - uses: actions/checkout@v4
-  
-      - name: Configure Environment
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # ---------------- PATH SETUP ----------------
+      - name: Setup PATH
         shell: cmd
         run: |
           echo %JAVA_HOME%\bin>>%GITHUB_PATH%
           echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
           echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
+          echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
           echo C:\maestro\bin>>%GITHUB_PATH%
-  
-      - name: Verify Runner
+
+      # ---------------- VERIFY ENV ----------------
+      - name: Verify Environment
         shell: cmd
         run: |
-          set JAVA_HOME=C:\Users\Hi\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.19.10-hotspot
-          set ANDROID_HOME=C:\Users\Hi\AppData\Local\Android\Sdk
-      
-          set PATH=%JAVA_HOME%\bin;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;C:\maestro\bin;%PATH%
-      
           echo JAVA_HOME=%JAVA_HOME%
           echo ANDROID_HOME=%ANDROID_HOME%
-      
+
           where java
           java -version
-      
+
           where adb
           adb version
-      
+
           where maestro
           maestro --version
-  
-      - name: Download APK Artifact
+
+      # ---------------- DOWNLOAD APK ----------------
+      - name: Download APK
         uses: actions/download-artifact@v4
         with:
           name: android-apk
           path: apk
-  
+
       - name: Verify APK
         shell: cmd
+        run: dir /s apk
+
+      # ---------------- START EMULATOR ----------------
+      - name: Start Emulator
+        shell: cmd
         run: |
-          dir /s apk
-  
+          echo Starting emulator...
+          start /B %ANDROID_HOME%\emulator\emulator.exe -avd test -no-window -no-audio -gpu swiftshader_indirect
+
+          adb wait-for-device
+          adb devices
+
+      # ---------------- INSTALL APK ----------------
       - name: Install APK
         shell: cmd
         run: |
           adb install -r apk\app-release.apk
-  
+
+      # ---------------- RUN MAESTRO ----------------
       - name: Run Maestro Tests
         shell: cmd
         run: |
           maestro test maestro
+
+      # ---------------- ARTIFACTS ----------------
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maestro-results
+          path: |
+            maestro-report*
+            **/*.log
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
