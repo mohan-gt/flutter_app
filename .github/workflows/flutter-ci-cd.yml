@@ -195,7 +195,7 @@ jobs:
           name: android-apk
           path: build/app/outputs/flutter-apk/app-release.apk  
 
-maestro_tests:
+  maestro_tests:
     runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
     needs: build_android
   
