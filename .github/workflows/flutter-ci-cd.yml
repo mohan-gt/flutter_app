@@ -248,43 +248,50 @@ jobs:
         shell: cmd
         run: dir /s apk
 
-      # ---------------- RESET ADB ----------------
-      - name: Reset ADB Server
-        shell: cmd
-        run: |
-          taskkill /F /IM adb.exe || echo "No adb process found"
-          adb start-server
+      # # ---------------- RESET ADB ----------------
+      # - name: Reset ADB Server
+      #   shell: cmd
+      #   run: |
+      #     taskkill /F /IM adb.exe || echo "No adb process found"
+      #     adb start-server
 
-      # ---------------- START EMULATOR ----------------
+      # # ---------------- START EMULATOR ----------------
+      # - name: Start Emulator
+      #   shell: cmd
+      #   run: |
+      #     start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
+      #       -avd test ^
+      #       -no-window ^
+      #       -no-audio ^
+      #       -gpu swiftshader_indirect ^
+      #       -no-snapshot-load ^
+      #       -wipe-data
+      #     adb wait-for-device
+
+      # # ---------------- WAIT FOR FULL BOOT ----------------
+      # - name: Wait for Boot Complete
+      #   shell: cmd
+      #   run: |
+      #     :loop
+      #     adb shell getprop sys.boot_completed | find "1"
+      #     if errorlevel 1 (
+      #       timeout /t 5 > nul
+      #       goto loop
+      #     )
+      #     echo Emulator boot completed
+                   
+      # # ---------------- VERIFY DEVICE ----------------
+      # - name: Verify Device
+      #   shell: cmd
+      #   run: adb devices
+      
       - name: Start Emulator
-        shell: cmd
         run: |
-          start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
-            -avd test ^
-            -no-window ^
-            -no-audio ^
-            -gpu swiftshader_indirect ^
-            -no-snapshot-load ^
-            -wipe-data
-          adb wait-for-device
-
-      # ---------------- WAIT FOR FULL BOOT ----------------
-      - name: Wait for Boot Complete
-        shell: cmd
-        run: |
-          :loop
-          adb shell getprop sys.boot_completed | find "1"
-          if errorlevel 1 (
-            timeout /t 5 > nul
-            goto loop
-          )
-          echo Emulator boot completed
-
-      # ---------------- VERIFY DEVICE ----------------
-      - name: Verify Device
-        shell: cmd
-        run: adb devices
-
+          Start-Process emulator -ArgumentList "-avd Pixel_8_API35 -gpu host"
+  
+      - name: Wait for Device
+        run: adb wait-for-device
+        
       # ---------------- INSTALL APK ----------------
       - name: Install APK
         shell: cmd
