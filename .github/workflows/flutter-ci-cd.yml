@@ -198,17 +198,18 @@ jobs:
   maestro_tests:
     runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
     needs: build_android
-
+  
     env:
       JAVA_HOME: C:\Java\jdk-17
       ANDROID_HOME: C:\Android\Sdk
-
+  
     steps:
-
+  
+      # ---------------- CHECKOUT ----------------
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      # ---------------- PATH SETUP ----------------
+  
+      # ---------------- SET PATH ----------------
       - name: Setup PATH
         shell: cmd
         run: |
@@ -217,56 +218,88 @@ jobs:
           echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
           echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
           echo C:\maestro\bin>>%GITHUB_PATH%
-
+  
       # ---------------- VERIFY ENV ----------------
       - name: Verify Environment
         shell: cmd
         run: |
           echo JAVA_HOME=%JAVA_HOME%
           echo ANDROID_HOME=%ANDROID_HOME%
-
-          where java
+  
+          where java || exit /b 1
           java -version
-
-          where adb
+  
+          where adb || exit /b 1
           adb version
-
-          where maestro
+  
+          where maestro || exit /b 1
           maestro --version
-
+  
       # ---------------- DOWNLOAD APK ----------------
       - name: Download APK
         uses: actions/download-artifact@v4
         with:
           name: android-apk
           path: apk
-
+  
       - name: Verify APK
         shell: cmd
         run: dir /s apk
-
+  
+      # ---------------- RESET ADB ----------------
+      - name: Reset ADB Server
+        shell: cmd
+        run: |
+          adb kill-server
+          adb start-server
+  
       # ---------------- START EMULATOR ----------------
       - name: Start Emulator
         shell: cmd
         run: |
           echo Starting emulator...
-          start /B %ANDROID_HOME%\emulator\emulator.exe -avd test -no-window -no-audio -gpu swiftshader_indirect
-
+  
+          start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
+            -avd test ^
+            -no-window ^
+            -no-audio ^
+            -gpu swiftshader_indirect ^
+            -no-snapshot-load ^
+            -wipe-data
+  
+          echo Waiting for emulator boot...
+  
           adb wait-for-device
-          adb devices
-
+  
+      # ---------------- WAIT FOR FULL BOOT ----------------
+      - name: Wait for Boot Complete
+        shell: cmd
+        run: |
+          :loop
+          adb shell getprop sys.boot_completed | find "1"
+          if errorlevel 1 (
+            timeout /t 5 > nul
+            goto loop
+          )
+  
+          echo Emulator boot completed
+  
+      # ---------------- VERIFY DEVICE ----------------
+      - name: Verify Device
+        shell: cmd
+        run: adb devices
+  
       # ---------------- INSTALL APK ----------------
       - name: Install APK
         shell: cmd
-        run: |
-          adb install -r apk\app-release.apk
-
+        run: adb install -r apk\app-release.apk
+  
       # ---------------- RUN MAESTRO ----------------
       - name: Run Maestro Tests
         shell: cmd
         run: |
-          maestro test maestro
-
+          maestro test maestro-tests
+  
       # ---------------- ARTIFACTS ----------------
       - name: Upload Reports
         if: always()
@@ -276,6 +309,7 @@ jobs:
           path: |
             maestro-report*
             **/*.log
+            **/*.xml
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
