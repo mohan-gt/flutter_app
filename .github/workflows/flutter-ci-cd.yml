@@ -197,7 +197,7 @@ jobs:
 
   maestro_tests:
     runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
-  
+    needs: build_android
     env:
       JAVA_HOME: C:\Users\Hi\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.19.10-hotspot
       ANDROID_HOME: C:\Users\Hi\AppData\Local\Android\Sdk
