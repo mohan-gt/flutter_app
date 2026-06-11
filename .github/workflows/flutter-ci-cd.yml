@@ -200,118 +200,104 @@ jobs:
     needs: build_android
   
     env:
-      JAVA_HOME: C:\Java\jdk-17
-      ANDROID_HOME: C:\Android\Sdk
-  
-    steps:
-  
-      # ---------------- CHECKOUT ----------------
-      - name: Checkout Code
-        uses: actions/checkout@v4
-  
-      # ---------------- SET PATH ----------------
-      - name: Setup PATH
-        shell: cmd
-        run: |
-          echo %JAVA_HOME%\bin>>%GITHUB_PATH%
-          echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
-          echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
-          echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
-          echo C:\maestro\bin>>%GITHUB_PATH%
-  
-      # ---------------- VERIFY ENV ----------------
-      - name: Verify Environment
-        shell: cmd
-        run: |
-          set PATH=%JAVA_HOME%\bin;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\emulator;%PATH%
+      JAVA_HOME: "C:\\Java\\jdk-17"
+      ANDROID_HOME: "C:\\Android\\Sdk"
       
-          echo JAVA_HOME=%JAVA_HOME%
-          echo ANDROID_HOME=%ANDROID_HOME%
-      
-          where java
-          java -version
-      
-          where adb
-          adb version
-      
-          where maestro
-          maestro --version
-  
-      # ---------------- DOWNLOAD APK ----------------
-      - name: Download APK
-        uses: actions/download-artifact@v4
-        with:
-          name: android-apk
-          path: apk
-  
-      - name: Verify APK
-        shell: cmd
-        run: dir /s apk
-  
-      # ---------------- RESET ADB ----------------
-      - name: Reset ADB Server
-        shell: cmd
-        run: |
-          adb kill-server
-          adb start-server
-  
-      # ---------------- START EMULATOR ----------------
-      - name: Start Emulator
-        shell: cmd
-        run: |
-          echo Starting emulator...
-  
-          start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
-            -avd test ^
-            -no-window ^
-            -no-audio ^
-            -gpu swiftshader_indirect ^
-            -no-snapshot-load ^
-            -wipe-data
-  
-          echo Waiting for emulator boot...
-  
-          adb wait-for-device
-  
-      # ---------------- WAIT FOR FULL BOOT ----------------
-      - name: Wait for Boot Complete
-        shell: cmd
-        run: |
-          :loop
-          adb shell getprop sys.boot_completed | find "1"
-          if errorlevel 1 (
-            timeout /t 5 > nul
-            goto loop
-          )
-  
-          echo Emulator boot completed
-  
-      # ---------------- VERIFY DEVICE ----------------
-      - name: Verify Device
-        shell: cmd
-        run: adb devices
-  
-      # ---------------- INSTALL APK ----------------
-      - name: Install APK
-        shell: cmd
-        run: adb install -r apk\app-release.apk
-  
-      # ---------------- RUN MAESTRO ----------------
-      - name: Run Maestro Tests
-        shell: cmd
-        run: |
-          maestro test maestro-tests
-  
-      # ---------------- ARTIFACTS ----------------
-      - name: Upload Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: maestro-results
-          path: |
-            maestro-report*
-            **/*.log
-            **/*.xml
+        steps:
+          # ---------------- CHECKOUT ----------------
+          - name: Checkout Code
+            uses: actions/checkout@v4
+    
+          # ---------------- SET PATH ----------------
+          - name: Setup PATH
+            shell: cmd
+            run: |
+              echo %JAVA_HOME%\bin>>%GITHUB_PATH%
+              echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
+              echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
+              echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
+              echo C:\maestro\bin>>%GITHUB_PATH%
+    
+          # ---------------- DEBUG ENV ----------------
+          - name: Debug Environment
+            shell: cmd
+            run: |
+              echo JAVA_HOME=%JAVA_HOME%
+              dir %JAVA_HOME%
+              where java
+              java -version
+              adb version
+              maestro --version
+    
+          # ---------------- DOWNLOAD APK ----------------
+          - name: Download APK
+            uses: actions/download-artifact@v4
+            with:
+              name: android-apk
+              path: apk
+    
+          - name: Verify APK
+            shell: cmd
+            run: dir /s apk
+    
+          # ---------------- RESET ADB ----------------
+          - name: Reset ADB Server
+            shell: cmd
+            run: |
+              adb kill-server
+              adb start-server
+    
+          # ---------------- START EMULATOR ----------------
+          - name: Start Emulator
+            shell: cmd
+            run: |
+              start "" /B %ANDROID_HOME%\emulator\emulator.exe ^
+                -avd test ^
+                -no-window ^
+                -no-audio ^
+                -gpu swiftshader_indirect ^
+                -no-snapshot-load ^
+                -wipe-data
+              adb wait-for-device
+    
+          # ---------------- WAIT FOR FULL BOOT ----------------
+          - name: Wait for Boot Complete
+            shell: cmd
+            run: |
+              :loop
+              adb shell getprop sys.boot_completed | find "1"
+              if errorlevel 1 (
+                timeout /t 5 > nul
+                goto loop
+              )
+              echo Emulator boot completed
+    
+          # ---------------- VERIFY DEVICE ----------------
+          - name: Verify Device
+            shell: cmd
+            run: adb devices
+    
+          # ---------------- INSTALL APK ----------------
+          - name: Install APK
+            shell: cmd
+            run: adb install -r apk\app-release.apk
+    
+          # ---------------- RUN MAESTRO ----------------
+          - name: Run Maestro Tests
+            shell: cmd
+            run: maestro test maestro-tests
+    
+          # ---------------- ARTIFACTS ----------------
+          - name: Upload Reports
+            if: always()
+            uses: actions/upload-artifact@v4
+            with:
+              name: maestro-results
+              path: |
+                maestro-report*
+                **/*.log
+                **/*.xml
+
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
