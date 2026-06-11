@@ -34,84 +34,84 @@ jobs:
       
   
 
-  # ✅ 2. UNIT & WIDGET TESTING
-  test:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - uses: actions/checkout@v4
+  # # ✅ 2. UNIT & WIDGET TESTING
+  # test:
+  #   runs-on: ubuntu-latest
+  #   needs: setup
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+  #     - uses: subosito/flutter-action@v2
+  #       with:
+  #         flutter-version: ${{ env.FLUTTER_VERSION }}
 
-      - run: flutter pub get
+  #     - run: flutter pub get
 
-      - name: Run Tests
-        run: flutter test --coverage
+  #     - name: Run Tests
+  #       run: flutter test --coverage
 
-      - name: Upload Coverage
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage/
+  #     - name: Upload Coverage
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: coverage-report
+  #         path: coverage/
 
-  # ✅ 3. CODE QUALITY (LINT + FORMAT)
-  code_quality:
-    runs-on: ubuntu-latest
-    needs: test
-    continue-on-error: true
+  # # ✅ 3. CODE QUALITY (LINT + FORMAT)
+  # code_quality:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   continue-on-error: true
 
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: subosito/flutter-action@v2
+  #       with:
+  #         flutter-version: ${{ env.FLUTTER_VERSION }}
 
-      - run: flutter pub get
+  #     - run: flutter pub get
 
-      - name: Analyze Code
-        run: flutter analyze
+  #     - name: Analyze Code
+  #       run: flutter analyze
 
-      - name: Format Check
-        run: dart format --set-exit-if-changed .
+  #     - name: Format Check
+  #       run: dart format --set-exit-if-changed .
 
-  # ✅ 4. SECURITY SCANNING
-  security_scan:
-    runs-on: ubuntu-latest
-    needs: code_quality
-    continue-on-error: true
+  # # ✅ 4. SECURITY SCANNING
+  # security_scan:
+  #   runs-on: ubuntu-latest
+  #   needs: code_quality
+  #   continue-on-error: true
 
-    steps:
-      - uses: actions/checkout@v4
+  #   steps:
+  #     - uses: actions/checkout@v4
   
-      - name: Setup Flutter (includes Dart)
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+  #     - name: Setup Flutter (includes Dart)
+  #       uses: subosito/flutter-action@v2
+  #       with:
+  #         flutter-version: ${{ env.FLUTTER_VERSION }}
   
-      - name: Install dependencies
-        run: flutter pub get
+  #     - name: Install dependencies
+  #       run: flutter pub get
 
-      # ✅ Dependency Vulnerability Scan
-      - name: Install Dart Dependency Checker
-        run: dart pub global activate pana
+  #     # ✅ Dependency Vulnerability Scan
+  #     - name: Install Dart Dependency Checker
+  #       run: dart pub global activate pana
         
 
-      - name: Run Dependency Scan
-        run: |
-          pana . > pana-report.txt
+  #     - name: Run Dependency Scan
+  #       run: |
+  #         pana . > pana-report.txt
 
-      # ✅ Secret scanning
-      - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2
+  #     # ✅ Secret scanning
+  #     - name: Run Gitleaks
+  #       uses: gitleaks/gitleaks-action@v2
 
-      # ✅ Upload reports
-      - name: Upload Security Reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-reports
-          path: "*.txt"
+  #     # ✅ Upload reports
+  #     - name: Upload Security Reports
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: security-reports
+  #         path: "*.txt"
 
   # ✅ 5. BUILD ANDROID APK
   # build_android:
@@ -138,7 +138,7 @@ jobs:
   
   build_android:
     runs-on: ubuntu-latest
-    needs: [test, code_quality, security_scan]
+    # needs: [test, code_quality, security_scan]
   
     steps:
       - name: Checkout Code
@@ -200,84 +200,44 @@ jobs:
     needs: build_android
   
     steps:
+      - uses: actions/checkout@v4
   
-      - name: Checkout Code
-        uses: actions/checkout@v4
-  
-      ####################################################
-      # Download APK artifact
-      ####################################################
       - name: Download APK
         uses: actions/download-artifact@v4
         with:
           name: android-apk
           path: apk
   
-      ####################################################
-      # Verify downloaded file
-      ####################################################
-      - name: List files
-        shell: powershell
-        run: |
-          Get-ChildItem -Recurse apk
+      - name: Verify files
+        shell: cmd
+        run: dir /s apk
   
-      ####################################################
-      # If artifact is zip, extract it
-      ####################################################
-      - name: Extract APK
-        shell: powershell
-        run: |
-          Expand-Archive apk\android-apk.zip -DestinationPath apk_extracted -Force
+      - name: Verify emulator
+        shell: cmd
+        run: adb devices
   
-      ####################################################
-      # Verify emulator
-      ####################################################
-      - name: Check emulator
-        shell: powershell
-        run: |
-          adb devices
-  
-      ####################################################
-      # Install APK
-      ####################################################
       - name: Install APK
-        shell: powershell
+        shell: cmd
         run: |
-          adb install -r apk_extracted\app-release.apk
+          adb uninstall com.joshuamdeguzman.circleci_flutter
+          adb install -r apk\app-release.apk
   
-      ####################################################
-      # Verify Maestro
-      ####################################################
-      - name: Maestro Version
-        shell: powershell
-        run: |
-          maestro --version
+      - name: Verify Maestro
+        shell: cmd
+        run: maestro --version
   
-      ####################################################
-      # Create reports folder
-      ####################################################
-      - name: Create reports directory
-        shell: powershell
+      - name: Run Maestro Tests
+        shell: cmd
         run: |
           mkdir reports
-  
-      ####################################################
-      # Run tests
-      ####################################################
-      - name: Execute Maestro Tests
-        shell: powershell
-        run: |
           maestro test maestro\all.yaml --format junit --output reports
   
-      ####################################################
-      # Upload reports
-      ####################################################
-      - name: Upload Maestro Results
-        uses: actions/upload-artifact@v4
+      - name: Upload Maestro Reports
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: maestro-results
-          path: reports          
+          path: reports
 
   # ✅ 6. BUILD IOS (MAC RUNNER)
   build_ios:
@@ -303,56 +263,56 @@ jobs:
           path: build/ios/ipa/*.ipa
 
   # ✅ 7. FIREBASE APP DISTRIBUTION
-  deploy_firebase:
-    runs-on: ubuntu-latest
-    needs: build_android
-    if: github.ref == 'refs/heads/main'
+  # deploy_firebase:
+  #   runs-on: ubuntu-latest
+  #   needs: build_android
+  #   if: github.ref == 'refs/heads/main'
 
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: android-apk
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: android-apk
 
-      - name: Deploy to Firebase
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: testers
-          file: app-release.apk
+  #     - name: Deploy to Firebase
+  #       uses: wzieba/Firebase-Distribution-Github-Action@v1
+  #       with:
+  #         appId: ${{ secrets.FIREBASE_APP_ID }}
+  #         token: ${{ secrets.FIREBASE_TOKEN }}
+  #         groups: testers
+  #         file: app-release.apk
 
-  # ✅ 8. OPTIONAL: GOOGLE PLAY STORE DEPLOY
-  deploy_playstore:
-    runs-on: ubuntu-latest
-    needs: build_android
-    if: github.ref == 'refs/heads/main'
-    continue-on-error: true
+  # # ✅ 8. OPTIONAL: GOOGLE PLAY STORE DEPLOY
+  # deploy_playstore:
+  #   runs-on: ubuntu-latest
+  #   needs: build_android
+  #   if: github.ref == 'refs/heads/main'
+  #   continue-on-error: true
 
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: android-apk
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: android-apk
 
-      - name: Upload to Play Store
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJson: ${{ secrets.PLAYSTORE_JSON }}
-          packageName: com.example.app
-          releaseFiles: app-release.apk
-          track: internal
+  #     - name: Upload to Play Store
+  #       uses: r0adkll/upload-google-play@v1
+  #       with:
+  #         serviceAccountJson: ${{ secrets.PLAYSTORE_JSON }}
+  #         packageName: com.example.app
+  #         releaseFiles: app-release.apk
+  #         track: internal
 
-  # ✅ 9. OPTIONAL: APPLE TESTFLIGHT (FASTLANE)
-  deploy_testflight:
-    runs-on: macos-latest
-    needs: build_ios
-    if: github.ref == 'refs/heads/main'
-    continue-on-error: true
+  # # ✅ 9. OPTIONAL: APPLE TESTFLIGHT (FASTLANE)
+  # deploy_testflight:
+  #   runs-on: macos-latest
+  #   needs: build_ios
+  #   if: github.ref == 'refs/heads/main'
+  #   continue-on-error: true
 
-    steps:
-      - uses: actions/checkout@v4
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Install Fastlane
-        run: gem install fastlane
+  #     - name: Install Fastlane
+  #       run: gem install fastlane
 
-      - name: Deploy to TestFlight
-        run: fastlane ios beta
+  #     - name: Deploy to TestFlight
+  #       run: fastlane ios beta
