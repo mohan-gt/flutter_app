@@ -242,7 +242,7 @@ jobs:
   # ✅ 6. BUILD IOS (MAC RUNNER)
   build_ios:
     runs-on: macos-latest
-    needs: [test, code_quality, security_scan]
+    # needs: [test, code_quality, security_scan]
 
     steps:
       - uses: actions/checkout@v4
