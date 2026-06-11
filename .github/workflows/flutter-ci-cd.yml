@@ -212,6 +212,21 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
   
+      - name: Debug Runner
+        shell: cmd
+        run: |
+          echo JAVA_HOME=%JAVA_HOME%
+          echo ANDROID_HOME=%ANDROID_HOME%
+  
+          where java
+          java -version
+  
+          where adb
+          adb version
+  
+          where maestro
+          maestro --version
+  
       - name: Download APK Artifact
         uses: actions/download-artifact@v4
         with:
@@ -223,35 +238,6 @@ jobs:
         run: |
           dir /s apk
   
-      - name: Verify Environment
-        shell: cmd
-        run: |
-          where adb
-          where maestro
-          adb version
-          maestro --version
-  
-      - name: Start ADB
-        shell: cmd
-        run: |
-          adb start-server
-  
-      - name: Start Emulator
-        shell: cmd
-        run: |
-          start "" emulator -avd Pixel_8_API35 -gpu host
-  
-      - name: Wait For Emulator
-        shell: cmd
-        run: |
-          adb wait-for-device
-          timeout /t 60
-  
-      - name: Verify Device
-        shell: cmd
-        run: |
-          adb devices
-  
       - name: Install APK
         shell: cmd
         run: |
@@ -261,16 +247,6 @@ jobs:
         shell: cmd
         run: |
           maestro test maestro
-  
-      - name: Upload Maestro Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: maestro-results
-          path: |
-            maestro-report*
-            *.xml
-            *.json
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
