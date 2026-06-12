@@ -241,39 +241,7 @@ jobs:
         shell: cmd
         run: dir /s apk
   
-      - name: Kill existing emulator if any
-        shell: powershell
-        run: |
-          $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-          if ($proc) {
-            Write-Host "Killing existing emulator process..."
-            $proc | Stop-Process -Force
-            Start-Sleep -Seconds 3
-          }
-          & adb kill-server
-          Start-Sleep -Seconds 2
-          & adb start-server
-          Write-Host "ADB server restarted"
-  
-      - name: Start Emulator
-        shell: powershell
-        run: |
-          $env:ANDROID_AVD_HOME = "C:\Android\avd"
-          $env:ANDROID_HOME = "C:\Android\Sdk"
-          Start-Process -FilePath "C:\Android\Sdk\emulator\emulator.exe" `
-            -ArgumentList "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
-            -NoNewWindow
-          Write-Host "Emulator launched"
-          Start-Sleep -Seconds 5
-          $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-          if ($proc) {
-            Write-Host "Emulator process is running PID=$($proc.Id)"
-          } else {
-            Write-Host "Emulator process not found"
-            exit 1
-          }
-    
-      - name: Wait for Boot Complete
+      - name: Wait for Emulator
         shell: powershell
         run: |
           $ErrorActionPreference = "Continue"
@@ -316,7 +284,7 @@ jobs:
             Write-Host "Timed out waiting for boot_completed"
             exit 1
           }
-          
+  
       - name: Install APK
         shell: cmd
         run: adb install -r apk\app-release.apk
@@ -324,20 +292,6 @@ jobs:
       - name: Run Maestro Tests
         shell: cmd
         run: maestro test %GITHUB_WORKSPACE%\maestro-tests
-  
-      - name: Kill Emulator after tests
-        if: always()
-        shell: powershell
-        run: |
-          & adb emu kill
-          Start-Sleep -Seconds 3
-          $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-          if ($proc) {
-            $proc | Stop-Process -Force
-            Write-Host "Emulator force killed"
-          }
-          Unregister-ScheduledTask -TaskName "StartEmulator" -Confirm:$false -ErrorAction SilentlyContinue
-          Write-Host "Cleanup done"
   
       - name: Upload Reports
         if: always()
