@@ -291,7 +291,7 @@ jobs:
   
       - name: Run Maestro Tests
         shell: cmd
-        run: maestro test %GITHUB_WORKSPACE%\maestro-tests
+        run: maestro test %GITHUB_WORKSPACE%\maestro
   
       - name: Upload Reports
         if: always()
