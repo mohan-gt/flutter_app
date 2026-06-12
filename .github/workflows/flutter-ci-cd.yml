@@ -281,12 +281,13 @@ jobs:
           $elapsed = 0
   
           while ($elapsed -lt $timeout) {
-            $state = & adb get-state 2>$null
+            $state = (& adb get-state) 2>&1
+            $state = "$state".Trim()
+            Write-Host "State: $state"
             if ($state -eq "device") {
               Write-Host "Device online."
               break
             }
-            Write-Host "Not ready yet, state=$state waiting..."
             Start-Sleep -Seconds 5
             $elapsed += 5
           }
@@ -299,8 +300,8 @@ jobs:
           Write-Host "Waiting for boot_completed..."
           $elapsed = 0
           while ($elapsed -lt $timeout) {
-            $boot = & adb shell getprop sys.boot_completed 2>$null
-            $boot = $boot.Trim()
+            $boot = (& adb shell getprop sys.boot_completed) 2>&1
+            $boot = "$boot".Trim()
             Write-Host "boot=$boot"
             if ($boot -eq "1") {
               Write-Host "Emulator boot completed"
