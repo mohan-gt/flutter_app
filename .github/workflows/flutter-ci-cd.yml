@@ -195,183 +195,183 @@ jobs:
           name: android-apk
           path: build/app/outputs/flutter-apk/app-release.apk  
           
-maestro_tests:
-  runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
-  needs: build_android
-  env:
-    ANDROID_HOME: "C:\\Android\\Sdk"
-    ANDROID_AVD_HOME: "C:\\Android\\avd"
-    MAESTRO_CLI_NO_ANALYTICS: "true"
-
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: gradle
-
-    - name: Setup PATH
-      shell: cmd
-      run: |
-        echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
-        echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
-        echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
-        echo C:\maestro\bin>>%GITHUB_PATH%
-
-    - name: Debug Environment
-      shell: cmd
-      run: |
-        echo JAVA_HOME=%JAVA_HOME%
-        where java
-        java -version
-        adb version
-        maestro --version
-
-    - name: Download APK
-      uses: actions/download-artifact@v4
-      with:
-        name: android-apk
-        path: apk
-
-    - name: Verify APK
-      shell: cmd
-      run: dir /s apk
-
-    - name: Kill existing emulator if any
-      shell: powershell
-      run: |
-        $ErrorActionPreference = "Continue"
-        $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-        if ($proc) {
-          Write-Host "Killing existing emulator..."
-          $proc | Stop-Process -Force
-          Start-Sleep -Seconds 3
-        }
-        & adb kill-server
-        Start-Sleep -Seconds 2
-        & adb start-server
-        Write-Host "ADB server restarted"
-
-    - name: Start Emulator via Scheduled Task
-      shell: powershell
-      run: |
-        $ErrorActionPreference = "Continue"
-
-        # Register scheduled task to run as Automation user
-        $action = New-ScheduledTaskAction `
-          -Execute "C:\Android\Sdk\emulator\emulator.exe" `
-          -Argument "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
-          -WorkingDirectory "C:\Android\Sdk\emulator"
-
-        $principal = New-ScheduledTaskPrincipal `
-          -UserId "Automation" `
-          -LogonType Interactive `
-          -RunLevel Highest
-
-        $settings = New-ScheduledTaskSettingsSet `
-          -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
-
-        Register-ScheduledTask `
-          -TaskName "StartEmulatorCI" `
-          -Action $action `
-          -Principal $principal `
-          -Settings $settings `
-          -Force
-
-        # Start the task
-        Start-ScheduledTask -TaskName "StartEmulatorCI"
-        Write-Host "Emulator task started"
-        Start-Sleep -Seconds 10
-
-        # Verify emulator process is running
-        $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-        if ($proc) {
-          Write-Host "Emulator process running PID=$($proc.Id)"
-        } else {
-          Write-Host "Emulator process not found - task may have failed"
-          exit 1
-        }
-
-    - name: Wait for Boot Complete
-      shell: powershell
-      run: |
-        $ErrorActionPreference = "Continue"
-        Write-Host "Waiting for device to come online..."
-        $timeout = 300
-        $elapsed = 0
-
-        while ($elapsed -lt $timeout) {
-          $state = (& adb get-state) 2>&1
-          $state = "$state".Trim()
-          Write-Host "State: $state"
-          if ($state -eq "device") {
-            Write-Host "Device online."
-            break
-          }
-          Start-Sleep -Seconds 5
-          $elapsed += 5
-        }
-
-        if ($elapsed -ge $timeout) {
-          Write-Host "Timed out waiting for device"
-          exit 1
-        }
-
-        Write-Host "Waiting for boot_completed..."
-        $elapsed = 0
-        while ($elapsed -lt $timeout) {
-          $boot = (& adb shell getprop sys.boot_completed) 2>&1
-          $boot = "$boot".Trim()
-          Write-Host "boot=$boot"
-          if ($boot -eq "1") {
-            Write-Host "Emulator boot completed"
-            break
-          }
-          Start-Sleep -Seconds 5
-          $elapsed += 5
-        }
-
-        if ($elapsed -ge $timeout) {
-          Write-Host "Timed out waiting for boot_completed"
-          exit 1
-        }
-
-    - name: Install APK
-      shell: cmd
-      run: adb install -r apk\app-release.apk
-
-    - name: Run Maestro Tests
-      shell: cmd
-      run: maestro test %GITHUB_WORKSPACE%\maestro
-
-    - name: Kill Emulator after tests
-      if: always()
-      shell: powershell
-      run: |
-        $ErrorActionPreference = "Continue"
-        & adb emu kill
-        Start-Sleep -Seconds 3
-        $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
-        if ($proc) {
-          $proc | Stop-Process -Force
-          Write-Host "Emulator force killed"
-        }
-        Unregister-ScheduledTask -TaskName "StartEmulatorCI" -Confirm:$false -ErrorAction SilentlyContinue
-        Write-Host "Cleanup done"
-
-    - name: Upload Reports
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: maestro-results
-        path: |
-          maestro-report*
-          **/*.log
-          **/*.xml
+  maestro_tests:
+      runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
+      needs: build_android
+      env:
+        ANDROID_HOME: "C:\\Android\\Sdk"
+        ANDROID_AVD_HOME: "C:\\Android\\avd"
+        MAESTRO_CLI_NO_ANALYTICS: "true"
+    
+      steps:
+        - name: Checkout Code
+          uses: actions/checkout@v4
+    
+        - name: Set up JDK 17
+          uses: actions/setup-java@v4
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            cache: gradle
+    
+        - name: Setup PATH
+          shell: cmd
+          run: |
+            echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
+            echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
+            echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
+            echo C:\maestro\bin>>%GITHUB_PATH%
+    
+        - name: Debug Environment
+          shell: cmd
+          run: |
+            echo JAVA_HOME=%JAVA_HOME%
+            where java
+            java -version
+            adb version
+            maestro --version
+    
+        - name: Download APK
+          uses: actions/download-artifact@v4
+          with:
+            name: android-apk
+            path: apk
+    
+        - name: Verify APK
+          shell: cmd
+          run: dir /s apk
+    
+        - name: Kill existing emulator if any
+          shell: powershell
+          run: |
+            $ErrorActionPreference = "Continue"
+            $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+            if ($proc) {
+              Write-Host "Killing existing emulator..."
+              $proc | Stop-Process -Force
+              Start-Sleep -Seconds 3
+            }
+            & adb kill-server
+            Start-Sleep -Seconds 2
+            & adb start-server
+            Write-Host "ADB server restarted"
+    
+        - name: Start Emulator via Scheduled Task
+          shell: powershell
+          run: |
+            $ErrorActionPreference = "Continue"
+    
+            # Register scheduled task to run as Automation user
+            $action = New-ScheduledTaskAction `
+              -Execute "C:\Android\Sdk\emulator\emulator.exe" `
+              -Argument "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
+              -WorkingDirectory "C:\Android\Sdk\emulator"
+    
+            $principal = New-ScheduledTaskPrincipal `
+              -UserId "Automation" `
+              -LogonType Interactive `
+              -RunLevel Highest
+    
+            $settings = New-ScheduledTaskSettingsSet `
+              -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
+    
+            Register-ScheduledTask `
+              -TaskName "StartEmulatorCI" `
+              -Action $action `
+              -Principal $principal `
+              -Settings $settings `
+              -Force
+    
+            # Start the task
+            Start-ScheduledTask -TaskName "StartEmulatorCI"
+            Write-Host "Emulator task started"
+            Start-Sleep -Seconds 10
+    
+            # Verify emulator process is running
+            $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+            if ($proc) {
+              Write-Host "Emulator process running PID=$($proc.Id)"
+            } else {
+              Write-Host "Emulator process not found - task may have failed"
+              exit 1
+            }
+    
+        - name: Wait for Boot Complete
+          shell: powershell
+          run: |
+            $ErrorActionPreference = "Continue"
+            Write-Host "Waiting for device to come online..."
+            $timeout = 300
+            $elapsed = 0
+    
+            while ($elapsed -lt $timeout) {
+              $state = (& adb get-state) 2>&1
+              $state = "$state".Trim()
+              Write-Host "State: $state"
+              if ($state -eq "device") {
+                Write-Host "Device online."
+                break
+              }
+              Start-Sleep -Seconds 5
+              $elapsed += 5
+            }
+    
+            if ($elapsed -ge $timeout) {
+              Write-Host "Timed out waiting for device"
+              exit 1
+            }
+    
+            Write-Host "Waiting for boot_completed..."
+            $elapsed = 0
+            while ($elapsed -lt $timeout) {
+              $boot = (& adb shell getprop sys.boot_completed) 2>&1
+              $boot = "$boot".Trim()
+              Write-Host "boot=$boot"
+              if ($boot -eq "1") {
+                Write-Host "Emulator boot completed"
+                break
+              }
+              Start-Sleep -Seconds 5
+              $elapsed += 5
+            }
+    
+            if ($elapsed -ge $timeout) {
+              Write-Host "Timed out waiting for boot_completed"
+              exit 1
+            }
+    
+        - name: Install APK
+          shell: cmd
+          run: adb install -r apk\app-release.apk
+    
+        - name: Run Maestro Tests
+          shell: cmd
+          run: maestro test %GITHUB_WORKSPACE%\maestro
+    
+        - name: Kill Emulator after tests
+          if: always()
+          shell: powershell
+          run: |
+            $ErrorActionPreference = "Continue"
+            & adb emu kill
+            Start-Sleep -Seconds 3
+            $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+            if ($proc) {
+              $proc | Stop-Process -Force
+              Write-Host "Emulator force killed"
+            }
+            Unregister-ScheduledTask -TaskName "StartEmulatorCI" -Confirm:$false -ErrorAction SilentlyContinue
+            Write-Host "Cleanup done"
+    
+        - name: Upload Reports
+          if: always()
+          uses: actions/upload-artifact@v4
+          with:
+            name: maestro-results
+            path: |
+              maestro-report*
+              **/*.log
+              **/*.xml
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
