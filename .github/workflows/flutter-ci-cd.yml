@@ -264,7 +264,7 @@ jobs:
             # Register scheduled task to run as Automation user
             $action = New-ScheduledTaskAction `
               -Execute "C:\Android\Sdk\emulator\emulator.exe" `
-              -Argument "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
+              -Argument "-avd Pixel_8_API35 -no-audio -gpu host -wipe-data -no-metrics" `
               -WorkingDirectory "C:\Android\Sdk\emulator"
     
             $principal = New-ScheduledTaskPrincipal `
