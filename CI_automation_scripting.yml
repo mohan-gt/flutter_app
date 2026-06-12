@@ -1,0 +1,267 @@
+CI/CD Setup Documentation — Android Emulator with GitHub Actions on GPU Machine
+________________________________________
+Machine Details
+•	OS: Windows 11
+•	GPU: NVIDIA GeForce RTX 4070
+•	CI User: Automation (Admin@123)
+•	Runner: Self-hosted GitHub Actions runner
+________________________________________
+Directory Structure
+C:\Android\
+  ├── Sdk\          — Android SDK
+  ├── avd\          — AVD files (Pixel_8_API35)
+  └── start_emulator.bat — Emulator launch script
+
+C:\maestro\bin\     — Maestro CLI
+C:\actions-runner\  — GitHub Actions runner
+________________________________________
+One-Time Machine Setup
+1. Android SDK & AVD
+•	Android SDK installed at C:\Android\Sdk
+•	AVD Pixel_8_API35 created and copied to C:\Android\avd
+•	AVD ini file updated to point to C:\Android\avd\Pixel_8_API35.avd
+2. Emulator Launch Script
+C:\Android\start_emulator.bat:
+bat
+set ANDROID_AVD_HOME=C:\Android\avd
+set ANDROID_HOME=C:\Android\Sdk
+start "" "C:\Android\Sdk\emulator\emulator.exe" -avd Pixel_8_API35 -no-audio -gpu host -wipe-data -no-metrics
+3. CI User Setup
+•	Created/used existing Automation user with admin rights
+•	Granted full access to all required folders:
+cmd
+icacls "C:\Android" /grant "Automation:(OI)(CI)F" /T
+icacls "C:\maestro" /grant "Automation:(OI)(CI)F" /T
+icacls "C:\actions-runner" /grant "Automation:(OI)(CI)F" /T
+•	Copied ADB keys from Hi user to Automation:
+cmd
+mkdir "C:\Users\Automation\.android"
+xcopy /E /I "C:\Users\Hi\.android" "C:\Users\Automation\.android"
+icacls "C:\Users\Automation\.android" /grant "Automation:(OI)(CI)F" /T"
+4. Auto-Login Setup
+Machine auto-logs in as Automation on every boot:
+cmd
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /t REG_SZ /d 1 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /t REG_SZ /d "Automation" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t REG_SZ /d "Admin@123" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultDomainName /t REG_SZ /d "." /f
+5. GitHub Actions Runner Service
+•	Runner configured to run as Automation user:
+cmd
+sc config "actions.runner.mohan-gt-flutter_app.gpu-runner" obj= ".\Automation" password= "Admin@123"
+•	Granted "Log on as a service" rights to Automation
+•	Runner starts automatically as a Windows service on boot
+6. PowerShell Execution Policy
+cmd
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+7. Disable Auto-Update Restarts
+cmd
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /t REG_DWORD /d 1 /f
+________________________________________
+How It Works on Every Boot
+1.	Machine powers on
+2.	Windows auto-logs in as Automation
+3.	GitHub Actions runner service starts automatically
+4.	Runner connects to GitHub and waits for jobs
+5.	Pipeline triggers → emulator launches → tests run → emulator killed
+________________________________________
+GitHub Actions Pipeline
+yaml
+maestro_tests:
+  runs-on: [self-hosted, Windows, X64, gpu, android, maestro]
+  needs: build_android
+  env:
+    ANDROID_HOME: "C:\\Android\\Sdk"
+    ANDROID_AVD_HOME: "C:\\Android\\avd"
+    MAESTRO_CLI_NO_ANALYTICS: "true"
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Setup PATH
+      shell: cmd
+      run: |
+        echo %ANDROID_HOME%\platform-tools>>%GITHUB_PATH%
+        echo %ANDROID_HOME%\emulator>>%GITHUB_PATH%
+        echo %ANDROID_HOME%\cmdline-tools\latest\bin>>%GITHUB_PATH%
+        echo C:\maestro\bin>>%GITHUB_PATH%
+
+    - name: Debug Environment
+      shell: cmd
+      run: |
+        echo JAVA_HOME=%JAVA_HOME%
+        where java
+        java -version
+        adb version
+        maestro --version
+
+    - name: Download APK
+      uses: actions/download-artifact@v4
+      with:
+        name: android-apk
+        path: apk
+
+    - name: Verify APK
+      shell: cmd
+      run: dir /s apk
+
+    - name: Kill existing emulator if any
+      shell: powershell
+      run: |
+        $ErrorActionPreference = "Continue"
+        & adb kill-server
+        Start-Sleep -Seconds 2
+        $procs = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+        if ($procs) {
+          Write-Host "Killing $($procs.Count) emulator process(es)..."
+          $procs | Stop-Process -Force
+          Start-Sleep -Seconds 5
+        } else {
+          Write-Host "No emulators running - clean state"
+        }
+        Get-Process -Name "qemu*" -ErrorAction SilentlyContinue | Stop-Process -Force
+        Start-Sleep -Seconds 3
+        & adb start-server
+        Start-Sleep -Seconds 2
+        Write-Host "ADB server restarted"
+
+    - name: Start Emulator via Scheduled Task
+      shell: powershell
+      run: |
+        $ErrorActionPreference = "Continue"
+        $action = New-ScheduledTaskAction `
+          -Execute "C:\Android\start_emulator.bat" `
+          -WorkingDirectory "C:\Android"
+        $principal = New-ScheduledTaskPrincipal `
+          -UserId "Automation" `
+          -LogonType Interactive `
+          -RunLevel Highest
+        $settings = New-ScheduledTaskSettingsSet `
+          -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
+        Register-ScheduledTask `
+          -TaskName "StartEmulatorCI" `
+          -Action $action `
+          -Principal $principal `
+          -Settings $settings `
+          -Force
+        Start-ScheduledTask -TaskName "StartEmulatorCI"
+        Write-Host "Emulator task started"
+        Start-Sleep -Seconds 10
+        $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+        if ($proc) {
+          Write-Host "Emulator process running PID=$($proc.Id)"
+        } else {
+          Write-Host "Emulator process not found"
+          exit 1
+        }
+
+    - name: Wait for Boot Complete
+      shell: powershell
+      run: |
+        $ErrorActionPreference = "Continue"
+        Write-Host "Waiting for device to come online..."
+        $timeout = 300
+        $elapsed = 0
+        while ($elapsed -lt $timeout) {
+          $state = (& adb get-state) 2>&1
+          $state = "$state".Trim()
+          Write-Host "State: $state"
+          if ($state -eq "device") {
+            Write-Host "Device online."
+            break
+          }
+          Start-Sleep -Seconds 5
+          $elapsed += 5
+        }
+        if ($elapsed -ge $timeout) {
+          Write-Host "Timed out waiting for device"
+          exit 1
+        }
+        Write-Host "Waiting for boot_completed..."
+        $elapsed = 0
+        while ($elapsed -lt $timeout) {
+          $boot = (& adb shell getprop sys.boot_completed) 2>&1
+          $boot = "$boot".Trim()
+          Write-Host "boot=$boot"
+          if ($boot -eq "1") {
+            Write-Host "Emulator boot completed"
+            break
+          }
+          Start-Sleep -Seconds 5
+          $elapsed += 5
+        }
+        if ($elapsed -ge $timeout) {
+          Write-Host "Timed out waiting for boot_completed"
+          exit 1
+        }
+
+    - name: Install APK
+      shell: cmd
+      run: adb install -r apk\app-release.apk
+
+    - name: Run Maestro Tests
+      shell: cmd
+      run: maestro test %GITHUB_WORKSPACE%\maestro
+
+    - name: Kill Emulator after tests
+      if: always()
+      shell: powershell
+      run: |
+        $ErrorActionPreference = "Continue"
+        & adb emu kill
+        Start-Sleep -Seconds 3
+        $procs = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+        if ($procs) {
+          $procs | Stop-Process -Force
+          Write-Host "Emulator force killed"
+        }
+        Unregister-ScheduledTask -TaskName "StartEmulatorCI" -Confirm:$false -ErrorAction SilentlyContinue
+        Write-Host "Cleanup done"
+
+    - name: Upload Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: maestro-results
+        path: |
+          maestro-report*
+          **/*.log
+          **/*.xml
+________________________________________
+Key Design Decisions
+Decision	Reason
+Emulator launched via Scheduled Task	Runner runs as Automation service account which needs Interactive session for GPU access
+-gpu host	Uses RTX 4070 for hardware accelerated rendering
+-wipe-data	Fresh state on every run, no leftover app data
+Kill emulator after tests	Clean state for next run, no conflicts
+Auto-login as Automation	No manual intervention needed after machine power on
+Runner as Automation user	Same user as emulator session, avoids permission issues
+________________________________________
+What Happens on Every Pipeline Run
+1.	Kill any existing emulator → clean state
+2.	Register + start scheduled task → launches emulator as Automation with GPU
+3.	Wait for emulator to boot
+4.	Install APK
+5.	Run Maestro tests
+6.	Kill emulator + cleanup scheduled task
+7.	Upload test reports
+________________________________________
+Troubleshooting
+Issue	Fix
+Runner offline	net start "actions.runner.mohan-gt-flutter_app.gpu-runner"
+Emulator not launching	Check schtasks /query /tn "StartEmulatorCI" Last Result
+ADB device not found	adb kill-server && adb start-server
+Multiple emulators	taskkill /F /IM emulator.exe then re-run
+Device unauthorized	adb kill-server && adb start-server then check emulator for Allow dialog
+
+
+
+-
