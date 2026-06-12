@@ -258,25 +258,21 @@ jobs:
       - name: Start Emulator
         shell: powershell
         run: |
-          $action = New-ScheduledTaskAction `
-            -Execute "C:\Android\Sdk\emulator\emulator.exe" `
-            -Argument "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
-            -WorkingDirectory "C:\Android\Sdk\emulator"
-  
-          $principal = New-ScheduledTaskPrincipal -UserId "Hi" -LogonType Interactive
-  
-          $settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
-  
-          Register-ScheduledTask -TaskName "StartEmulator" -Action $action `
-            -Principal $principal -Settings $settings -Force
-  
-          Start-ScheduledTask -TaskName "StartEmulator"
-          Write-Host "Emulator launched as user Hi"
+          $env:ANDROID_AVD_HOME = "C:\Android\avd"
+          $env:ANDROID_HOME = "C:\Android\Sdk"
+          Start-Process -FilePath "C:\Android\Sdk\emulator\emulator.exe" `
+            -ArgumentList "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
+            -NoNewWindow
+          Write-Host "Emulator launched"
           Start-Sleep -Seconds 5
-  
-          $taskState = (Get-ScheduledTask -TaskName "StartEmulator").State
-          Write-Host "Task state: $taskState"
-  
+          $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+          if ($proc) {
+            Write-Host "Emulator process is running PID=$($proc.Id)"
+          } else {
+            Write-Host "Emulator process not found"
+            exit 1
+          }
+    
       - name: Wait for Boot Complete
         shell: powershell
         run: |
