@@ -1,7 +1,8 @@
 appId: com.joshuamdeguzman.circleci_flutter
-
 ---
-
 - launchApp
-
-- assertVisible: "Login"
+- assertVisible: "Flutter Demo Home Page"
+- assertVisible: "You have pushed the button this many times"
+- tapOn:
+    id: "increment"
+- assertVisible: "1"
