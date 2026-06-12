@@ -251,16 +251,31 @@ jobs:
             Start-Sleep -Seconds 3
           }
           & adb kill-server
+          Start-Sleep -Seconds 2
           & adb start-server
+          Write-Host "ADB server restarted"
   
       - name: Start Emulator
         shell: powershell
         run: |
-          $env:ANDROID_AVD_HOME = "C:\Android\avd"
-          Start-Process -FilePath "C:\Android\Sdk\emulator\emulator.exe" `
-            -ArgumentList "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data" `
-            -NoNewWindow
-          Write-Host "Emulator process launched"
+          $action = New-ScheduledTaskAction `
+            -Execute "C:\Android\Sdk\emulator\emulator.exe" `
+            -Argument "-avd Pixel_8_API35 -no-window -no-audio -gpu host -wipe-data -no-metrics" `
+            -WorkingDirectory "C:\Android\Sdk\emulator"
+  
+          $principal = New-ScheduledTaskPrincipal -UserId "Hi" -LogonType Interactive
+  
+          $settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
+  
+          Register-ScheduledTask -TaskName "StartEmulator" -Action $action `
+            -Principal $principal -Settings $settings -Force
+  
+          Start-ScheduledTask -TaskName "StartEmulator"
+          Write-Host "Emulator launched as user Hi"
+          Start-Sleep -Seconds 5
+  
+          $taskState = (Get-ScheduledTask -TaskName "StartEmulator").State
+          Write-Host "Task state: $taskState"
   
       - name: Wait for Boot Complete
         shell: powershell
@@ -275,13 +290,13 @@ jobs:
               Write-Host "Device online."
               break
             }
-            Write-Host "State: $state — waiting..."
+            Write-Host "Not ready yet, state=$state waiting..."
             Start-Sleep -Seconds 5
             $elapsed += 5
           }
   
           if ($elapsed -ge $timeout) {
-            Write-Error "Timed out waiting for device"
+            Write-Host "Timed out waiting for device"
             exit 1
           }
   
@@ -290,7 +305,7 @@ jobs:
           while ($elapsed -lt $timeout) {
             $boot = & adb shell getprop sys.boot_completed 2>$null
             $boot = $boot.Trim()
-            Write-Host "sys.boot_completed = '$boot'"
+            Write-Host "boot=$boot"
             if ($boot -eq "1") {
               Write-Host "Emulator boot completed"
               break
@@ -300,7 +315,7 @@ jobs:
           }
   
           if ($elapsed -ge $timeout) {
-            Write-Error "Timed out waiting for boot_completed"
+            Write-Host "Timed out waiting for boot_completed"
             exit 1
           }
   
@@ -312,6 +327,20 @@ jobs:
         shell: cmd
         run: maestro test %GITHUB_WORKSPACE%\maestro-tests
   
+      - name: Kill Emulator after tests
+        if: always()
+        shell: powershell
+        run: |
+          & adb emu kill
+          Start-Sleep -Seconds 3
+          $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
+          if ($proc) {
+            $proc | Stop-Process -Force
+            Write-Host "Emulator force killed"
+          }
+          Unregister-ScheduledTask -TaskName "StartEmulator" -Confirm:$false -ErrorAction SilentlyContinue
+          Write-Host "Cleanup done"
+  
       - name: Upload Reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -321,7 +350,6 @@ jobs:
             maestro-report*
             **/*.log
             **/*.xml
-
             
   # # ✅ 6. BUILD IOS (MAC RUNNER)
   # build_ios:
