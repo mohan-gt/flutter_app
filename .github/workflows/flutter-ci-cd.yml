@@ -255,17 +255,15 @@ jobs:
             Start-Sleep -Seconds 2
             & adb start-server
             Write-Host "ADB server restarted"
-    
+        
         - name: Start Emulator via Scheduled Task
           shell: powershell
           run: |
             $ErrorActionPreference = "Continue"
     
-            # Register scheduled task to run as Automation user
             $action = New-ScheduledTaskAction `
-              -Execute "C:\Android\Sdk\emulator\emulator.exe" `
-              -Argument "-avd Pixel_8_API35 -no-audio -gpu host -wipe-data -no-metrics" `
-              -WorkingDirectory "C:\Android\Sdk\emulator"
+              -Execute "C:\Android\start_emulator.bat" `
+              -WorkingDirectory "C:\Android"
     
             $principal = New-ScheduledTaskPrincipal `
               -UserId "Automation" `
@@ -282,17 +280,15 @@ jobs:
               -Settings $settings `
               -Force
     
-            # Start the task
             Start-ScheduledTask -TaskName "StartEmulatorCI"
             Write-Host "Emulator task started"
             Start-Sleep -Seconds 10
     
-            # Verify emulator process is running
             $proc = Get-Process -Name "emulator" -ErrorAction SilentlyContinue
             if ($proc) {
               Write-Host "Emulator process running PID=$($proc.Id)"
             } else {
-              Write-Host "Emulator process not found - task may have failed"
+              Write-Host "Emulator process not found"
               exit 1
             }
     
