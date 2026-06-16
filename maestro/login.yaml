@@ -19,7 +19,6 @@ appId: com.joshuamdeguzman.circleci_flutter
 - assertVisible: "Home"
 
 
-related to service identity folder permissions and long path restrictions on Windows.
 # Create a folder under the drive root
 $ mkdir actions-runner; cd actions-runner
 # Download the latest runner package
@@ -30,9 +29,10 @@ $ if((Get-FileHash -Path actions-runner-win-x64-2.335.1.zip -Algorithm SHA256).H
 $ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.335.1.zip", "$PWD")
 Configure
 # Create the runner and start the configuration experience
-$ ./config.cmd --url https://github.com/vectorstack-IT/daiv-ai-app --token BRD36XSUD7FLPK5RNPPYRKTKFRBJ2
+$ ./config.cmd --url https://github.com/vectorstack-IT/daiv-ai-app --token BRD36XUHSQQZULVZXSJYBOTKGD4H6
 # Run it!
 $ ./run.cmd
 Using your self-hosted runner
 # Use this YAML in your workflow file for each job
 runs-on: self-hosted
+
