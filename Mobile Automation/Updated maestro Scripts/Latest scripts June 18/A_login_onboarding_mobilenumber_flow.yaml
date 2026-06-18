@@ -1,0 +1,50 @@
+appId: com.daivbharathi.daiv
+---
+# LOGIN FLOW — Mobile Number + OTP
+# Test mobile : 8122857394
+# Test OTP    : 0000
+
+- assertVisible: "Daiv"
+- tapOn: "Daiv"
+- takeScreenshot: "001_app_launched"
+
+- assertVisible: "English"
+- tapOn: "English"
+- takeScreenshot: "002_english_selected"
+
+- assertVisible: "Continue"
+- tapOn: "Continue"
+- takeScreenshot: "003_continue_tapped"
+
+- assertVisible: "Skip"
+- tapOn: "Skip"
+- takeScreenshot: "004_skip_tapped"
+
+- assertVisible: "Let's Start"
+- tapOn: "Let's Start"
+- takeScreenshot: "005_lets_start_tapped"
+
+# Enter phone number
+- assertVisible: "Please enter your phone number"
+- tapOn:
+    point: 29%,45%
+- takeScreenshot: "006_phone_field_focused"
+
+- inputText: "8122857394"
+- takeScreenshot: "007_phone_entered"
+
+- assertVisible: "Generate OTP"
+- tapOn: "Generate OTP"
+- takeScreenshot: "008_otp_requested"
+
+# Enter OTP
+- assertVisible: "OTP Verification"
+- tapOn: "OTP Verification"
+- takeScreenshot: "009_otp_field_focused"
+
+- inputText: "0000"
+- takeScreenshot: "010_otp_entered"
+
+# Landed on Home
+- assertVisible: "Home"
+- takeScreenshot: "011_home_screen_verified"

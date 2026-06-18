@@ -1,0 +1,580 @@
+appId: com.daivbharathi.daiv
+---
+# Flow- Home-Astro-Panchang- Select your Rashi
+
+- assertVisible: "Home"
+- assertVisible: "Astro"
+- tapOn: "Astro"
+- takeScreenshot: "001_astro_tab_opened"
+
+# Rashi 1 - Aries
+- assertVisible: "Aries"
+- tapOn: "Aries"
+- takeScreenshot: "002_aries_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "003_aries_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "004_aries_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "005_aries_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "006_aries_back"
+
+# Rashi 2 - Taurus
+- assertVisible: "Taurus"
+- tapOn: "Taurus"
+- takeScreenshot: "007_taurus_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "008_taurus_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "009_taurus_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "010_taurus_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "011_taurus_back"
+
+# Rashi 3 - Gemini
+- assertVisible: "Temini"
+- tapOn: "Temini"
+- takeScreenshot: "012_gemini_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "013_gemini_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "014_gemini_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "015_gemini_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "016_gemini_back"
+
+# Rashi 4 - Cancer
+- assertVisible: "Cancer"
+- tapOn: "Cancer"
+- takeScreenshot: "017_cancer_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "018_cancer_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "019_cancer_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "020_cancer_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "021_cancer_back"
+
+# Rashi 5 - Leo
+- assertVisible: "Leo"
+- tapOn: "Leo"
+- takeScreenshot: "022_leo_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "023_leo_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "024_leo_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "025_leo_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "026_leo_back"
+
+# Rashi 6 - Virgo
+- assertVisible: "Virgo"
+- tapOn: "Virgo"
+- takeScreenshot: "027_virgo_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "028_virgo_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "029_virgo_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "030_virgo_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "031_virgo_back"
+
+# Rashi 7 - Libra
+- assertVisible: "Libra"
+- tapOn: "Libra"
+- takeScreenshot: "032_libra_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "033_libra_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "034_libra_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "035_libra_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "036_libra_back"
+
+# Rashi 8 - Scorpio
+- assertVisible: "Scorpio"
+- tapOn: "Scorpio"
+- takeScreenshot: "037_scorpio_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "038_scorpio_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "039_scorpio_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "040_scorpio_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "041_scorpio_back"
+
+- swipe:
+    direction: UP
+    duration: 800
+- takeScreenshot: "042_swiped_up_to_sagittarius"
+
+# Rashi 9 - Sagittarius
+- assertVisible: "Sagittarius"
+- tapOn: "Sagittarius"
+- takeScreenshot: "043_sagittarius_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "044_sagittarius_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "045_sagittarius_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "046_sagittarius_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "047_sagittarius_back"
+
+# Rashi 10 - Capricorn
+- assertVisible: "Capricorn"
+- tapOn: "Capricorn"
+- takeScreenshot: "048_capricorn_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "049_capricorn_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "050_capricorn_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "051_capricorn_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "052_capricorn_back"
+
+# Rashi 11 - Aquarius
+- assertVisible: "Aquarius"
+- tapOn: "Aquarius"
+- takeScreenshot: "053_aquarius_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "054_aquarius_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "055_aquarius_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "056_aquarius_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "057_aquarius_back"
+
+# Rashi 12 - Pisces
+- assertVisible: "Pisces"
+- tapOn: "Pisces"
+- takeScreenshot: "058_pisces_selected"
+
+- assertVisible: "View Details"
+- tapOn: "View Details"
+- takeScreenshot: "059_pisces_view_details"
+
+- assertVisible: "Yesterday\nTab 1 of 3"
+- tapOn: "Yesterday\nTab 1 of 3"
+- takeScreenshot: "060_pisces_yesterday"
+
+- assertVisible: "Tomorrow\nTab 3 of 3"
+- tapOn: "Tomorrow\nTab 3 of 3"
+- takeScreenshot: "061_pisces_tomorrow"
+
+- tapOn:
+    text: "Back"
+- takeScreenshot: "062_pisces_back"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "063_swiped_up_to_learn_more"
+
+- assertVisible: "Learn More"
+- tapOn: "Learn More"
+- takeScreenshot: "064_learn_more_tapped"
+
+- assertVisible: "I'll do it Later!"
+- tapOn: "I'll do it Later!"
+- takeScreenshot: "065_do_it_later_tapped"
+
+# Flow- Home-Astro-Plans
+- assertVisible: "Plans"
+- tapOn: "Plans"
+- takeScreenshot: "066_plans_tab_opened"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "067_swiped_to_silver"
+
+# Plan 1 - Silver
+- assertVisible: "Upgrade to Plan silver"
+- tapOn: "Upgrade to Plan silver"
+- takeScreenshot: "068_silver_plan_opened"
+
+- assertVisible: "1 Month\n₹99"
+- tapOn: "1 Month\n₹99"
+- takeScreenshot: "069_silver_1m_selected"
+
+- assertVisible: "3 Months\n₹249\nEquivalent to ₹83.00 Per Month\n₹48 saved"
+- tapOn: "3 Months\n₹249\nEquivalent to ₹83.00 Per Month\n₹48 saved"
+- takeScreenshot: "070_silver_3m_selected"
+
+- assertVisible: "6 Months\n₹499\nEquivalent to ₹83.17 Per Month\n₹95 saved"
+- tapOn: "6 Months\n₹499\nEquivalent to ₹83.17 Per Month\n₹95 saved"
+- takeScreenshot: "071_silver_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "072_silver_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "073_silver_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "074_silver_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "075_silver_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "076_silver_back_to_plans"
+
+# Plan 2 - Gold Plan1
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "077_swiped_to_gold1"
+
+- assertVisible: "Upgrade to Gold Plan1"
+- tapOn: "Upgrade to Gold Plan1"
+- takeScreenshot: "078_gold1_plan_opened"
+
+- assertVisible: "1 Month\n₹2000"
+- tapOn: "1 Month\n₹2000"
+- takeScreenshot: "079_gold1_1m_selected"
+
+- assertVisible: "3 Months\n₹2500\nEquivalent to ₹833.33 Per Month\n₹3500 saved"
+- tapOn: "3 Months\n₹2500\nEquivalent to ₹833.33 Per Month\n₹3500 saved"
+- takeScreenshot: "080_gold1_3m_selected"
+
+- assertVisible: "6 Months\n₹3000\nEquivalent to ₹500.00 Per Month\n₹9000 saved"
+- tapOn: "6 Months\n₹3000\nEquivalent to ₹500.00 Per Month\n₹9000 saved"
+- takeScreenshot: "081_gold1_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "082_gold1_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "083_gold1_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "084_gold1_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "085_gold1_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "086_gold1_back_to_plans"
+
+# Plan 3 - Sample Plan2
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "087_swiped_to_sample2"
+
+- assertVisible: "Upgrade to Sample Plan2"
+- tapOn: "Upgrade to Sample Plan2"
+- takeScreenshot: "088_sample2_plan_opened"
+
+- assertVisible: "1 Month\n₹200"
+- tapOn: "1 Month\n₹200"
+- takeScreenshot: "089_sample2_1m_selected"
+
+- assertVisible: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- tapOn: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- takeScreenshot: "090_sample2_3m_selected"
+
+- assertVisible: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- tapOn: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- takeScreenshot: "091_sample2_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "092_sample2_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "093_sample2_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "094_sample2_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "095_sample2_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "096_sample2_back_to_plans"
+
+# Plan 4 - Sample Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "097_swiped_to_sample"
+
+- assertVisible: "Upgrade to Sample Plan"
+- tapOn: "Upgrade to Sample Plan"
+- takeScreenshot: "098_sample_plan_opened"
+
+- assertVisible: "1 Month\n₹200"
+- tapOn: "1 Month\n₹200"
+- takeScreenshot: "099_sample_1m_selected"
+
+- assertVisible: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- tapOn: "3 Months\n₹250\nEquivalent to ₹83.33 Per Month\n₹350 saved"
+- takeScreenshot: "100_sample_3m_selected"
+
+- assertVisible: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- tapOn: "6 Months\n₹300\nEquivalent to ₹50.00 Per Month\n₹900 saved"
+- takeScreenshot: "101_sample_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "102_sample_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "103_sample_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "104_sample_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "105_sample_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "106_sample_back_to_plans"
+
+# Plan 5 - Divine Connect Plan12
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "107_swiped_to_divine12"
+
+- assertVisible: "Upgrade to Divine Connect Plan12"
+- tapOn: "Upgrade to Divine Connect Plan12"
+- takeScreenshot: "108_divine12_plan_opened"
+
+- assertVisible: "1 Month\n₹2000"
+- tapOn: "1 Month\n₹2000"
+- takeScreenshot: "109_divine12_1m_selected"
+
+- assertVisible: "3 Months\n₹500\nEquivalent to ₹166.67 Per Month\n₹5500 saved"
+- tapOn: "3 Months\n₹500\nEquivalent to ₹166.67 Per Month\n₹5500 saved"
+- takeScreenshot: "110_divine12_3m_selected"
+
+- assertVisible: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹10000 saved"
+- tapOn: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹10000 saved"
+- takeScreenshot: "111_divine12_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "112_divine12_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "113_divine12_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "114_divine12_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "115_divine12_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "116_divine12_back_to_plans"
+
+# Plan 6 - Divine Connect Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "117_swiped_to_divine"
+
+- assertVisible: "Upgrade to Divine Connect Plan"
+- tapOn: "Upgrade to Divine Connect Plan"
+- takeScreenshot: "118_divine_plan_opened"
+
+- assertVisible: "1 Month\n₹1000"
+- tapOn: "1 Month\n₹1000"
+- takeScreenshot: "119_divine_1m_selected"
+
+- assertVisible: "3 Months\n₹1500\nEquivalent to ₹500.00 Per Month\n₹1500 saved"
+- tapOn: "3 Months\n₹1500\nEquivalent to ₹500.00 Per Month\n₹1500 saved"
+- takeScreenshot: "120_divine_3m_selected"
+
+- assertVisible: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹4000 saved"
+- tapOn: "6 Months\n₹2000\nEquivalent to ₹333.33 Per Month\n₹4000 saved"
+- takeScreenshot: "121_divine_6m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "122_divine_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "123_divine_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "124_divine_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "125_divine_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "126_divine_back_to_plans"
+
+# Plan 7 - Gold Plan
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "127_swiped_to_gold"
+
+- assertVisible: "Upgrade to Gold Plan"
+- tapOn: "Upgrade to Gold Plan"
+- takeScreenshot: "128_gold_plan_opened"
+
+- assertVisible: "1 Month\n₹99"
+- tapOn: "1 Month\n₹99"
+- takeScreenshot: "129_gold_1m_selected"
+
+- assertVisible: "3 Months\n₹199\nEquivalent to ₹66.33 Per Month\n₹98 saved"
+- tapOn: "3 Months\n₹199\nEquivalent to ₹66.33 Per Month\n₹98 saved"
+- takeScreenshot: "130_gold_3m_selected"
+
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "131_gold_payment_screen"
+
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "132_gold_back"
+
+- assertVisible: "YES"
+- tapOn: "YES"
+- takeScreenshot: "133_gold_yes"
+
+- assertVisible: "Try Again"
+- tapOn: "Try Again"
+- takeScreenshot: "134_gold_try_again"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "135_gold_back_to_plans"
+
+- tapOn:
+    text: "back"
+- takeScreenshot: "136_back_to_astro"
+
+- assertVisible: "Home"
+- takeScreenshot: "137_home_verified"

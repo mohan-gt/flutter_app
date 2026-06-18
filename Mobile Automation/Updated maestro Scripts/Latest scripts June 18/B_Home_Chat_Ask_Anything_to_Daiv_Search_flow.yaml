@@ -1,0 +1,258 @@
+appId: com.daivbharathi.daiv
+---
+# ASK DAIV FLOW
+
+# Option 1: I just want to explore
+- assertVisible: "Ask anything to Daiv..."
+- tapOn: "Ask anything to Daiv..."
+- takeScreenshot: "001_daiv_chat_opened"
+
+- assertVisible: "I just want to explore"
+- tapOn: "I just want to explore"
+- takeScreenshot: "002_explore_selected"
+
+- assertVisible: "1"
+- tapOn: "1"
+- takeScreenshot: "003_explore_page1"
+
+- assertVisible: "2"
+- tapOn: "2"
+- takeScreenshot: "004_explore_page2"
+
+- assertVisible: "3"
+- tapOn: "3"
+- takeScreenshot: "005_explore_page3"
+
+- assertVisible: "Ask Guru anything..."
+- tapOn: "back"
+- takeScreenshot: "006_back_from_explore"
+
+# Option 2: Life feels confusing
+- assertVisible: "Ask anything to Daiv..."
+- tapOn: "Ask anything to Daiv..."
+- takeScreenshot: "007_daiv_chat_opened_2"
+
+- assertVisible: "Life feels confusing"
+- tapOn: "Life feels confusing"
+- takeScreenshot: "008_confusing_selected"
+
+- assertVisible: "1"
+- tapOn: "1"
+- takeScreenshot: "009_confusing_page1"
+
+- assertVisible: "2"
+- tapOn: "2"
+- takeScreenshot: "010_confusing_page2"
+
+- assertVisible: "3"
+- tapOn: "3"
+- takeScreenshot: "011_confusing_page3"
+
+- assertVisible: "Ask Guru anything..."
+- tapOn: "back"
+- takeScreenshot: "012_back_from_confusing"
+
+# Option 3: Relationship issues
+- assertVisible: "Ask anything to Daiv..."
+- tapOn: "Ask anything to Daiv..."
+- takeScreenshot: "013_daiv_chat_opened_3"
+
+- assertVisible: "Relationship issues"
+- tapOn: "Relationship issues"
+- takeScreenshot: "014_relationship_selected"
+
+- assertVisible: "1"
+- tapOn: "1"
+- takeScreenshot: "015_relationship_page1"
+
+- assertVisible: "2"
+- tapOn: "2"
+- takeScreenshot: "016_relationship_page2"
+
+- assertVisible: "3"
+- tapOn: "3"
+- takeScreenshot: "017_relationship_page3"
+
+- tapOn: "back"
+- takeScreenshot: "018_back_from_relationship"
+
+# Option 4: Career or finances
+- assertVisible: "Ask anything to Daiv..."
+- tapOn: "Ask anything to Daiv..."
+- takeScreenshot: "019_daiv_chat_opened_4"
+
+- assertVisible: "Career or finances"
+- tapOn: "Career or finances"
+- takeScreenshot: "020_career_selected"
+
+- assertVisible: "1"
+- tapOn: "1"
+- takeScreenshot: "021_career_page1"
+
+- assertVisible: "2"
+- tapOn: "2"
+- takeScreenshot: "022_career_page2"
+
+- assertVisible: "3"
+- tapOn: "3"
+- takeScreenshot: "023_career_page3"
+
+- assertVisible: "Ask Guru anything..."
+- tapOn: "back"
+- takeScreenshot: "024_back_from_career"
+
+# Option 5: Health & peace of mind
+- assertVisible: "Ask anything to Daiv..."
+- tapOn: "Ask anything to Daiv..."
+- takeScreenshot: "025_daiv_chat_opened_5"
+
+- assertVisible: "Health & peace of mind"
+- tapOn: "Health & peace of mind"
+- takeScreenshot: "026_health_selected"
+
+- assertVisible: "1"
+- tapOn: "1"
+- takeScreenshot: "027_health_page1"
+
+- assertVisible: "2"
+- tapOn: "2"
+- takeScreenshot: "028_health_page2"
+
+- assertVisible: "3"
+- tapOn: "3"
+- takeScreenshot: "029_health_page3"
+
+- assertVisible: "Ask Guru anything..."
+- tapOn: "back"
+- takeScreenshot: "030_back_from_health"
+
+# SEARCH FLOW
+# Open Search
+- tapOn:
+    point: 87%,17%
+- takeScreenshot: "031_search_opened"
+
+# Filter: Seva
+- assertVisible: "Filter by Category"
+- assertVisible: "Seva"
+- tapOn: "Seva"
+- takeScreenshot: "032_seva_filter_applied"
+
+- assertVisible: "See More"
+- tapOn: "See More"
+- takeScreenshot: "033_seva_see_more"
+
+- assertVisible: "Ganapathi Temple\n Ganapathi\nKoramangala 6th block"
+- tapOn: "Ganapathi Temple\n Ganapathi\nKoramangala 6th block"
+- takeScreenshot: "034_ganapathi_temple_opened"
+
+- tapOn: "back"
+- takeScreenshot: "035_back_from_temple"
+
+- tapOn: "back"
+- takeScreenshot: "036_back_to_search"
+
+- tapOn:
+    point: 37%,16%
+- takeScreenshot: "037_seva_filter_cleared"
+
+# Filter: Purohit
+- assertVisible: "Purohit"
+- tapOn: "Purohit"
+- takeScreenshot: "038_purohit_filter_applied"
+
+- tapOn:
+    point: 37%,16%
+- takeScreenshot: "039_purohit_filter_cleared"
+
+# Filter: Pooja Kit
+- assertVisible: "Pooja Kit"
+- tapOn: "Pooja Kit"
+- takeScreenshot: "040_pooja_kit_filter_applied"
+
+- tapOn:
+    point: 43%,15%
+- takeScreenshot: "041_pooja_kit_filter_cleared"
+
+# Filter: Samagri
+- assertVisible: "Samagri"
+- tapOn: "Samagri"
+- takeScreenshot: "042_samagri_filter_applied"
+
+- tapOn:
+    point: 43%,15%
+- takeScreenshot: "043_samagri_filter_cleared"
+
+# Filter: Music
+- assertVisible: "Music"
+- tapOn: "Music"
+- takeScreenshot: "044_music_filter_applied"
+
+- tapOn:
+    point: 37%,15%
+- takeScreenshot: "045_music_filter_cleared"
+
+# Filter: Videos
+- assertVisible: "Videos"
+- tapOn: "Videos"
+- takeScreenshot: "046_videos_filter_applied"
+
+- tapOn:
+    point: 37%,15%
+- takeScreenshot: "047_videos_filter_cleared"
+
+# Filter: Books
+- assertVisible: "Books"
+- tapOn: "Books"
+- takeScreenshot: "048_books_filter_applied"
+
+- tapOn:
+    point: 37%,15%
+- takeScreenshot: "049_books_filter_cleared"
+
+# Filter: Community
+- assertVisible: "Community"
+- tapOn: "Community"
+- takeScreenshot: "050_community_filter_applied"
+
+- tapOn:
+    point: 37%,15%
+- takeScreenshot: "051_community_filter_cleared"
+
+# Filter: Temples
+- tapOn:
+    point: 45%,15%
+- takeScreenshot: "052_scroll_to_temples"
+
+- assertVisible: "Temples"
+- tapOn: "Temples"
+- takeScreenshot: "053_temples_filter_applied"
+
+- tapOn:
+    point: 40%,15%
+- takeScreenshot: "054_temples_filter_cleared"
+
+- tapOn: "back"
+- takeScreenshot: "055_back_from_search"
+
+# Filter flow
+- assertVisible: "notification"
+- tapOn: "notification"
+- assertVisible: "General\nTab 2 of 2"
+- tapOn: "General\nTab 2 of 2"
+- tapOn: "back"
+
+# Cart Flow
+- assertVisible: "cart"
+- tapOn: "cart"
+- tapOn: "back"
+- assertVisible: "show_more\nShow More"
+- tapOn: "show_more\nShow More"
+- tapOn: "Ganapathi Temple\n Ganapathi\nKoramangala 6th block"
+- assertVisible: "Show More"
+- tapOn: "Show More"
+
+
+
+
+

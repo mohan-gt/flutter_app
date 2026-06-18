@@ -1,0 +1,647 @@
+appId: com.daivbharathi.daiv
+---
+# Home- Faith- Seva- Explore Temples flow
+
+- assertVisible: "Home"
+- tapOn: "Home"
+- takeScreenshot: "001_home_tapped"
+
+- assertVisible: "Faith"
+- tapOn: "Faith"
+- takeScreenshot: "002_faith_tab_opened"
+
+- assertVisible: "Seva"
+- assertVisible: "Show More"
+- tapOn: "Show More"
+- takeScreenshot: "003_show_more_tapped"
+
+# Ganapathi Temple
+- assertVisible: "Ganapathi Temple\n Ganapathi\nKoramangala 6th block"
+- tapOn: "Ganapathi Temple\n Ganapathi\nKoramangala 6th block"
+- takeScreenshot: "004_ganapathi_temple_opened"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+- takeScreenshot: "005_ganapathi_show_more_tapped"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+- takeScreenshot: "006_ganapathi_join_community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "007_ganapathi_leave_community_1"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "008_ganapathi_leave_community_2"
+
+- tapOn: "back"
+- takeScreenshot: "009_back_from_ganapathi"
+
+- assertVisible: "favorite"
+- tapOn: "favorite"
+- takeScreenshot: "favorite"
+
+- assertVisible: "back"
+- tapOn: "back"
+- takeScreenshot: "010_back_to_temple_list"
+
+# Radha Temple
+- assertVisible: "Radha Temple\n test\nKormangla"
+- tapOn: "Radha Temple\n test\nKormangla"
+- takeScreenshot: "011_radha_temple_opened"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+- takeScreenshot: "012_radha_show_more_tapped"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+- takeScreenshot: "013_radha_join_community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "014_radha_leave_community_1"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "015_radha_leave_community_2"
+
+- tapOn: "back"
+- takeScreenshot: "016_radha_community_back"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "017_radha_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "018_radha_book_seva"
+
+- assertVisible: "Monday, June 15, 2026"
+- tapOn: "Monday, June 15, 2026"
+- takeScreenshot: "019_radha_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "020_radha_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "021_radha_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "022_radha_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "023_radha_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "024_radha_back_2"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "025_scrolled_up_to_golden"
+
+# Golden Temple
+- assertVisible: "Golden Temple\n Sri Lakshmi Narayani\nSri Narayani Peedam, Thirumalaikodi, Vellore, Tamil Nadu"
+- tapOn: "Golden Temple\n Sri Lakshmi Narayani\nSri Narayani Peedam, Thirumalaikodi, Vellore, Tamil Nadu"
+- takeScreenshot: "026_golden_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "027_golden_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "028_golden_book_seva"
+
+- assertVisible: "Tuesday, June 23, 2026"
+- tapOn: "Tuesday, June 23, 2026"
+- takeScreenshot: "029_golden_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "030_golden_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "031_golden_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "032_golden_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "033_golden_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "034_golden_back_2"
+
+# Sri Saraswathi Temple
+- assertVisible: "Sri Saraswathi Temple\n Lord saraswathi\nsri saraswathi temple  "
+- tapOn: "Sri Saraswathi Temple\n Lord saraswathi\nsri saraswathi temple  "
+- takeScreenshot: "035_saraswathi_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 400
+- takeScreenshot: "036_saraswathi_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "037_saraswathi_book_seva"
+
+- assertVisible: "Wednesday, June 17, 2026"
+- tapOn: "Wednesday, June 17, 2026"
+- takeScreenshot: "038_saraswathi_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "039_saraswathi_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "040_saraswathi_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "041_saraswathi_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "042_saraswathi_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "043_saraswathi_back_2"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "044_scrolled_up_to_ganesha"
+
+# Ganesha Temple (KHB Colony) — Booking 1
+- assertVisible: "Ganesha Temple\n Ganesha\nKormangala,KHB Colony."
+- tapOn: "Ganesha Temple\n Ganesha\nKormangala,KHB Colony."
+- takeScreenshot: "045_ganesha_khb_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "046_ganesha_khb_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "047_ganesha_khb_book_seva_1"
+
+- assertVisible: "Sunday, June 21, 2026"
+- tapOn: "Sunday, June 21, 2026"
+- takeScreenshot: "048_ganesha_khb_date_selected_1"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "049_ganesha_khb_proceed_to_book_1"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "050_ganesha_khb_proceed_1"
+
+- tapOn: "back"
+- takeScreenshot: "051_ganesha_khb_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "052_ganesha_khb_menu_tapped_1"
+
+# Ganesha Temple (KHB Colony) — Booking 2
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "053_ganesha_khb_book_seva_2"
+
+- assertVisible: "Sunday, June 21, 2026"
+- tapOn: "Sunday, June 21, 2026"
+- takeScreenshot: "054_ganesha_khb_date_selected_2"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "055_ganesha_khb_proceed_to_book_2"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "056_ganesha_khb_proceed_2"
+
+- tapOn: "back"
+- takeScreenshot: "057_ganesha_khb_back_2"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "058_ganesha_khb_menu_tapped_2"
+
+# Ganesha Temple (KHB Colony) — Booking 3
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "059_ganesha_khb_book_seva_3"
+
+- assertVisible: "Sunday, June 28, 2026"
+- tapOn: "Sunday, June 28, 2026"
+- takeScreenshot: "060_ganesha_khb_date_selected_3"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "061_ganesha_khb_proceed_to_book_3"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "062_ganesha_khb_proceed_3"
+
+- tapOn: "back"
+- takeScreenshot: "063_ganesha_khb_back_3"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "064_ganesha_khb_menu_tapped_3"
+
+- tapOn: "back"
+- takeScreenshot: "065_ganesha_khb_back_to_list"
+
+# Shree Banashankari Devi Temple
+- assertVisible: "Shree Banashankari Devi Temple\n Banashankari Devi \nKanakapura Main Rd, Sarbandapalya, Banashankari Temple Ward, Bengaluru"
+- tapOn: "Shree Banashankari Devi Temple\n Banashankari Devi \nKanakapura Main Rd, Sarbandapalya, Banashankari Temple Ward, Bengaluru"
+- takeScreenshot: "066_banashankari_temple_opened"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+- takeScreenshot: "067_banashankari_show_more_tapped"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+- takeScreenshot: "068_banashankari_join_community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "069_banashankari_leave_community_1"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "070_banashankari_leave_community_2"
+
+- tapOn: "back"
+- takeScreenshot: "071_banashankari_back_1"
+
+- tapOn: "back"
+- takeScreenshot: "072_banashankari_back_2"
+
+# Ganesha Temple (1st main road)
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "073_scrolled_up_to_ganesha_1st"
+
+- assertVisible: "Ganesha Temple\n Ganesha\n1st main road KHB Colony Koramangala"
+- tapOn: "Ganesha Temple\n Ganesha\n1st main road KHB Colony Koramangala"
+- takeScreenshot: "074_ganesha_1st_opened"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+- takeScreenshot: "075_ganesha_1st_show_more_tapped"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+- takeScreenshot: "076_ganesha_1st_join_community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "077_ganesha_1st_leave_community_1"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+- takeScreenshot: "078_ganesha_1st_leave_community_2"
+
+- tapOn: "back"
+- takeScreenshot: "079_ganesha_1st_back_1"
+
+- tapOn: "back"
+- takeScreenshot: "080_ganesha_1st_back_to_list"
+
+# Ragigudda Temple
+- assertVisible: "Ragigudda Temple\n Hanuman\n9th Block, Jaya Nagar"
+- tapOn: "Ragigudda Temple\n Hanuman\n9th Block, Jaya Nagar"
+- takeScreenshot: "081_ragigudda_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "082_ragigudda_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "083_ragigudda_book_seva"
+
+- assertVisible: "Saturday, June 20, 2026"
+- tapOn: "Saturday, June 20, 2026"
+- takeScreenshot: "084_ragigudda_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "085_ragigudda_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "086_ragigudda_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "087_ragigudda_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "088_ragigudda_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "089_ragigudda_back_2"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "090_scrolled_up_to_kollur"
+
+# Kollur Mookambika Temple — Booking 1
+- assertVisible: "Kollur Mookambika Temple\n Devi\nHindu temple in Kollur, Udupi district"
+- tapOn: "Kollur Mookambika Temple\n Devi\nHindu temple in Kollur, Udupi district"
+- takeScreenshot: "091_kollur_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "092_kollur_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "093_kollur_book_seva_1"
+
+- assertVisible: "Monday, June 22, 2026"
+- tapOn: "Monday, June 22, 2026"
+- takeScreenshot: "094_kollur_date_selected_1"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "095_kollur_proceed_to_book_1"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "096_kollur_proceed_1"
+
+- tapOn: "back"
+- takeScreenshot: "097_kollur_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "098_kollur_menu_tapped_1"
+
+# Kollur Mookambika Temple — Booking 2
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "099_kollur_book_seva_2"
+
+- assertVisible: "Monday, June 22, 2026"
+- tapOn: "Monday, June 22, 2026"
+- takeScreenshot: "100_kollur_date_selected_2"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "101_kollur_proceed_to_book_2"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "102_kollur_proceed_2"
+
+- tapOn: "back"
+- takeScreenshot: "103_kollur_back_2"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "104_kollur_menu_tapped_2"
+
+- tapOn: "back"
+- takeScreenshot: "105_kollur_back_to_list"
+
+# Sri Rama Temple
+- assertVisible: "Sri Rama Temple \n Lord Rama \nnear Ayodhya Railway Station, near Hanuman Ghadi, Ramkot, Sai Nagar, Ayodhya"
+- tapOn: "Sri Rama Temple \n Lord Rama \nnear Ayodhya Railway Station, near Hanuman Ghadi, Ramkot, Sai Nagar, Ayodhya"
+- takeScreenshot: "106_sri_rama_temple_opened"
+
+- tapOn: "back"
+- takeScreenshot: "107_sri_rama_back"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+
+- tapOn: "back"
+
+- tapOn: "back"
+
+# Hanuman Temple
+- assertVisible: "Hanuman Temple\n Lord Hanuman\nBasavanagudi "
+- tapOn: "Hanuman Temple\n Lord Hanuman\nBasavanagudi "
+- takeScreenshot: "108_hanuman_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "109_hanuman_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "110_hanuman_book_seva"
+
+- assertVisible: "Monday, June 22, 2026"
+- tapOn: "Monday, June 22, 2026"
+- takeScreenshot: "111_hanuman_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "112_hanuman_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "113_hanuman_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "114_hanuman_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "115_hanuman_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "116_hanuman_back_2"
+
+# Shri Kanyaka Parameshwari Devi Temple
+- assertVisible: "Shri Kanyaka Parameshwari Devi Temple\n Lakshmi Devi\nXH2G+9Q2, Vasavi Temple St, Vishweshwarapura, Basavanagudi"
+- tapOn: "Shri Kanyaka Parameshwari Devi Temple\n Lakshmi Devi\nXH2G+9Q2, Vasavi Temple St, Vishweshwarapura, Basavanagudi"
+- takeScreenshot: "117_kanyaka_temple_opened"
+
+- tapOn: "back"
+- takeScreenshot: "118_kanyaka_back"
+
+- assertVisible: "show_more"
+- tapOn: "show_more"
+
+- assertVisible: "Join Community"
+- tapOn: "Join Community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+
+- assertVisible: "Leave Community"
+- tapOn: "Leave Community"
+
+- tapOn: "back"
+
+- tapOn: "back"
+
+# Sri Ayyappa Temple
+- assertVisible: "Sri Ayyappa Temple\n  Lord Ayyappa\nSri Ayyappa Temple pathanamthitta"
+- tapOn: "Sri Ayyappa Temple\n  Lord Ayyappa\nSri Ayyappa Temple pathanamthitta"
+- takeScreenshot: "119_ayyappa_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "120_ayyappa_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "121_ayyappa_book_seva"
+
+- assertVisible: "Saturday, June 20, 2026"
+- tapOn: "Saturday, June 20, 2026"
+- takeScreenshot: "122_ayyappa_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "123_ayyappa_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "124_ayyappa_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "125_ayyappa_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "126_ayyappa_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "127_ayyappa_back_2"
+
+# Lingaraj Temple
+- assertVisible: "Lingaraj Temple\n Siva\nOld Town"
+- tapOn: "Lingaraj Temple\n Siva\nOld Town"
+- takeScreenshot: "128_lingaraj_temple_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "129_lingaraj_scrolled_up"
+
+- assertVisible: "Book Seva"
+- tapOn: "Book Seva"
+- takeScreenshot: "130_lingaraj_book_seva"
+
+- assertVisible: "Monday, June 22, 2026"
+- tapOn: "Monday, June 22, 2026"
+- takeScreenshot: "131_lingaraj_date_selected"
+
+- assertVisible: "Proceed to Book"
+- tapOn: "Proceed to Book"
+- takeScreenshot: "132_lingaraj_proceed_to_book"
+
+- assertVisible: "Proceed"
+- tapOn: "Proceed"
+- takeScreenshot: "133_lingaraj_proceed"
+
+- tapOn: "back"
+- takeScreenshot: "134_lingaraj_back_1"
+
+- assertVisible:
+    point: 90%,26%
+- tapOn:
+    point: 90%,26%
+- takeScreenshot: "135_lingaraj_menu_tapped"
+
+- tapOn: "back"
+- takeScreenshot: "136_lingaraj_back_2"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "137_scrolled_up_to_mahadeshwara"
+
+# Mahadeshwara
+- assertVisible: "Mahadeshwara\n Rudra\nGejjalanatha, Ramapura(Post), Hanur(Taluk),ChamarajNagar(District)"
+- tapOn: "Mahadeshwara\n Rudra\nGejjalanatha, Ramapura(Post), Hanur(Taluk),ChamarajNagar(District)"
+- takeScreenshot: "138_mahadeshwara_opened"
+
+- swipe:
+    direction: UP
+    duration: 250
+- takeScreenshot: "139_mahadeshwara_scrolled_up"
+
+- assertVisible: "₹ 100"
+- tapOn: "₹ 100"
+- takeScreenshot: "140_mahadeshwara_100_selected"
+
+- assertVisible: "Proceed to Donate"
+- tapOn: "Proceed to Donate"
+- takeScreenshot: "141_mahadeshwara_proceed_to_donate"
+
+- tapOn: "back"
+- takeScreenshot: "142_mahadeshwara_back_1"
+
+- tapOn: "back"
+- takeScreenshot: "143_mahadeshwara_back_2"
+
+- tapOn: "back"
+- takeScreenshot: "144_mahadeshwara_back_3"
+
+- tapOn: "back"
+- takeScreenshot: "145_mahadeshwara_back_to_list"
+
+- assertVisible: "Home"
+- takeScreenshot: "146_home_screen_verified"
