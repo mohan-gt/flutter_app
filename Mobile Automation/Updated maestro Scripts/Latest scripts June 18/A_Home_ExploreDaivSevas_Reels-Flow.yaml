@@ -1,8 +1,6 @@
 appId: com.daivbharathi.daiv
 ---
 # List of reels available - 4
-- assertVisible: "I'll do it Later!"
-- tapOn: "I'll do it Later!"
 
 # Reel 1: daiv Clips
 - assertVisible: "Daiv\nUser Audio\ndaiv Clips"
