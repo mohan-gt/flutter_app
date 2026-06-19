@@ -1,9 +1,10 @@
 appId: com.daivbharathi.daiv
 ---
-# Login-Onboarding flow with skip button 
+# LOGIN FLOW — Mobile Number + OTP
+# Test mobile : 8122857394
+# Test OTP    : 0000
 
-- assertVisible: "Daiv"
-- tapOn: "Daiv"
+- launchApp
 - takeScreenshot: "001_app_launched"
 
 - assertVisible: "English"
@@ -14,19 +15,34 @@ appId: com.daivbharathi.daiv
 - tapOn: "Continue"
 - takeScreenshot: "003_continue_tapped"
 
-- assertVisible: "Skip"
-- tapOn: "Skip"
+- assertVisible: "onboarding_skip\nSkip"
+- tapOn: "onboarding_skip\nSkip"
 - takeScreenshot: "004_skip_tapped"
 
 - assertVisible: "Let's Start"
 - tapOn: "Let's Start"
 - takeScreenshot: "005_lets_start_tapped"
 
-- assertVisible: "Continue as guest"
-- tapOn: "Continue as guest"
-- takeScreenshot: "006_continue_as_guest_tapped"
+# Enter phone number
+- assertVisible: "login_mobile_number"
+- tapOn: "login_mobile_number"
+- takeScreenshot: "006_phone_field_focused"
 
+- inputText: "8122857394"
+- takeScreenshot: "007_phone_entered"
+
+- assertVisible: "Generate OTP"
+- tapOn: "Generate OTP"
+- takeScreenshot: "008_otp_requested"
+
+# Enter OTP
+- assertVisible: "OTP Verification"
+- tapOn: "OTP Verification"
+- takeScreenshot: "009_otp_field_focused"
+
+- inputText: "0000"
+- takeScreenshot: "010_otp_entered"
+
+# Landed on Home
 - assertVisible: "Home"
-- takeScreenshot: "007_home_screen_verified"
-
-
+- takeScreenshot: "011_home_screen_verified"
