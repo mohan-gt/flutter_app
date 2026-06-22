@@ -1,10 +1,16 @@
 appId: com.daivbharathi.daiv
 ---
-# Launch app-Onboarding flow with arrows
+# ════════════════════════════════════════════════════════════════
+# FLOW NAME : Launch → Onboarding (arrow navigation) → Guest Home
+# MODULE    : Onboarding & Authentication
+# PURPOSE   : Launch app, select language, advance the onboarding
+#             carousel via the next-arrow, then continue as guest.
+# ════════════════════════════════════════════════════════════════
 
 - launchApp
 - takeScreenshot: "001_app_launched"
 
+# Language selection
 - assertVisible: "English"
 - tapOn: "English"
 - takeScreenshot: "002_english_selected"
@@ -13,25 +19,29 @@ appId: com.daivbharathi.daiv
 - tapOn: "Continue"
 - takeScreenshot: "003_continue_tapped"
 
-- tapOn:
-    point: 82%,83%
+# Onboarding carousel — advance via next arrow (3 slides)
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
 - takeScreenshot: "004_onboarding_slide_2"
 
-- tapOn:
-    point: 82%,83%
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
 - takeScreenshot: "005_onboarding_slide_3"
 
-- tapOn:
-    point: 82%,83%
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
 - takeScreenshot: "006_onboarding_slide_4"
 
+# Start
 - assertVisible: "Let's Start"
 - tapOn: "Let's Start"
 - takeScreenshot: "007_lets_start_tapped"
 
+# Guest login
 - assertVisible: "Continue as guest"
 - tapOn: "Continue as guest"
-- takeScreenshot: "006_continue_as_guest_tapped"
+- takeScreenshot: "008_continue_as_guest_tapped"
 
+# Landed on Home
 - assertVisible: "Home"
 - takeScreenshot: "009_home_screen_verified"
