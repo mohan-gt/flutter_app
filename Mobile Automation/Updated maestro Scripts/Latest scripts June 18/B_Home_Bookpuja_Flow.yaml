@@ -1,200 +1,679 @@
 appId: com.daivbharathi.daiv
 ---
+# ════════════════════════════════════════════════════════════════
+# FLOW NAME : Home → Book Poojas → Puja Booking (Per Person + Family)
+# MODULE    : Puja Booking
+# APP       : com.daivbharathi.daiv (Daiv / FaithSeva)
+# ----------------------------------------------------------------
+# PURPOSE   : Book all 5 home-screen poojas end-to-end, covering both
+#             "Per Person" and "Family Members" pricing, devotee
+#             details entry (name / gotra / rashi / nakshatra),
+#             Add More / Remove devotee rows, and exit-confirm dialog.
+# DEVOTEE   : Name "Lokesh" / "Lokesh Pattubala", Gotra "Pattubala",
+#             Rashi "MESHA", Nakshatra "BHARANI"
+# NOTE      : Stops at Proceed to Payment — no real transaction.
+# ════════════════════════════════════════════════════════════════
 - assertVisible: "Home"
-- takeScreenshot: "01_home_screen"
+- takeScreenshot: "001_home_screen"
 
 # Swipe up to reveal Book Puja section
 - swipe:
     direction: UP
-    duration: 1000
-- waitForAnimationToEnd:
-- takeScreenshot: "02_book_puja_visible"
+    duration: 250
+- takeScreenshot: "002_book_puja_visible"
 
-# PUJA 1 — Maha Rudrabhisheka
-- tapOn:
-    point: "22%,54%"
-- takeScreenshot: "03_maha_rudrabhisheka_detail"
+# ════════════════════════════════════════════════
+# FLOW 1 — book_puja_1 · Maha Rudrabhisheka  (Per Person ₹501 + Family ₹1501)
+# ════════════════════════════════════════════════
+- assertVisible: "book_puja_1"
+- tapOn: "book_puja_1"
+- takeScreenshot: "003_bp1_detail_opened"
 
-# Select ₹501 Per Person
-- assertVisible: "₹ 501.0\nPer Person"
-- takeScreenshot: "001_per_person_option_visible"
- 
-- tapOn: "₹ 501.0\nPer Person"
-- takeScreenshot: "002_per_person_selected"
- 
-- assertVisible: "Book"
-- takeScreenshot: "003_book_button_visible"
- 
-- tapOn: "Book"
-- takeScreenshot: "004_after_tap_book"
- 
-- assertVisible: "Proceed to Payment"
-- takeScreenshot: "005_proceed_to_payment_visible"
- 
-- tapOn: "Proceed to Payment"
-- takeScreenshot: "006_payment_screen_opened"
- 
-- tapOn:
-    id: "back"
-- takeScreenshot: "007_back_from_payment"
-
-# Option 2: ₹1501 — 4 Family Members
-- assertVisible: "₹ 1501.0\n4 Family members"
-- takeScreenshot: "008_family_option_visible"
- 
-- tapOn: "₹ 1501.0\n4 Family members"
-- takeScreenshot: "009_family_option_selected"
- 
-- assertVisible: "Book"
-- takeScreenshot: "010_book_button_visible_family"
- 
-- tapOn: "Book"
-- takeScreenshot: "011_after_tap_book_family"
- 
-- assertVisible: "Proceed to Payment"
-- takeScreenshot: "012_proceed_to_payment_visible_family"
- 
-- tapOn: "Proceed to Payment"
-- takeScreenshot: "013_payment_screen_opened_family"
- 
-- tapOn: "back"
-- takeScreenshot: "014_back_from_payment_family"
- 
-- tapOn: "back"
-- takeScreenshot: "015_back_to_puja_listing"
-
-# PUJA 2 — Satyanarayana Puja
-- assertVisible:
-    point: 45%,51%
-- takeScreenshot: "001_puja_card_visible"
- 
-- tapOn:
-    point: 45%,51%
-- takeScreenshot: "002_puja_card_tapped"
- 
 # Option 1: ₹501 Per Person
 - assertVisible: "₹ 501.0\nPer Person"
-- takeScreenshot: "003_per_person_option_visible"
- 
 - tapOn: "₹ 501.0\nPer Person"
-- takeScreenshot: "004_per_person_selected"
- 
+- takeScreenshot: "004_bp1_per_person_selected"
+
+# Tap Book to open devotee details
 - assertVisible: "Book"
-- takeScreenshot: "005_book_button_visible"
- 
 - tapOn: "Book"
-- takeScreenshot: "006_after_tap_book"
- 
+- takeScreenshot: "005_bp1_book_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "006_bp1_name_field_tapped"
+- inputText: "Lokesh"
+- takeScreenshot: "007_bp1_name_entered"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+- takeScreenshot: "008_bp1_name_enter_tapped"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "009_bp1_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "010_bp1_gotra_entered"
+
+- assertVisible: "Enter"
+- tapOn: "Enter"
+- takeScreenshot: "011_bp1_gotra_enter_tapped"
+
+# Devotee details — Rashi
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "012_bp1_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "013_bp1_rashi_mesha_selected"
+
+# Devotee details — Nakshatra
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "014_bp1_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "015_bp1_nakshatra_bharani_selected"
+
+# Proceed to Payment
 - assertVisible: "Proceed to Payment"
-- takeScreenshot: "007_proceed_to_payment_visible"
- 
 - tapOn: "Proceed to Payment"
-- takeScreenshot: "008_payment_screen_opened"
- 
+- takeScreenshot: "016_bp1_payment_screen"
+
+# Exit-confirm dialog → back
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "017_bp1_back_tapped"
+
+- assertVisible: "Yes, exit"
+- tapOn: "Yes, exit"
+- takeScreenshot: "018_bp1_yes_exit_tapped"
+
+- assertVisible: "back"
 - tapOn: "back"
-- takeScreenshot: "009_back_from_payment"
- 
+- takeScreenshot: "019_bp1_back_from_payment"
+
 # Option 2: ₹1501 — 4 Family Members
 - assertVisible: "₹ 1501.0\n4 Family members"
-- takeScreenshot: "010_family_option_visible"
- 
 - tapOn: "₹ 1501.0\n4 Family members"
-- takeScreenshot: "011_family_option_selected"
- 
-- assertVisible: "Book"
-- takeScreenshot: "012_book_button_visible_family"
- 
-- tapOn: "Book"
-- takeScreenshot: "013_after_tap_book_family"
- 
-- assertVisible: "Proceed to Payment"
-- takeScreenshot: "014_proceed_to_payment_visible_family"
- 
-- tapOn: "Proceed to Payment"
-- takeScreenshot: "015_payment_screen_opened_family"
- 
-- tapOn: "back"
-- takeScreenshot: "016_back_from_payment_family"
- 
-- tapOn: "back"
-- takeScreenshot: "017_back_to_puja_listing"
+- takeScreenshot: "020_bp1_family_selected"
 
-# PUJA 3 — Maha Shivratri Puja
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "021_bp1_book_family_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "022_bp1_family_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "023_bp1_family_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "024_bp1_family_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "025_bp1_family_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "026_bp1_family_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "027_bp1_family_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "028_bp1_family_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "029_bp1_family_nakshatra_bharani_selected"
+
+# Add another devotee row
+- assertVisible: "Add More"
+- tapOn: "Add More"
+- takeScreenshot: "030_bp1_add_more_tapped"
+
+# Remove the added devotee row
+- assertVisible: "Remove"
+- tapOn: "Remove"
+- takeScreenshot: "031_bp1_remove_tapped"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "032_bp1_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "033_bp1_back_from_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "034_bp1_back_to_listing"
+
+# ════════════════════════════════════════════════
+# FLOW 2 — book_puja_2 · Puja 2  (Per Person ₹200 + Family ₹215 / 2 members)
+# ════════════════════════════════════════════════
+- assertVisible: "book_puja_2"
+- tapOn: "book_puja_2"
+- takeScreenshot: "035_bp2_detail_opened"
+
+# Option 1: ₹ 200.0 Per Person
+- assertVisible: "₹ 200.0\nPer Person"
+- tapOn: "₹ 200.0\nPer Person"
+- takeScreenshot: "036_bp2_per_person_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "037_bp2_book_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "038_bp2_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "039_bp2_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "040_bp2_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "041_bp2_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "042_bp2_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "043_bp2_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "044_bp2_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "045_bp2_nakshatra_bharani_selected"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "046_bp2_payment_screen"
+
+# Exit-confirm dialog
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "047_bp2_back_tapped"
+
+- assertVisible: "Yes, exit"
+- tapOn: "Yes, exit"
+- takeScreenshot: "048_bp2_yes_exit_tapped"
+
+- assertVisible: "back"
+- tapOn: "back"
+- takeScreenshot: "049_bp2_back_from_payment"
+
+# Family: ₹215 — 2 Family members
+- assertVisible: "₹ 215.0\n2 Family members"
+- tapOn: "₹ 215.0\n2 Family members"
+- takeScreenshot: "050_bp2_family_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "051_bp2_book_family_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "052_bp2_family_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "053_bp2_family_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "054_bp2_family_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "055_bp2_family_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "056_bp2_family_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "057_bp2_family_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "058_bp2_family_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "059_bp2_family_nakshatra_bharani_selected"
+
+# Add another devotee row
+- assertVisible: "Add More"
+- tapOn: "Add More"
+- takeScreenshot: "060_bp2_add_more_tapped"
+
+# Remove the added devotee row
+- assertVisible: "Remove"
+- tapOn: "Remove"
+- takeScreenshot: "061_bp2_remove_tapped"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "062_bp2_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "063_bp2_back_from_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "064_bp2_back_to_listing"
+
 - swipe:
     direction: LEFT
-    duration: 400
-- takeScreenshot: "001_after_swipe_left"
+    duration: 1000
+- takeScreenshot: "065_swiped_left_after_bp2"
 
-- assertVisible:
-    point: 60%,51%
-- takeScreenshot: "001_puja_card_visible"
- 
-- tapOn:
-    point: 60%,51%
-- takeScreenshot: "002_puja_card_tapped"
+# ════════════════════════════════════════════════
+# FLOW 3 — book_puja_3 · Satyanarayana Puja  (Per Person ₹501 + Family ₹1501)
+# ════════════════════════════════════════════════
+- assertVisible: "book_puja_3"
+- tapOn: "book_puja_3"
+- takeScreenshot: "066_bp3_detail_opened"
+
+# Option 1: ₹501 Per Person
+- assertVisible: "₹ 501.0\nPer Person"
+- tapOn: "₹ 501.0\nPer Person"
+- takeScreenshot: "067_bp3_per_person_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "068_bp3_book_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "069_bp3_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "070_bp3_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "071_bp3_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "072_bp3_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "073_bp3_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "074_bp3_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "075_bp3_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "076_bp3_nakshatra_bharani_selected"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "077_bp3_payment_screen"
+
+- tapOn: "back"
+- takeScreenshot: "078_bp3_back_from_payment"
+
+- tapOn: "back"
+- takeScreenshot: "079_bp3_back_2"
+
+# Option 2: ₹1501 — 4 Family Members
+- assertVisible: "₹ 1501.0\n4 Family members"
+- tapOn: "₹ 1501.0\n4 Family members"
+- takeScreenshot: "080_bp3_family_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "081_bp3_book_family_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "082_bp3_family_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "083_bp3_family_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "084_bp3_family_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "085_bp3_family_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "086_bp3_family_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "087_bp3_family_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "088_bp3_family_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "089_bp3_family_nakshatra_bharani_selected"
+
+# Add another devotee row
+- assertVisible: "Add More"
+- tapOn: "Add More"
+- takeScreenshot: "090_bp3_add_more_tapped"
+
+# Remove the added devotee row
+- assertVisible: "Remove"
+- tapOn: "Remove"
+- takeScreenshot: "091_bp3_remove_tapped"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "092_bp3_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "093_bp3_back_from_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "094_bp3_back_to_listing"
+
+# ════════════════════════════════════════════════
+# FLOW 4 — book_puja_4 · Maha Shivratri Puja  (Per Person ₹100 + Family ₹500)
+# ════════════════════════════════════════════════
+- assertVisible: "book_puja_4"
+- tapOn: "book_puja_4"
+- takeScreenshot: "095_bp4_detail_opened"
 
 # Option 1: ₹100 Per Person
 - assertVisible: "₹ 100.0\nPer Person"
-- takeScreenshot: "003_per_person_option_visible"
- 
 - tapOn: "₹ 100.0\nPer Person"
-- takeScreenshot: "004_per_person_selected"
- 
+- takeScreenshot: "096_bp4_per_person_selected"
+
+# Tap Book to open devotee details
 - assertVisible: "Book"
-- takeScreenshot: "005_book_button_visible"
- 
 - tapOn: "Book"
-- takeScreenshot: "006_after_tap_book"
- 
+- takeScreenshot: "097_bp4_book_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "098_bp4_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "099_bp4_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "100_bp4_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "101_bp4_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "102_bp4_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "103_bp4_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "104_bp4_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "105_bp4_nakshatra_bharani_selected"
+
+# Proceed to Payment
 - assertVisible: "Proceed to Payment"
-- takeScreenshot: "007_proceed_to_payment_visible"
- 
 - tapOn: "Proceed to Payment"
-- takeScreenshot: "008_payment_screen_opened"
- 
+- takeScreenshot: "106_bp4_payment_screen"
+
 - tapOn: "back"
-- takeScreenshot: "009_back_from_payment"
+- takeScreenshot: "107_bp4_back_1"
+
+- tapOn: "back"
+- takeScreenshot: "108_bp4_back_from_payment"
 
 # Option 2: ₹500 — 4 Family Members
 - assertVisible: "₹ 500.0\n4 Family members"
-- takeScreenshot: "010_family_option_visible"
- 
 - tapOn: "₹ 500.0\n4 Family members"
-- takeScreenshot: "011_family_option_selected"
- 
+- takeScreenshot: "109_bp4_family_selected"
+
+# Tap Book to open devotee details
 - assertVisible: "Book"
-- takeScreenshot: "012_book_button_visible_family"
- 
 - tapOn: "Book"
-- takeScreenshot: "013_after_tap_book_family"
- 
+- takeScreenshot: "110_bp4_book_family_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "111_bp4_family_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "112_bp4_family_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "113_bp4_family_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "114_bp4_family_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "115_bp4_family_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "116_bp4_family_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "117_bp4_family_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "118_bp4_family_nakshatra_bharani_selected"
+
+# Add another devotee row
+- assertVisible: "Add More"
+- tapOn: "Add More"
+- takeScreenshot: "119_bp4_add_more_tapped"
+
+# Remove the added devotee row
+- assertVisible: "Remove"
+- tapOn: "Remove"
+- takeScreenshot: "120_bp4_remove_tapped"
+
+# Proceed to Payment
 - assertVisible: "Proceed to Payment"
-- takeScreenshot: "014_proceed_to_payment_visible_family"
- 
 - tapOn: "Proceed to Payment"
-- takeScreenshot: "015_payment_screen_opened_family"
- 
+- takeScreenshot: "121_bp4_payment_family"
+
 - tapOn: "back"
-- takeScreenshot: "016_back_from_payment_family"
- 
+- takeScreenshot: "122_bp4_back_from_payment_family"
+
 - tapOn: "back"
-- takeScreenshot: "017_back_to_puja_listing"
+- takeScreenshot: "123_bp4_back_to_listing"
+
+- swipe:
+    direction: LEFT
+    duration: 400
+- takeScreenshot: "124_swiped_left_after_bp4"
+
+# ════════════════════════════════════════════════
+# FLOW 5 — book_puja_5 · Puja 5  (Per Person ₹300 + Family ₹10000 / 5 members)
+# ════════════════════════════════════════════════
+- assertVisible: "book_puja_5"
+- tapOn: "book_puja_5"
+- takeScreenshot: "125_bp5_detail_opened"
+
+# Option 1: ₹ 300.0 Per Person
+- assertVisible: "₹ 300.0\nPer Person"
+- tapOn: "₹ 300.0\nPer Person"
+- takeScreenshot: "126_bp5_per_person_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "127_bp5_book_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "128_bp5_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "129_bp5_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "130_bp5_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "131_bp5_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "132_bp5_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "133_bp5_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "134_bp5_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "135_bp5_nakshatra_bharani_selected"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "136_bp5_payment_screen"
+
+# Exit-confirm dialog
+- assertVisible: "Back"
+- tapOn: "Back"
+- takeScreenshot: "137_bp5_back_tapped"
+
+- assertVisible: "Yes, exit"
+- tapOn: "Yes, exit"
+- takeScreenshot: "138_bp5_yes_exit_tapped"
+
+- assertVisible: "back"
+- tapOn: "back"
+- takeScreenshot: "139_bp5_back_from_payment"
+
+# Family: ₹10000 — 5 Family members
+- assertVisible: "₹ 10000.0\n5 Family members"
+- tapOn: "₹ 10000.0\n5 Family members"
+- takeScreenshot: "140_bp5_family_selected"
+
+# Tap Book to open devotee details
+- assertVisible: "Book"
+- tapOn: "Book"
+- takeScreenshot: "141_bp5_book_family_tapped"
+
+# Devotee details — Name
+- assertVisible: "name"
+- tapOn: "name"
+- takeScreenshot: "142_bp5_family_name_field_tapped"
+- inputText: "Lokesh Pattubala"
+- takeScreenshot: "143_bp5_family_name_entered"
+
+# Devotee details — Gotra
+- assertVisible: "gotra"
+- tapOn: "gotra"
+- takeScreenshot: "144_bp5_family_gotra_field_tapped"
+- inputText: "Pattubala"
+- takeScreenshot: "145_bp5_family_gotra_entered"
+
+# Devotee details — Rashi (dropdown)
+- assertVisible: "rashi"
+- tapOn: "rashi"
+- takeScreenshot: "146_bp5_family_rashi_dropdown_tapped"
+
+- assertVisible: "MESHA"
+- tapOn: "MESHA"
+- takeScreenshot: "147_bp5_family_rashi_mesha_selected"
+
+# Devotee details — Nakshatra (dropdown)
+- assertVisible: "nakshatra"
+- tapOn: "nakshatra"
+- takeScreenshot: "148_bp5_family_nakshatra_dropdown_tapped"
+
+- assertVisible: "BHARANI"
+- tapOn: "BHARANI"
+- takeScreenshot: "149_bp5_family_nakshatra_bharani_selected"
+
+# Add another devotee row
+- assertVisible: "Add More"
+- tapOn: "Add More"
+- takeScreenshot: "150_bp5_add_more_tapped"
+
+# Remove the added devotee row
+- assertVisible: "Remove"
+- tapOn: "Remove"
+- takeScreenshot: "151_bp5_remove_tapped"
+
+# Proceed to Payment
+- assertVisible: "Proceed to Payment"
+- tapOn: "Proceed to Payment"
+- takeScreenshot: "152_bp5_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "153_bp5_back_from_payment_family"
+
+- tapOn: "back"
+- takeScreenshot: "154_bp5_back_to_listing"
+
 - assertVisible: "Home"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
