@@ -9,16 +9,16 @@ appId: com.daivbharathi.daiv
 - tapOn: "English"
 - takeScreenshot: "002_english_selected"
 
-- assertVisible: "Continue"
-- tapOn: "Continue"
+- assertVisible: "Continue\nContinue"
+- tapOn: "Continue\nContinue"
 - takeScreenshot: "003_continue_tapped"
 
-- assertVisible: "Skip"
-- tapOn: "Skip"
+- assertVisible: "onboarding_skip\nSkip"
+- tapOn: "onboarding_skip\nSkip"
 - takeScreenshot: "004_skip_tapped"
 
-- assertVisible: "Let's Start"
-- tapOn: "Let's Start"
+- assertVisible: "Let's Start\nLet's Start"
+- tapOn: "Let's Start\nLet's Start"
 - takeScreenshot: "005_lets_start_tapped"
 
 - assertVisible: "Continue as guest"
