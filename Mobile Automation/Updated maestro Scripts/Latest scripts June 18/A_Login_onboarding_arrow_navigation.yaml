@@ -15,8 +15,8 @@ appId: com.daivbharathi.daiv
 - tapOn: "English"
 - takeScreenshot: "002_english_selected"
 
-- assertVisible: "Continue"
-- tapOn: "Continue"
+- assertVisible: "Continue\nContinue"
+- tapOn: "Continue\nContinue"
 - takeScreenshot: "003_continue_tapped"
 
 # Onboarding carousel — advance via next arrow (3 slides)
@@ -33,8 +33,8 @@ appId: com.daivbharathi.daiv
 - takeScreenshot: "006_onboarding_slide_4"
 
 # Start
-- assertVisible: "Let's Start"
-- tapOn: "Let's Start"
+- assertVisible: "Let's Start\nLet's Start"
+- tapOn: "Let's Start\nLet's Start"
 - takeScreenshot: "007_lets_start_tapped"
 
 # Guest login
