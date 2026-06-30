@@ -1,0 +1,155 @@
+appId: com.daivbharathi.daiv
+---
+# ════════════════════════════════════════════════════════════════
+# FLOW NAME : Onboarding (arrow) → Guest Home
+#             → Onboarding (skip) → Guest Home
+#             → Onboarding (skip) → Mobile + OTP Login → Home
+# MODULE    : Onboarding & Authentication
+# Test mobile : 8122857394
+# Test OTP    : 0000
+# ════════════════════════════════════════════════════════════════
+
+# ────────────────────────────────────────────────────────────────
+# FLOW 1 : Launch → Onboarding (arrow navigation) → Guest Home
+# ────────────────────────────────────────────────────────────────
+
+- launchApp
+- takeScreenshot: "001_app_launched"
+
+# Language selection
+- assertVisible: "English"
+- tapOn: "English"
+- takeScreenshot: "002_english_selected"
+
+- assertVisible: "Continue\nContinue"
+- tapOn: "Continue\nContinue"
+- takeScreenshot: "003_continue_tapped"
+
+# Onboarding carousel — advance via next arrow (3 slides)
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
+- takeScreenshot: "004_onboarding_slide_2"
+
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
+- takeScreenshot: "005_onboarding_slide_3"
+
+- assertVisible: "onboarding_next"
+- tapOn: "onboarding_next"
+- takeScreenshot: "006_onboarding_slide_4"
+
+# Start
+- assertVisible: "Let's Start\nLet's Start"
+- tapOn: "Let's Start\nLet's Start"
+- takeScreenshot: "007_lets_start_tapped"
+
+# Guest login
+- assertVisible: "Continue as guest"
+- tapOn: "Continue as guest"
+- takeScreenshot: "008_continue_as_guest_tapped"
+
+# Landed on Home
+- assertVisible: "bottom_tab_home\nHome"
+- tapOn: "bottom_tab_home\nHome"
+- takeScreenshot: "009_home_screen_verified"
+
+# ════════════════════════════════════════════════════════════════
+# BRIDGE 1 → 2 : Close and relaunch with cleared state
+# ════════════════════════════════════════════════════════════════
+- stopApp
+- takeScreenshot: "010_app_stopped"
+
+- launchApp:
+    clearState: true
+- takeScreenshot: "011_app_relaunched"
+
+# ────────────────────────────────────────────────────────────────
+# FLOW 2 : Onboarding (skip button) → Guest Home
+# ────────────────────────────────────────────────────────────────
+
+# Language selection
+- assertVisible: "English"
+- tapOn: "English"
+- takeScreenshot: "012_english_selected"
+
+- assertVisible: "Continue\nContinue"
+- tapOn: "Continue\nContinue"
+- takeScreenshot: "013_continue_tapped"
+
+# Onboarding — skip
+- assertVisible: "onboarding_skip\nSkip"
+- tapOn: "onboarding_skip\nSkip"
+- takeScreenshot: "014_skip_tapped"
+
+# Start
+- assertVisible: "Let's Start\nLet's Start"
+- tapOn: "Let's Start\nLet's Start"
+- takeScreenshot: "015_lets_start_tapped"
+
+# Guest login
+- assertVisible: "Continue as guest"
+- tapOn: "Continue as guest"
+- takeScreenshot: "016_continue_as_guest_tapped"
+
+# Landed on Home
+- assertVisible: "bottom_tab_home\nHome"
+- tapOn: "bottom_tab_home\nHome"
+- takeScreenshot: "017_home_screen_verified"
+
+# ════════════════════════════════════════════════════════════════
+# BRIDGE 2 → 3 : Close and relaunch with cleared state
+# ════════════════════════════════════════════════════════════════
+- stopApp
+- takeScreenshot: "018_app_stopped"
+
+- launchApp:
+    clearState: true
+- takeScreenshot: "019_app_relaunched"
+
+# ────────────────────────────────────────────────────────────────
+# FLOW 3 : Onboarding (skip) → Mobile Number + OTP Login → Home
+# ────────────────────────────────────────────────────────────────
+
+# Language selection
+- assertVisible: "English"
+- tapOn: "English"
+- takeScreenshot: "020_english_selected"
+
+- assertVisible: "Continue\nContinue"
+- tapOn: "Continue\nContinue"
+- takeScreenshot: "021_continue_tapped"
+
+# Onboarding — skip
+- assertVisible: "onboarding_skip\nSkip"
+- tapOn: "onboarding_skip\nSkip"
+- takeScreenshot: "022_skip_tapped"
+
+# Start
+- assertVisible: "Let's Start\nLet's Start"
+- tapOn: "Let's Start\nLet's Start"
+- takeScreenshot: "023_lets_start_tapped"
+
+# Enter phone number
+- assertVisible: "login_mobile_number"
+- tapOn: "login_mobile_number"
+- takeScreenshot: "024_phone_field_focused"
+
+- inputText: "8122857394"
+- takeScreenshot: "025_phone_entered"
+
+- assertVisible: "Generate OTP\nGenerate OTP"
+- tapOn: "Generate OTP\nGenerate OTP"
+- takeScreenshot: "026_otp_requested"
+
+# Enter OTP
+- assertVisible: "login_otp_field"
+- tapOn: "login_otp_field"
+- takeScreenshot: "027_otp_field_focused"
+
+- inputText: "0000"
+- takeScreenshot: "028_otp_entered"
+
+# Landed on Home
+- assertVisible: "bottom_tab_home\nHome"
+- tapOn: "bottom_tab_home\nHome"
+- takeScreenshot: "029_home_screen_verified"
