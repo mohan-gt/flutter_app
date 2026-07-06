@@ -1,4 +1,5 @@
-token : sqp_85c9b2ceb4041f3a6bbc919258d415f9d956dc0c
+token : sqp_7d7d1583f308ec94298b344f87a3ca134aa0b8b7 
+token name: github-actions
 
 url: http://192.168.1.163:9000
 
