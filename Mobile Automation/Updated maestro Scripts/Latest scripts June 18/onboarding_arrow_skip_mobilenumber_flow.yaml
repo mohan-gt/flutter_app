@@ -7,6 +7,9 @@ appId: com.daivbharathi.daiv
 # MODULE    : Onboarding & Authentication
 # Test mobile : 8122857394
 # Test OTP    : 0000
+#
+# Semantics reference: lib/utils/accessibility/app_semantics.dart
+# Optional widget keys documented inline where text matching may fail.
 # ════════════════════════════════════════════════════════════════
 
 # ────────────────────────────────────────────────────────────────
@@ -21,36 +24,36 @@ appId: com.daivbharathi.daiv
 - tapOn: "English"
 - takeScreenshot: "002_english_selected"
 
-- assertVisible: "Continue\nContinue"
-- tapOn: "Continue\nContinue"
+- assertVisible: "Continue, Double tap to continue"
+- tapOn: "Continue, Double tap to continue"
 - takeScreenshot: "003_continue_tapped"
 
-# Onboarding carousel — advance via next arrow (3 slides)
-- assertVisible: "onboarding_next"
-- tapOn: "onboarding_next"
+# Onboarding carousel — advance via next arrow (3 taps → 4th slide shows Let's Start)
+- assertVisible: "Next, Double tap to go to the next page"
+- tapOn: "Next, Double tap to go to the next page"
 - takeScreenshot: "004_onboarding_slide_2"
 
-- assertVisible: "onboarding_next"
-- tapOn: "onboarding_next"
+- assertVisible: "Next, Double tap to go to the next page"
+- tapOn: "Next, Double tap to go to the next page"
 - takeScreenshot: "005_onboarding_slide_3"
 
-- assertVisible: "onboarding_next"
-- tapOn: "onboarding_next"
+- assertVisible: "Next, Double tap to go to the next page"
+- tapOn: "Next, Double tap to go to the next page"
 - takeScreenshot: "006_onboarding_slide_4"
 
 # Start
-- assertVisible: "Let's Start\nLet's Start"
-- tapOn: "Let's Start\nLet's Start"
+- assertVisible: "Let's Start, Double tap to activate"
+- tapOn: "Let's Start, Double tap to activate"
 - takeScreenshot: "007_lets_start_tapped"
 
 # Guest login
-- assertVisible: "Continue as guest"
-- tapOn: "Continue as guest"
+- assertVisible: "Continue as guest, Double tap to continue"
+- tapOn: "Continue as guest, Double tap to continue"
 - takeScreenshot: "008_continue_as_guest_tapped"
 
 # Landed on Home
-- assertVisible: "bottom_tab_home\nHome"
-- tapOn: "bottom_tab_home\nHome"
+- assertVisible: "Selected, Home, Double tap to activate"
+- tapOn: "Selected, Home, Double tap to activate"
 - takeScreenshot: "009_home_screen_verified"
 
 # ════════════════════════════════════════════════════════════════
@@ -72,28 +75,28 @@ appId: com.daivbharathi.daiv
 - tapOn: "English"
 - takeScreenshot: "012_english_selected"
 
-- assertVisible: "Continue\nContinue"
-- tapOn: "Continue\nContinue"
+- assertVisible: "Continue, Double tap to continue"
+- tapOn: "Continue, Double tap to continue"
 - takeScreenshot: "013_continue_tapped"
 
-# Onboarding — skip
-- assertVisible: "onboarding_skip\nSkip"
-- tapOn: "onboarding_skip\nSkip"
+# Onboarding — skip (widget key fallback: onboarding_skip)
+- assertVisible: "Skip, Double tap to skip onboarding"
+- tapOn: "Skip, Double tap to skip onboarding"
 - takeScreenshot: "014_skip_tapped"
 
-# Start
-- assertVisible: "Let's Start\nLet's Start"
-- tapOn: "Let's Start\nLet's Start"
+# Start (widget key fallback: lets_start)
+- assertVisible: "Let's Start, Double tap to activate"
+- tapOn: "Let's Start, Double tap to activate"
 - takeScreenshot: "015_lets_start_tapped"
 
-# Guest login
-- assertVisible: "Continue as guest"
-- tapOn: "Continue as guest"
+# Guest login (widget key fallback: login_continue_as_guest)
+- assertVisible: "Continue as guest, Double tap to continue"
+- tapOn: "Continue as guest, Double tap to continue"
 - takeScreenshot: "016_continue_as_guest_tapped"
 
 # Landed on Home
-- assertVisible: "bottom_tab_home\nHome"
-- tapOn: "bottom_tab_home\nHome"
+- assertVisible: "Selected, Home, Double tap to activate"
+- tapOn: "Selected, Home, Double tap to activate"
 - takeScreenshot: "017_home_screen_verified"
 
 # ════════════════════════════════════════════════════════════════
@@ -115,41 +118,42 @@ appId: com.daivbharathi.daiv
 - tapOn: "English"
 - takeScreenshot: "020_english_selected"
 
-- assertVisible: "Continue\nContinue"
-- tapOn: "Continue\nContinue"
+- assertVisible: "Continue, Double tap to continue"
+- tapOn: "Continue, Double tap to continue"
 - takeScreenshot: "021_continue_tapped"
 
 # Onboarding — skip
-- assertVisible: "onboarding_skip\nSkip"
-- tapOn: "onboarding_skip\nSkip"
+- assertVisible: "Skip, Double tap to skip onboarding"
+- tapOn: "Skip, Double tap to skip onboarding"
 - takeScreenshot: "022_skip_tapped"
 
 # Start
-- assertVisible: "Let's Start\nLet's Start"
-- tapOn: "Let's Start\nLet's Start"
+- assertVisible: "Let's Start, Double tap to activate"
+- tapOn: "Let's Start, Double tap to activate"
 - takeScreenshot: "023_lets_start_tapped"
 
-# Enter phone number
-- assertVisible: "login_mobile_number"
-- tapOn: "login_mobile_number"
+# Enter phone number (widget key fallback: login_mobile_number)
+- assertVisible: "Mobile number, Enter your 10 digit mobile number"
+- tapOn: "Mobile number, Enter your 10 digit mobile number"
 - takeScreenshot: "024_phone_field_focused"
 
 - inputText: "8122857394"
 - takeScreenshot: "025_phone_entered"
 
-- assertVisible: "Generate OTP\nGenerate OTP"
-- tapOn: "Generate OTP\nGenerate OTP"
+# Generate OTP (widget key fallback: login_generate_otp)
+- assertVisible: "Generate OTP, Double tap to activate"
+- tapOn: "Generate OTP, Double tap to activate"
 - takeScreenshot: "026_otp_requested"
 
-# Enter OTP
-- assertVisible: "login_otp_field"
-- tapOn: "login_otp_field"
+# Enter OTP (widget key fallback: otp_field)
+- assertVisible: "One time password, Enter the 4 digit OTP"
+- tapOn: "One time password, Enter the 4 digit OTP"
 - takeScreenshot: "027_otp_field_focused"
 
 - inputText: "0000"
 - takeScreenshot: "028_otp_entered"
 
 # Landed on Home
-- assertVisible: "bottom_tab_home\nHome"
-- tapOn: "bottom_tab_home\nHome"
+- assertVisible: "Selected, Home, Double tap to activate"
+- tapOn: "Selected, Home, Double tap to activate"
 - takeScreenshot: "029_home_screen_verified"
